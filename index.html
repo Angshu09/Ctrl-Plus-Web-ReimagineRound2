@@ -13,10 +13,49 @@
     <link rel="stylesheet" href="style.css">
 
     <title>Fastrack</title>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
   <body>
 
-    <div class="mainContainer">
+    <div class="mainContainer bg-[#242424] min-h-[100vh] ">
+
+      <div class="loader fixed pointer-events-none z-[10] bg-[#242424] rounded-full  text-[white]">
+        <div class="fastrack w-[100vw] h-[100vh] flex justify-center items-center ">
+          <ul class="scale-[4] flex justify-center items-center w-max p-0">
+            <li class="list-none text-center ">F</li>
+            <li class="list-none text-center ">A</li>
+            <li class="list-none text-center ">S</li>
+            <li class="list-none text-center ">T</li>
+            <li class="list-none text-center ">R</li>
+            <li class="list-none text-center ">A</li>
+            <li class="list-none text-center ">C</li>
+            <li class="list-none text-center ">K</li>
+          </ul>
+        </div>
+
+        <div class="dialCircle h-[51px] w-[51px] bg-[white] rounded-full absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] opacity-0 border border-white ">
+          <img class="absolute opacity-0 scale-0 " src="sundial.png" alt="">
+
+          <div class="circle h-[30px] w-[30px] bg-[white] blur-[50px]"></div>
+        </div>
+        <div class="lightSource h-[350px] w-[350px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] opacity-0 scale-0">
+          <div class="light h-[50px] w-[50px] absolute top-0 bg-yellow-500 rounded-full"></div>
+          <div class="lightShadow h-[50px] w-[50px] absolute top-0 bg-yellow-500 rounded-full blur-[20px] " ></div>
+        </div>
+
+        <div class="clock absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] scale-[0.5] opacity-0 z-[3]">
+          <lottie-player class="scale-[0.1] opacity-0" src="https://lottie.host/ccdd79fb-ec6e-42bd-a640-239a7806e728/fXKKqtoY0H.json" background="##ffffff" speed="1" style="width: 300px; height: 300px" autoplay direction="1" mode="normal"></lottie-player>
+        </div>
+
+        <div class="wristWatch absolute top-[50.5%] left-[50.5%] translate-x-[-50%] translate-y-[-50%] opacity-0">
+          <img src="belt.png" alt="">
+        </div>
+        
+      </div>
+
+      <div class="navbar h-[80px] w-full bg-white opacity-0">   
+      </div>
       
     
 
@@ -25,6 +64,9 @@
 
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="module" src="/Animation.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
