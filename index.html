@@ -13,10 +13,148 @@
     <link rel="stylesheet" href="style.css">
 
     <title>Fastrack</title>
+
+    <style>
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .mainContainer::-webkit-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+
+      .mainContainer {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
   <body>
+    <div class="mainContainer bg-[#242424] min-h-[100vh] overflow-y-auto h-[100vh]">
 
-    <div class="mainContainer">
+      <div class="loader fixed pointer-events-none z-[10] bg-[#242424] text-[white] overflow-hidden ">
+        <div class="fastrack w-[100vw] h-[100vh] flex justify-center items-center rounded-full">
+          <ul class="scale-[4] flex justify-center items-center w-max p-0">
+            <li class="list-none text-center ">F</li>
+            <li class="list-none text-center ">A</li>
+            <li class="list-none text-center ">S</li>
+            <li class="list-none text-center ">T</li>
+            <li class="list-none text-center ">R</li>
+            <li class="list-none text-center ">A</li>
+            <li class="list-none text-center ">C</li>
+            <li class="list-none text-center ">K</li>
+          </ul>
+        </div>
+  
+        <div class="dialCircle h-[51px] w-[51px] bg-[white] rounded-full absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] opacity-0 border border-white ">
+          <img class="absolute opacity-0 scale-0 top-[1.7%] " src="sundial.png" alt="">
+  
+          <div class="circle h-[30px] w-[30px] bg-[white] blur-[50px]"></div>
+        </div>
+        <div class="lightSource h-[350px] w-[350px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] opacity-0 scale-0">
+          <div class="light h-[50px] w-[50px] absolute top-0 bg-yellow-500 rounded-full"></div>
+          <div class="lightShadow h-[50px] w-[50px] absolute top-0 bg-yellow-500 rounded-full blur-[20px] " ></div>
+        </div>
+  
+        <div class="clock absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] scale-[0.5] opacity-0 z-[3]">
+          <lottie-player class="scale-[0.1] opacity-0" src="https://lottie.host/ccdd79fb-ec6e-42bd-a640-239a7806e728/fXKKqtoY0H.json" background="##ffffff" speed="1" style="width: 300px; height: 300px" autoplay direction="1" mode="normal"></lottie-player>
+        </div>
+  
+        <div class="wristWatch absolute top-[50.5%] left-[50.5%] translate-x-[-50%] translate-y-[-50%] opacity-0">
+          <img src="belt.png" alt="">
+        </div>
+        
+      </div>
+      
+      <div class="navbar h-[80px] w-full bg-white opacity-0 fixed z-[8]">   
+      </div>
+
+      <div class="scrollHorizontal overflow-x-hidden ">
+        <div class="tabContainer flex  w-[400vw] ">
+          <div class="tab w-[100vw] h-[100vh]  bg-orange-700 pt-[80px]"></div>
+          <div class="tab w-[100vw] h-[100vh]  bg-orange-600 pt-[80px]"></div>
+          <div class="tab w-[100vw] h-[100vh]  bg-orange-500 pt-[80px]"></div>
+          <div class="tab w-[100vw] h-[100vh] 
+          bg-orange-400 pt-[80px]" ></div>
+        </div>
+      </div>
+
+      <div class="test h-[200px]" ></div>
+
+
+      <div class="services h-[400px] w-full mt-20">
+
+        <div class="line h-[50%] w-full border-b-[3px] border-dashed border-[#f1caad] flex " >
+
+          <div class="section w-1/4 relative ">
+            <div class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"></div>
+
+            <div class="chekout w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center">
+
+              <img class="w-[95%] h-[85%] " src="security.png" alt="">
+
+              <div class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute bottom-[-50%] translate-y-[50%] left-[50%] translate-x-[-50%] w-max">SAFE AND SECURE <br> CHECKOUT</div>
+
+            </div>
+
+            
+
+            
+          </div>
+          <div class="section  w-1/4 relative ">
+
+            <div class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"></div>
+
+            <div class="quality w-[12vw] h-[12vw]  md:w-[9vw] md:h-[9vw]  border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center">
+
+              <img class="w-[75%] h-[75%] " src="quality.png" alt="">
+
+              <div class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute top-[-50%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-max">PREMIUM QUALITY <br> PRODUCT</div>
+
+            </div>
+          </div>
+          <div class="section  w-1/4 relative ">
+
+            <div class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"></div>
+
+            <div class="return w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center">
+
+              <img class="w-[75%] h-[75%] " src="return-box.png" alt="">
+
+              <div class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute bottom-[-50%] translate-y-[50%] left-[50%] translate-x-[-50%] w-max">7 DAY RETURN</div>
+
+            </div>
+          </div>
+          <div class="section  w-1/4 relative ">
+
+            <div class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"></div>
+
+            <div class="shipping w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center">   
+
+              <img class="w-[75%] h-[75%] " src="fast-delivery.png" alt="">
+
+              <div class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute top-[-50%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-max">FREE SHIPPING <br> NATIONWIDE</div>
+
+            </div>
+
+            <div class="shadow w-[80px] h-[80px] "></div>
+            
+          </div>
+
+          
+       
+          
+        </div>
+
+      </div>
+
+      <div class="footer h-[500px]"></div>
+
+
       
     
 
@@ -25,6 +163,11 @@
 
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="module" src="/Animation.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
