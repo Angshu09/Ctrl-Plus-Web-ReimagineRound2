@@ -147,8 +147,34 @@ gsap.to('.navbar ',{
   opacity:1,
   duration:2,
   delay:11,
-  background:'white',
 })
+gsap.to('.navbar div', {
+  stagger:0.5,
+  delay:11,
+
+})
+gsap.from('.navbar li', {
+  opacity:0,
+  x:'-100%',
+  stagger:0.5,
+  delay:11.5,
+  ease: "elastic.out(0.9,0.5)",
+
+})
+
+gsap.to('.navbar',{
+  background:'#100F0F',
+  scrollTrigger: {
+    trigger:'.scrollHorizontal',
+    scroller:'.mainContainer',
+    markers:false,
+    start:"top 0%",
+    end:'top -10%',
+    scrub:2,
+  
+  }
+})
+
 
 gsap.to('.tabContainer',{
   transform:"translateX(-300vw)",

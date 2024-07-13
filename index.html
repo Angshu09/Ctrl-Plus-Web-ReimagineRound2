@@ -10,6 +10,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="style.css">
 
     <title>Fastrack</title>
@@ -51,7 +59,7 @@
         </div>
   
         <div class="dialCircle h-[51px] w-[51px] bg-[white] rounded-full absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] opacity-0 border border-white ">
-          <img class="absolute opacity-0 scale-0 top-[1.7%] " src="sundial.png" alt="">
+          <img class="absolute opacity-0 scale-0 top-[1%] " src="sundial.png" alt="">
   
           <div class="circle h-[30px] w-[30px] bg-[white] blur-[50px]"></div>
         </div>
@@ -60,17 +68,55 @@
           <div class="lightShadow h-[50px] w-[50px] absolute top-0 bg-yellow-500 rounded-full blur-[20px] " ></div>
         </div>
   
-        <div class="clock absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] scale-[0.5] opacity-0 z-[3]">
-          <lottie-player class="scale-[0.1] opacity-0" src="https://lottie.host/ccdd79fb-ec6e-42bd-a640-239a7806e728/fXKKqtoY0H.json" background="##ffffff" speed="1" style="width: 300px; height: 300px" autoplay direction="1" mode="normal"></lottie-player>
+        <div class="clock absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] scale-[0.5]  z-[3] opacity-0">
+          <lottie-player class="scale-[0.1] " src="https://lottie.host/ccdd79fb-ec6e-42bd-a640-239a7806e728/fXKKqtoY0H.json" background="##ffffff" speed="1" style="width: 300px; height: 300px" autoplay direction="1" mode="normal"></lottie-player>
         </div>
   
-        <div class="wristWatch absolute top-[50.5%] left-[50.5%] translate-x-[-50%] translate-y-[-50%] opacity-0">
+        <div class="wristWatch absolute h-[350px] w-[350px] top-[50.5%] left-[50.5%] translate-x-[-50%] translate-y-[-50%] opacity-0">
           <img src="belt.png" alt="">
         </div>
         
       </div>
       
-      <div class="navbar h-[80px] w-full bg-white opacity-0 fixed z-[8]">   
+      <div class="navbar h-[80px] w-full opacity-0 fixed z-[8] items-center flex justify-between px-2">  
+        <div class="brandLogo w-[20%] ">
+          <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+        </div>
+
+        <div class="navCategory text-[#ffffffc4] flex items-center justify-between w-[60%]">
+          <ul class="flex gap-2">
+            <li class="p-2">Watches</li>
+            <li class="p-2">Men</li>
+            <li class="p-2">Women</li>
+            <li class="p-2">More..</li>
+          </ul>
+          <ul class="flex gap-2">
+            <li class="p-2">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </li>
+            <li class="cartIcon relative p-2">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <label for="cartCount" class=" cartCount absolute text-xs sm:text-sm px-1 top-[0px] font-bold left-[-10px] text-[red] bg-[#ffffffb9] rounded-full text-center">0</label>
+              
+            </li>
+            <li class="p-2">
+              <i class="fa-solid fa-user"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+
+      <div class="heroSection relative">
+
+        <video autoplay loop >
+          <source src="videoplayback.mp4">
+        </video>
+
+        <div class="overCast aspect-video w-full border absolute bg-[#3a3737c4] top-[0]"></div>
+
+
+
       </div>
 
       <div class="scrollHorizontal overflow-x-hidden ">
