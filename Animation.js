@@ -162,24 +162,11 @@ gsap.from('.navbar li', {
 
 })
 
-gsap.to('.navbar',{
-  background:'#100F0F',
-  scrollTrigger: {
-    trigger:'.scrollHorizontal',
-    scroller:'.mainContainer',
-    markers:false,
-    start:"top 0%",
-    end:'top -10%',
-    scrub:2,
-  
-  }
-})
-
 
 gsap.to('.tabContainer',{
   transform:"translateX(-300vw)",
   scrollTrigger: {
-    trigger:'.scrollHorizontal',
+    trigger:'.tabContainer',
     scroller:'.mainContainer',
     markers:false,
     start:"top 0%",
@@ -198,7 +185,7 @@ gsap.to('.tabContainer',{
 const serviceContainer=document.querySelector('.services')
 const serviceLine=document.querySelector('.line')
 
-var tl= gsap.timeline({scrollTrigger: {start:'top 75%',end:'top 15%', markers:false, scroller:'.mainContainer', trigger:'.services', scrub:5}})
+var tl= gsap.timeline({scrollTrigger: {start:'top 75%',end:'top 15%', markers:false, scroller:'.mainContainer', trigger:'.services', scrub:4}})
 
 
 tl.from(serviceLine,{
@@ -224,6 +211,80 @@ tl.from('.serviceText', {
   delay:-2.5 
 
 })
+
+
+gsap.from('.trendings .heading',{
+  opacity:0,
+  scale:0,
+  scrollTrigger: {
+    trigger:'.trendings',
+    scroller:'.mainContainer',
+    markers:false,
+    start:"top 50%",
+    end:'top 20%',
+    scrub:2,
+  },
+  duration:1,
+
+})
+gsap.from('.trendings .slideContainer',{
+  opacity:0,
+  x:'100%',
+  scrollTrigger: {
+    trigger:'.trendings',
+    scroller:'.mainContainer',
+    markers:false,
+    start:"top 45%",
+    end:'top 15%',
+    scrub:2,
+  },
+  duration:1,
+  delay:0.3
+
+})
+gsap.from('.trendings .slideContainer2',{
+  opacity:0,
+  x:'-100%',
+  scrollTrigger: {
+    trigger:'.trendings',
+    scroller:'.mainContainer',
+    markers:false,
+    start:"top 40%",
+    end:'top 10%',
+    scrub:2,
+  },
+  duration:1,
+  delay:0.3
+
+})
+
+let tl1=gsap.timeline({scrollTrigger: {start:'top 0%',end:'top -100%', markers:false, scroller:'.mainContainer', trigger:'.slider', scrub:3, pin:true}})
+
+tl1.to('.shopYourVibe .sliderContainer .slider .slide1 .image',{
+  y:'-100%',
+  duration:1.5,
+  stagger:-.3,
+})
+tl1.from('.shopYourVibe .sliderContainer .slider .slide2 .image',{
+  y:'100%',
+  delay:-3,
+  duration:1.5,
+  stagger:-.3,
+  opacity:0
+})
+tl1.to('.shopYourVibe .sliderContainer .slider .slide2 .image',{
+  y:'-100%',
+  duration:1.5,
+  stagger:-.3,
+})
+tl1.from('.shopYourVibe .sliderContainer .slider .slide3 .image',{
+  y:'100%',
+  delay:-3,
+  duration:1,
+  stagger:-.3,
+  opacity:0
+})
+
 
 
 
