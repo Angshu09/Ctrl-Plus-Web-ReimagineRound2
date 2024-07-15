@@ -258,30 +258,35 @@ gsap.from('.trendings .slideContainer2',{
 
 })
 
-let tl1=gsap.timeline({scrollTrigger: {start:'top 0%',end:'top -100%', markers:false, scroller:'.mainContainer', trigger:'.slider', scrub:3, pin:true}})
+let tl1=gsap.timeline({scrollTrigger: {start:'top 0%',end:'top -100%', markers:false, scroller:'.mainContainer', trigger:'.slider', scrub:5, pin:true}})
 
 tl1.to('.shopYourVibe .sliderContainer .slider .slide1 .image',{
   y:'-100%',
-  duration:1.5,
-  stagger:-.3,
+  duration:2,
+  stagger:-.2,
 })
 tl1.from('.shopYourVibe .sliderContainer .slider .slide2 .image',{
   y:'100%',
   delay:-3,
-  duration:1.5,
-  stagger:-.3,
+  duration:2,
+  stagger:-.2,
   opacity:0
 })
 tl1.to('.shopYourVibe .sliderContainer .slider .slide2 .image',{
+  y:'0',
+  stagger:0,
+  duration:1.2
+})
+tl1.to('.shopYourVibe .sliderContainer .slider .slide2 .image',{
   y:'-100%',
-  duration:1.5,
-  stagger:-.3,
+  duration:2,
+  stagger:-.2,
 })
 tl1.from('.shopYourVibe .sliderContainer .slider .slide3 .image',{
   y:'100%',
   delay:-3,
-  duration:1,
-  stagger:-.3,
+  duration:2,
+  stagger:-.2,
   opacity:0
 })
 
