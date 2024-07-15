@@ -275,7 +275,7 @@ tl1.from('.shopYourVibe .sliderContainer .slider .slide2 .image',{
 tl1.to('.shopYourVibe .sliderContainer .slider .slide2 .image',{
   y:'0',
   stagger:0,
-  duration:1.5
+  duration:1.2
 })
 tl1.to('.shopYourVibe .sliderContainer .slider .slide2 .image',{
   y:'-100%',
