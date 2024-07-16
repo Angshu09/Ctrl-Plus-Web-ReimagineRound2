@@ -2,18 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-
+    <title>Fastrack</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -21,25 +11,22 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
     <link rel="stylesheet" href="style.css" />
-
-    <title>Fastrack</title>
-
     <style>
       * {
+        margin: 0px;
+        padding: 0px;
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
       }
-      .mainContainer::-webkit-scrollbar::-webkit-scrollbar {
-        display: none !important;
+      :root::-webkit-scrollbar::-webkit-scrollbar {
+        display: none;
       }
 
-      .mainContainer {
+      :root {
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
+
 
       .textShadow {
         text-shadow: 1px 0px 0px #ff721d;
@@ -84,17 +71,19 @@
         background: linear-gradient(to right, #ff721d, #d64312);
         clip-path: circle(150px at 80% 20%);
         transition: 0.5s ease-in-out;
+       
       }
 
       .bestSeller .slideContainer .slidewrapper .bestSeller-slide:hover:before {
         clip-path: circle(300px at 80% -20%);
+        
       }
 
       .bestSeller .slideContainer .slidewrapper .bestSeller-slide .imgBox {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 10000;
+        z-index: 20;
         width: 100%;
         height: 210px;
         transition: 0.5s;
@@ -140,7 +129,7 @@
       .bestSeller-button {
         opacity: 0;
         transform: translateY(50px);
-        transition: 0.5s;
+        transition: 0.2s;
       }
 
       .bestSeller
@@ -150,7 +139,7 @@
         .bestSeller-cate {
         opacity: 1;
         transform: translateY(0px);
-        transition-delay: 0.75s;
+        transition-delay: 0.3s;
       }
 
       .bestSeller
@@ -160,7 +149,7 @@
         .bestSeller-price {
         opacity: 1;
         transform: translateY(0px);
-        transition-delay: 0.85s;
+        transition-delay: 0.4s;
       }
 
       .bestSeller
@@ -170,7 +159,7 @@
         .bestSeller-button {
         opacity: 1;
         transform: translateY(0px);
-        transition-delay: 0.95s;
+        transition-delay: 0.5s;
       }
 
       @keyframes autoRun {
@@ -194,1289 +183,1092 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
   <body>
-    <div
-      class="mainContainer bg-[#242424] min-h-[100vh] overflow-y-auto h-[100vh]"
-    >
-      <div
-        class="loader fixed pointer-events-none z-[10] bg-[#242424] text-[white] overflow-hidden"
-      >
-        <div
-          class="fastrack w-[100vw] h-[100vh] flex justify-center items-center rounded-full"
-        >
-          <ul class="scale-[4] flex justify-center items-center w-max p-0">
-            <li class="list-none text-center">F</li>
-            <li class="list-none text-center">A</li>
-            <li class="list-none text-center">S</li>
-            <li class="list-none text-center">T</li>
-            <li class="list-none text-center">R</li>
-            <li class="list-none text-center">A</li>
-            <li class="list-none text-center">C</li>
-            <li class="list-none text-center">K</li>
-          </ul>
-        </div>
-
-        <div
-          class="dialCircle h-[51px] w-[51px] bg-[white] rounded-full absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] opacity-0 border border-white"
-        >
-          <img
-            class="absolute opacity-0 scale-0 top-[1%]"
-            src="sundial.png"
-            alt=""
-          />
-
-          <div class="circle h-[30px] w-[30px] bg-[white] blur-[50px]"></div>
-        </div>
-        <div
-          class="lightSource h-[350px] w-[350px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] opacity-0 scale-0"
+    <div id="main" class="bg-[#242424] min-h-[100vh] w-[100vw] overflow-hidden">
+      <div class="mainContainer w-[100%] ">
+        <div class="loader fixed pointer-events-none z-[50] bg-[#242424] text-[white] overflow-hidden"
         >
           <div
-            class="light h-[50px] w-[50px] absolute top-0 bg-yellow-500 rounded-full"
-          ></div>
-          <div
-            class="lightShadow h-[50px] w-[50px] absolute top-0 bg-yellow-500 rounded-full blur-[20px]"
-          ></div>
-        </div>
-
-        <div
-          class="clock absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] scale-[0.5] z-[3] opacity-0"
-        >
-          <lottie-player
-            class="scale-[0.1]"
-            src="https://lottie.host/ccdd79fb-ec6e-42bd-a640-239a7806e728/fXKKqtoY0H.json"
-            background="##ffffff"
-            speed="1"
-            style="width: 300px; height: 300px"
-            autoplay
-            direction="1"
-            mode="normal"
-          ></lottie-player>
-        </div>
-
-        <div
-          class="wristWatch absolute h-[350px] w-[350px] top-[50.5%] left-[50.5%] translate-x-[-50%] translate-y-[-50%] opacity-0"
-        >
-          <img src="belt.png" alt="" />
-        </div>
-      </div>
-
-      <div
-        class="navbar h-[80px] w-full opacity-0 fixed z-[8] items-center flex justify-between px-2"
-      >
-        <div class="brandLogo w-[20%]">
-          <img
-            src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-            alt="logo"
-          />
-        </div>
-
-        <div
-          class="navCategory text-[#ffffffc4] flex items-center justify-between w-[60%]"
-        >
-          <ul class="flex gap-2">
-            <li class="p-2">Watches</li>
-            <li class="p-2">Men</li>
-            <li class="p-2">Women</li>
-            <li class="p-2">More..</li>
-          </ul>
-          <ul class="flex gap-2">
-            <li class="p-2">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </li>
-            <li class="cartIcon relative p-2">
-              <i class="fa-solid fa-bag-shopping"></i>
-              <label
-                for="cartCount"
-                class="cartCount absolute text-xs sm:text-sm px-1 top-[0px] font-bold left-[-10px] text-[red] bg-[#ffffffb9] rounded-full text-center"
-                >0</label
-              >
-            </li>
-            <li class="p-2">
-              <i class="fa-solid fa-user"></i>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="heroSection relative">
-        <video autoplay loop>
-          <source src="videoplayback.mp4" />
-        </video>
-
-        <div
-          class="overCast aspect-video w-full absolute bg-[#3a3737c4] top-[0] flex justify-center items-center flex-col text-[white] gap-8"
-        >
-          <h1 class="scale-[5] textShadow font-bold">WEAR THE CLASS</h1>
-          <p class="text-2xl font-bold">
-            YOUR <span class="text-[#FF721D]">FASTRACK</span> WATCH TELLS MORE
-            THAN JUST TIME
-          </p>
-        </div>
-      </div>
-
-      <div class="scrollHorizontal overflow-x-hidden">
-        <div
-          class="heading h-[200px] flex flex-col w-max m-auto justify-center my-10"
-        >
-          <h1
-            class="textShadow text-white text-center scale-[4] font-bold w-max relative"
+            class="fastrack w-[100vw] h-[100vh] flex justify-center items-center rounded-full"
           >
-            NEW LAUNCHES
+            <ul class="scale-[4] flex justify-center items-center w-max p-0">
+              <li class="list-none text-center">F</li>
+              <li class="list-none text-center">A</li>
+              <li class="list-none text-center">S</li>
+              <li class="list-none text-center">T</li>
+              <li class="list-none text-center">R</li>
+              <li class="list-none text-center">A</li>
+              <li class="list-none text-center">C</li>
+              <li class="list-none text-center">K</li>
+            </ul>
+          </div>
+
+          <div
+            class="dialCircle h-[51px] w-[51px] bg-[white] rounded-full absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] opacity-0 border border-white"
+          >
             <img
-              class="w-[30%] absolute top-[-20%]"
-              src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
+              class="absolute opacity-0 scale-0 top-[1%]"
+              src="sundial.png"
               alt=""
             />
-          </h1>
-        </div>
 
-        <div class="tabContainer flex w-[400vw]">
-          <div class="tab w-[100vw] h-[100vh] bg-orange-700 pt-[80px]"></div>
-          <div class="tab w-[100vw] h-[100vh] bg-orange-600 pt-[80px]"></div>
-          <div class="tab w-[100vw] h-[100vh] bg-orange-500 pt-[80px]"></div>
-          <div class="tab w-[100vw] h-[100vh] bg-orange-400 pt-[80px]"></div>
-        </div>
-      </div>
-
-      <div class="test h-[200px]"></div>
-
-      <div class="services h-[400px] w-full mt-20">
-        <div
-          class="line h-[50%] w-full border-b-[3px] border-dashed border-[#f1caad] flex"
-        >
-          <div class="section w-1/4 relative">
+            <div class="circle h-[30px] w-[30px] bg-[white] blur-[50px]"></div>
+          </div>
+          <div
+            class="lightSource h-[350px] w-[350px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] opacity-0 scale-0"
+          >
             <div
-              class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"
+              class="light h-[50px] w-[50px] absolute top-0 bg-yellow-500 rounded-full"
             ></div>
-
             <div
-              class="chekout w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center"
-            >
-              <img class="w-[95%] h-[85%]" src="security.png" alt="" />
-
-              <div
-                class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute bottom-[-50%] translate-y-[50%] left-[50%] translate-x-[-50%] w-max"
-              >
-                SAFE AND SECURE <br />
-                CHECKOUT
-              </div>
-            </div>
-          </div>
-          <div class="section w-1/4 relative">
-            <div
-              class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"
+              class="lightShadow h-[50px] w-[50px] absolute top-0 bg-yellow-500 rounded-full blur-[20px]"
             ></div>
-
-            <div
-              class="quality w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center"
-            >
-              <img class="w-[75%] h-[75%]" src="quality.png" alt="" />
-
-              <div
-                class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute top-[-50%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-max"
-              >
-                PREMIUM QUALITY <br />
-                PRODUCT
-              </div>
-            </div>
           </div>
-          <div class="section w-1/4 relative">
-            <div
-              class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"
-            ></div>
 
-            <div
-              class="return w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center"
-            >
-              <img class="w-[75%] h-[75%]" src="return-box.png" alt="" />
-
-              <div
-                class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute bottom-[-50%] translate-y-[50%] left-[50%] translate-x-[-50%] w-max"
-              >
-                7 DAY RETURN
-              </div>
-            </div>
-          </div>
-          <div class="section w-1/4 relative">
-            <div
-              class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"
-            ></div>
-
-            <div
-              class="shipping w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center"
-            >
-              <img class="w-[75%] h-[75%]" src="fast-delivery.png" alt="" />
-
-              <div
-                class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute top-[-50%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-max"
-              >
-                FREE SHIPPING <br />
-                NATIONWIDE
-              </div>
-            </div>
-
-            <div class="shadow w-[80px] h-[80px]"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="trendings bg-[#242424]">
-        <div
-          class="heading h-[200px] flex flex-col w-max m-auto justify-center my-10"
-        >
-          <h1
-            class="textShadow text-white text-center scale-[4] font-bold w-max relative"
-          >
-            TRENDINGS
-            <img
-              class="w-[30%] absolute top-[-20%]"
-              src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-              alt=""
-            />
-          </h1>
-        </div>
-
-        <div class="slideContainer overflow-x-scroll p-5 w-[90%] m-auto">
           <div
-            class="slidewrapper flex w-[100%] h-[250px] min-w-[1700px] relative"
+            class="clock absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] scale-[0.5] z-[3] opacity-0"
           >
-            <div
-              style="--position: 0"
-              class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3"
-            >
-              <div
-                class="desc flex flex-col w-[60%] justify-between p-3 h-[100%] font-bold"
-              >
-                <div class="logo w-[25%]">
-                  <img
-                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-                    alt="logo"
-                  />
-                </div>
-
-                <div class="itemName text-white">
-                  <p>Reflex Play - Smart Watch Amoled...</p>
-                </div>
-
-                <div class="text-[grey] text-[8px] leading-3">
-                  UNISEX WATCHES
-                </div>
-
-                <div class="price flex gap-2 items-center">
-                  <div class="sp text-white text-sm">&#8377; 2999</div>
-                  <div class="mrp line-through text-[grey] text-sm">
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-
-                <div class="buttonContainer flex gap-3">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    BUY NOW
-                  </div>
-                  <div
-                    class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    + ADD TO CART
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              style="--position: 1"
-              class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3"
-            >
-              <div
-                class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold"
-              >
-                <div class="logo w-[25%]">
-                  <img
-                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-                    alt="logo"
-                  />
-                </div>
-
-                <div class="itemName text-white">
-                  <p>Reflex Play - Smart Watch Amoled...</p>
-                </div>
-
-                <div class="text-[grey] text-[8px] leading-3">
-                  UNISEX WATCHES
-                </div>
-
-                <div class="price flex gap-2 items-center">
-                  <div class="sp text-white text-sm">&#8377; 2999</div>
-                  <div class="mrp line-through text-[grey] text-sm">
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-
-                <div class="buttonContainer flex gap-3">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    BUY NOW
-                  </div>
-                  <div
-                    class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    + ADD TO CART
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              style="--position: 2"
-              class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3"
-            >
-              <div
-                class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold"
-              >
-                <div class="logo w-[25%]">
-                  <img
-                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-                    alt="logo"
-                  />
-                </div>
-
-                <div class="itemName text-white">
-                  <p>Reflex Play - Smart Watch Amoled...</p>
-                </div>
-
-                <div class="text-[grey] text-[8px] leading-3">
-                  UNISEX WATCHES
-                </div>
-
-                <div class="price flex gap-2 items-center">
-                  <div class="sp text-white text-sm">&#8377; 2999</div>
-                  <div class="mrp line-through text-[grey] text-sm">
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-
-                <div class="buttonContainer flex gap-3">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    BUY NOW
-                  </div>
-                  <div
-                    class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    + ADD TO CART
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              style="--position: 3"
-              class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3"
-            >
-              <div
-                class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold"
-              >
-                <div class="logo w-[25%]">
-                  <img
-                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-                    alt="logo"
-                  />
-                </div>
-
-                <div class="itemName text-white">
-                  <p>Reflex Play - Smart Watch Amoled...</p>
-                </div>
-
-                <div class="text-[grey] text-[8px] leading-3">
-                  UNISEX WATCHES
-                </div>
-
-                <div class="price flex gap-2 items-center">
-                  <div class="sp text-white text-sm">&#8377; 2999</div>
-                  <div class="mrp line-through text-[grey] text-sm">
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-
-                <div class="buttonContainer flex gap-3">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    BUY NOW
-                  </div>
-                  <div
-                    class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    + ADD TO CART
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              style="--position: 4"
-              class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3"
-            >
-              <div
-                class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold"
-              >
-                <div class="logo w-[25%]">
-                  <img
-                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-                    alt="logo"
-                  />
-                </div>
-
-                <div class="itemName text-white">
-                  <p>Reflex Play - Smart Watch Amoled...</p>
-                </div>
-
-                <div class="text-[grey] text-[8px] leading-3">
-                  UNISEX WATCHES
-                </div>
-
-                <div class="price flex gap-2 items-center">
-                  <div class="sp text-white text-sm">&#8377; 2999</div>
-                  <div class="mrp line-through text-[grey] text-sm">
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-
-                <div class="buttonContainer flex gap-3">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    BUY NOW
-                  </div>
-                  <div
-                    class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    + ADD TO CART
-                  </div>
-                </div>
-              </div>
-            </div>
+            <lottie-player
+              class="scale-[0.1]"
+              src="https://lottie.host/ccdd79fb-ec6e-42bd-a640-239a7806e728/fXKKqtoY0H.json"
+              background="##ffffff"
+              speed="1"
+              style="width: 300px; height: 300px"
+              autoplay
+              direction="1"
+              mode="normal"
+            ></lottie-player>
           </div>
-        </div>
 
-        <div class="slideContainer2 overflow-x-scroll p-5 w-[90%] m-auto">
           <div
-            class="slidewrapper2 flex w-[100%] h-[250px] min-w-[1700px] relative"
+            class="wristWatch absolute h-[350px] w-[350px] top-[50.5%] left-[50.5%] translate-x-[-50%] translate-y-[-50%] opacity-0"
           >
-            <div
-              style="--position: 0"
-              class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3"
-            >
-              <div
-                class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold"
-              >
-                <div class="logo w-[25%]">
-                  <img
-                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-                    alt="logo"
-                  />
-                </div>
-
-                <div class="itemName text-white">
-                  <p>Reflex Play - Smart Watch Amoled...</p>
-                </div>
-
-                <div class="text-[grey] text-[8px] leading-3">
-                  UNISEX WATCHES
-                </div>
-
-                <div class="price flex gap-2 items-center">
-                  <div class="sp text-white text-sm">&#8377; 2999</div>
-                  <div class="mrp line-through text-[grey] text-sm">
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-
-                <div class="buttonContainer flex gap-3">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    BUY NOW
-                  </div>
-                  <div
-                    class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    + ADD TO CART
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              style="--position: 1"
-              class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3"
-            >
-              <div
-                class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold"
-              >
-                <div class="logo w-[25%]">
-                  <img
-                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-                    alt="logo"
-                  />
-                </div>
-
-                <div class="itemName text-white">
-                  <p>Reflex Play - Smart Watch Amoled...</p>
-                </div>
-
-                <div class="text-[grey] text-[8px] leading-3">
-                  UNISEX WATCHES
-                </div>
-
-                <div class="price flex gap-2 items-center">
-                  <div class="sp text-white text-sm">&#8377; 2999</div>
-                  <div class="mrp line-through text-[grey] text-sm">
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-
-                <div class="buttonContainer flex gap-3">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    BUY NOW
-                  </div>
-                  <div
-                    class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    + ADD TO CART
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              style="--position: 2"
-              class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3"
-            >
-              <div
-                class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold"
-              >
-                <div class="logo w-[25%]">
-                  <img
-                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-                    alt="logo"
-                  />
-                </div>
-
-                <div class="itemName text-white">
-                  <p>Reflex Play - Smart Watch Amoled...</p>
-                </div>
-
-                <div class="text-[grey] text-[8px] leading-3">
-                  UNISEX WATCHES
-                </div>
-
-                <div class="price flex gap-2 items-center">
-                  <div class="sp text-white text-sm">&#8377; 2999</div>
-                  <div class="mrp line-through text-[grey] text-sm">
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-
-                <div class="buttonContainer flex gap-3">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    BUY NOW
-                  </div>
-                  <div
-                    class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    + ADD TO CART
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              style="--position: 3"
-              class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3"
-            >
-              <div
-                class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold"
-              >
-                <div class="logo w-[25%]">
-                  <img
-                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-                    alt="logo"
-                  />
-                </div>
-
-                <div class="itemName text-white">
-                  <p>Reflex Play - Smart Watch Amoled...</p>
-                </div>
-
-                <div class="text-[grey] text-[8px] leading-3">
-                  UNISEX WATCHES
-                </div>
-
-                <div class="price flex gap-2 items-center">
-                  <div class="sp text-white text-sm">&#8377; 2999</div>
-                  <div class="mrp line-through text-[grey] text-sm">
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-
-                <div class="buttonContainer flex gap-3">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    BUY NOW
-                  </div>
-                  <div
-                    class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    + ADD TO CART
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              style="--position: 4"
-              class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3"
-            >
-              <div
-                class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold"
-              >
-                <div class="logo w-[25%]">
-                  <img
-                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-                    alt="logo"
-                  />
-                </div>
-
-                <div class="itemName text-white">
-                  <p>Reflex Play - Smart Watch Amoled...</p>
-                </div>
-
-                <div class="text-[grey] text-[8px] leading-3">
-                  UNISEX WATCHES
-                </div>
-
-                <div class="price flex gap-2 items-center">
-                  <div class="sp text-white text-sm">&#8377; 2999</div>
-                  <div class="mrp line-through text-[grey] text-sm">
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-
-                <div class="buttonContainer flex gap-3">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    BUY NOW
-                  </div>
-                  <div
-                    class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide"
-                  >
-                    + ADD TO CART
-                  </div>
-                </div>
-              </div>
-            </div>
+            <img src="belt.png" alt="" />
           </div>
         </div>
-      </div>
-
-      <div class="shopYourVibe my-6">
-        <div
-          class="heading h-[200px] flex flex-col w-max m-auto justify-center my-10"
-        >
-          <h1
-            class="textShadow text-white text-center scale-[4] font-bold w-max relative"
-          >
-            SHOP YOUR VIBE
-            <img
-              class="w-[30%] absolute top-[-20%]"
-              src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-              alt=""
-            />
-          </h1>
-        </div>
-
-        <div class="sliderContainer">
-          <div class="slider w-[100%] h-max relative">
-            <img
-              class="w-[100%] opacity-0 overflow-hidden"
-              src="https://res.cloudinary.com/dojcchveo/image/upload/v1720889510/fastrack/banners/a4hyu3uo9uyyawub1orj.jpg"
-              alt=""
-            />
-            <div class="slide1 absolute z-[3] h-[100%] w-[100%] flex top-0">
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889492/fastrack/banners/ecvbquigt4fanpiap1ln.jpg')] bg-[length:500%_100%]"
-              ></div>
-
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889492/fastrack/banners/ecvbquigt4fanpiap1ln.jpg')] bg-[length:500%_100%] bg-[25%]"
-              ></div>
-
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889492/fastrack/banners/ecvbquigt4fanpiap1ln.jpg')] bg-[length:500%_100%] bg-[50%]"
-              ></div>
-
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889492/fastrack/banners/ecvbquigt4fanpiap1ln.jpg')] bg-[length:500%_100%] bg-[75%]"
-              ></div>
-
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889492/fastrack/banners/ecvbquigt4fanpiap1ln.jpg')] bg-[length:500%_100%] bg-[100%]"
-              ></div>
-            </div>
-            <div class="slide2 absolute z-[2] h-[100%] w-[100%] flex top-0">
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889496/fastrack/banners/alf5uaatazeshnltvmp7.jpg')] bg-[length:500%_100%]"
-              ></div>
-
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889496/fastrack/banners/alf5uaatazeshnltvmp7.jpg')] bg-[length:500%_100%] bg-[25%]"
-              ></div>
-
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889496/fastrack/banners/alf5uaatazeshnltvmp7.jpg')] bg-[length:500%_100%] bg-[50%]"
-              ></div>
-
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889496/fastrack/banners/alf5uaatazeshnltvmp7.jpg')] bg-[length:500%_100%] bg-[75%]"
-              ></div>
-
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889496/fastrack/banners/alf5uaatazeshnltvmp7.jpg')] bg-[length:500%_100%] bg-[100%]"
-              ></div>
-            </div>
-            <div class="slide3 absolute z-[1] h-[100%] w-[100%] flex top-0">
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889510/fastrack/banners/a4hyu3uo9uyyawub1orj.jpg')] bg-[length:500%_100%]"
-              ></div>
-
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889510/fastrack/banners/a4hyu3uo9uyyawub1orj.jpg')] bg-[length:500%_100%] bg-[25%]"
-              ></div>
-
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889510/fastrack/banners/a4hyu3uo9uyyawub1orj.jpg')] bg-[length:500%_100%] bg-[50%]"
-              ></div>
-
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889510/fastrack/banners/a4hyu3uo9uyyawub1orj.jpg')] bg-[length:500%_100%] bg-[75%]"
-              ></div>
-
-              <div
-                class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889510/fastrack/banners/a4hyu3uo9uyyawub1orj.jpg')] bg-[length:500%_100%] bg-[100%]"
-              ></div>
-            </div>
+        <div class="navbar h-[80px] w-full opacity-0 fixed z-[8] items-center flex justify-between px-2">  
+          <div class="brandLogo w-[20%] ">
+            <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+          </div>
+  
+          <div class="navCategory text-[#ffffffc4] flex items-center justify-between w-[60%]">
+            <ul class="flex gap-2">
+              <li class="p-2">Watches</li>
+              <li class="p-2">Men</li>
+              <li class="p-2">Women</li>
+              <li class="p-2">More..</li>
+            </ul>
+            <ul class="flex gap-2">
+              <li class="p-2">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </li>
+              <li class="cartIcon relative p-2">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <label for="cartCount" class=" cartCount absolute text-xs sm:text-sm px-1 top-[0px] font-bold left-[-10px] text-[red] bg-[#ffffffb9] rounded-full text-center">0</label>
+                
+              </li>
+              <li class="p-2">
+                <i class="fa-solid fa-user"></i>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      <div class="bestSeller">
-        <div
-          class="heading h-[200px] flex flex-col w-max m-auto justify-center my-7"
-        >
-          <h1
-            class="textShadow text-white text-center scale-[4] font-bold w-max relative"
-          >
-            BEST SELLERS
-            <img
-              class="w-[30%] absolute top-[-10%]"
-              src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
-              alt=""
-            />
-          </h1>
+        <div class="heroSection relative">
+  
+          <video autoplay loop >
+            <source src="videoplayback.mp4">
+          </video>
+  
+          <div class="overCast aspect-video w-full absolute bg-[#3a3737c4] top-[0] flex justify-center items-center flex-col text-[white] gap-8">
+  
+            <h1 class="scale-[5] textShadow font-bold">WEAR THE CLASS</h1>
+            <p class="text-2xl font-bold">YOUR <span class="text-[#FF721D]">FASTRACK</span> WATCH TELLS MORE THAN JUST TIME</p>
+  
+          </div>
+  
+  
+  
         </div>
 
-        <div class="slideContainer p-5 w-[95%] m-auto">
+        <div class="scrollHorizontal overflow-x-hidden ">
+          <div class="heading h-[200px] flex flex-col   w-max m-auto justify-center my-10" >
+            
+            <h1 class="textShadow text-white text-center scale-[4] font-bold w-max relative">
+              NEW LAUNCHES
+              <img class=" w-[30%] absolute top-[-20%]" src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="">
+            </h1>
+          </div>
+  
+  
+          <div class="tabContainer flex  w-[400vw] ">
+            <div class="tab w-[100vw] h-[100vh]  bg-orange-700 pt-[80px]"></div>
+            <div class="tab w-[100vw] h-[100vh]  bg-orange-600 pt-[80px]"></div>
+            <div class="tab w-[100vw] h-[100vh]  bg-orange-500 pt-[80px]"></div>
+            <div class="tab w-[100vw] h-[100vh] 
+            bg-orange-400 pt-[80px]" ></div>
+          </div>
+        </div>
+
+        <div class="services h-[400px] w-full mt-20">
+  
+          <div class="line h-[50%] w-full border-b-[3px] border-dashed border-[#f1caad] flex " >
+  
+            <div class="section w-1/4 relative ">
+              <div class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"></div>
+  
+              <div class="chekout w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center">
+  
+                <img class="w-[95%] h-[85%] " src="security.png" alt="">
+  
+                <div class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute bottom-[-50%] translate-y-[50%] left-[50%] translate-x-[-50%] w-max">SAFE AND SECURE <br> CHECKOUT</div>
+  
+              </div>
+  
+              
+  
+              
+            </div>
+            <div class="section  w-1/4 relative ">
+  
+              <div class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"></div>
+  
+              <div class="quality w-[12vw] h-[12vw]  md:w-[9vw] md:h-[9vw]  border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center">
+  
+                <img class="w-[75%] h-[75%] " src="quality.png" alt="">
+  
+                <div class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute top-[-50%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-max">PREMIUM QUALITY <br> PRODUCT</div>
+  
+              </div>
+            </div>
+            <div class="section  w-1/4 relative ">
+  
+              <div class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"></div>
+  
+              <div class="return w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center">
+  
+                <img class="w-[75%] h-[75%] " src="return-box.png" alt="">
+  
+                <div class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute bottom-[-50%] translate-y-[50%] left-[50%] translate-x-[-50%] w-max">7 DAY RETURN</div>
+  
+              </div>
+            </div>
+            <div class="section  w-1/4 relative ">
+  
+              <div class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"></div>
+  
+              <div class="shipping w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center">   
+  
+                <img class="w-[75%] h-[75%] " src="fast-delivery.png" alt="">
+  
+                <div class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute top-[-50%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-max">FREE SHIPPING <br> NATIONWIDE</div>
+  
+              </div>
+  
+              <div class="shadow w-[80px] h-[80px] "></div>
+              
+            </div>
+  
+            
+         
+            
+          </div>
+  
+        </div>
+
+        <div class="trendings bg-[#242424] ">
+          <div class="heading h-[200px] flex flex-col   w-max m-auto justify-center my-10" > 
+            <h1 class="textShadow text-white text-center scale-[4] font-bold w-max relative">
+              TRENDINGS
+              <img class=" w-[30%] absolute top-[-20%]" src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="">
+            </h1>
+          </div>
+          
+          <div class="slideContainer  overflow-x-scroll p-5 w-[90%] m-auto ">
+            <div class="slidewrapper flex w-[100%] h-[250px] min-w-[1700px] relative">
+              <div style="--position:0" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
+                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
+  
+                  <div class="logo w-[25%]">
+                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+                  </div>
+    
+                  <div class="itemName text-white">
+                    <p>Reflex Play - Smart Watch Amoled...</p>
+                  </div>
+  
+                  <div class=" text-[grey] text-[8px] leading-3">
+                    UNISEX WATCHES
+                  </div>
+  
+                  <div class="price flex gap-2 items-center">
+                    <div class="sp text-white text-sm">&#8377; 2999</div>
+                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+  
+                  <div class="buttonContainer flex gap-3">
+                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+                  </div>
+    
+  
+                </div>
+  
+              </div>
+              <div style="--position:1" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
+                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
+  
+                  <div class="logo w-[25%]">
+                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+                  </div>
+    
+                  <div class="itemName text-white">
+                    <p>Reflex Play - Smart Watch Amoled...</p>
+                  </div>
+  
+                  <div class=" text-[grey] text-[8px] leading-3">
+                    UNISEX WATCHES
+                  </div>
+  
+                  <div class="price flex gap-2 items-center">
+                    <div class="sp text-white text-sm">&#8377; 2999</div>
+                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+  
+                  <div class="buttonContainer flex gap-3">
+                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+                  </div>
+    
+  
+                </div>
+  
+              </div>
+              <div style="--position:2" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
+                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
+  
+                  <div class="logo w-[25%]">
+                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+                  </div>
+    
+                  <div class="itemName text-white">
+                    <p>Reflex Play - Smart Watch Amoled...</p>
+                  </div>
+  
+                  <div class=" text-[grey] text-[8px] leading-3">
+                    UNISEX WATCHES
+                  </div>
+  
+                  <div class="price flex gap-2 items-center">
+                    <div class="sp text-white text-sm">&#8377; 2999</div>
+                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+  
+                  <div class="buttonContainer flex gap-3">
+                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+                  </div>
+    
+  
+                </div>
+  
+              </div>
+              <div style="--position:3" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
+                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
+  
+                  <div class="logo w-[25%]">
+                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+                  </div>
+    
+                  <div class="itemName text-white">
+                    <p>Reflex Play - Smart Watch Amoled...</p>
+                  </div>
+  
+                  <div class=" text-[grey] text-[8px] leading-3">
+                    UNISEX WATCHES
+                  </div>
+  
+                  <div class="price flex gap-2 items-center">
+                    <div class="sp text-white text-sm">&#8377; 2999</div>
+                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+  
+                  <div class="buttonContainer flex gap-3">
+                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+                  </div>
+    
+  
+                </div>
+  
+              </div>
+              <div style="--position:4" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
+                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
+  
+                  <div class="logo w-[25%]">
+                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+                  </div>
+    
+                  <div class="itemName text-white">
+                    <p>Reflex Play - Smart Watch Amoled...</p>
+                  </div>
+  
+                  <div class=" text-[grey] text-[8px] leading-3">
+                    UNISEX WATCHES
+                  </div>
+  
+                  <div class="price flex gap-2 items-center">
+                    <div class="sp text-white text-sm">&#8377; 2999</div>
+                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+  
+                  <div class="buttonContainer flex gap-3">
+                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+                  </div>
+    
+  
+                </div>
+  
+              </div>
+              
+            </div>
+          </div>
+  
+          <div class="slideContainer2  overflow-x-scroll p-5 w-[90%] m-auto ">
+            <div class="slidewrapper2 flex w-[100%] h-[250px] min-w-[1700px] relative">
+              <div style="--position:0" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
+                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
+  
+                  <div class="logo w-[25%]">
+                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+                  </div>
+    
+                  <div class="itemName text-white">
+                    <p>Reflex Play - Smart Watch Amoled...</p>
+                  </div>
+  
+                  <div class=" text-[grey] text-[8px] leading-3">
+                    UNISEX WATCHES
+                  </div>
+  
+                  <div class="price flex gap-2 items-center">
+                    <div class="sp text-white text-sm">&#8377; 2999</div>
+                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+  
+                  <div class="buttonContainer flex gap-3">
+                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+                  </div>
+    
+  
+                </div>
+  
+              </div>
+              <div style="--position:1" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
+                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
+  
+                  <div class="logo w-[25%]">
+                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+                  </div>
+    
+                  <div class="itemName text-white">
+                    <p>Reflex Play - Smart Watch Amoled...</p>
+                  </div>
+  
+                  <div class=" text-[grey] text-[8px] leading-3">
+                    UNISEX WATCHES
+                  </div>
+  
+                  <div class="price flex gap-2 items-center">
+                    <div class="sp text-white text-sm">&#8377; 2999</div>
+                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+  
+                  <div class="buttonContainer flex gap-3">
+                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+                  </div>
+    
+  
+                </div>
+  
+              </div>
+              <div style="--position:2" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
+                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
+  
+                  <div class="logo w-[25%]">
+                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+                  </div>
+    
+                  <div class="itemName text-white">
+                    <p>Reflex Play - Smart Watch Amoled...</p>
+                  </div>
+  
+                  <div class=" text-[grey] text-[8px] leading-3">
+                    UNISEX WATCHES
+                  </div>
+  
+                  <div class="price flex gap-2 items-center">
+                    <div class="sp text-white text-sm">&#8377; 2999</div>
+                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+  
+                  <div class="buttonContainer flex gap-3">
+                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+                  </div>
+    
+  
+                </div>
+  
+              </div>
+              <div style="--position:3" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
+                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
+  
+                  <div class="logo w-[25%]">
+                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+                  </div>
+    
+                  <div class="itemName text-white">
+                    <p>Reflex Play - Smart Watch Amoled...</p>
+                  </div>
+  
+                  <div class=" text-[grey] text-[8px] leading-3">
+                    UNISEX WATCHES
+                  </div>
+  
+                  <div class="price flex gap-2 items-center">
+                    <div class="sp text-white text-sm">&#8377; 2999</div>
+                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+  
+                  <div class="buttonContainer flex gap-3">
+                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+                  </div>
+    
+  
+                </div>
+  
+              </div>
+              <div style="--position:4" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
+                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
+  
+                  <div class="logo w-[25%]">
+                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+                  </div>
+    
+                  <div class="itemName text-white">
+                    <p>Reflex Play - Smart Watch Amoled...</p>
+                  </div>
+  
+                  <div class=" text-[grey] text-[8px] leading-3">
+                    UNISEX WATCHES
+                  </div>
+  
+                  <div class="price flex gap-2 items-center">
+                    <div class="sp text-white text-sm">&#8377; 2999</div>
+                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+  
+                  <div class="buttonContainer flex gap-3">
+                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+                  </div>
+    
+  
+                </div>
+  
+              </div>
+              
+            </div>
+          </div>
+  
+        </div>
+
+        <div class="shopYourVibe my-6">
+          <div class="heading h-[200px] flex flex-col   w-max m-auto justify-center my-10" > 
+            <h1 class="textShadow text-white text-center scale-[4] font-bold w-max relative">
+              SHOP YOUR VIBE
+              <img class=" w-[30%] absolute top-[-20%]" src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="">
+            </h1>
+          </div>
+  
+          <div class="sliderContainer ">
+            <div class="slider w-[100%] h-max relative">
+              <img class="w-[100%] opacity-0 overflow-hidden" src="https://res.cloudinary.com/dojcchveo/image/upload/v1720889510/fastrack/banners/a4hyu3uo9uyyawub1orj.jpg" alt="">
+              <div class="slide1 absolute z-[3] h-[100%] w-[100%] flex top-0 ">
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889492/fastrack/banners/ecvbquigt4fanpiap1ln.jpg')] bg-[length:500%_100%] "></div>
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889492/fastrack/banners/ecvbquigt4fanpiap1ln.jpg')] bg-[length:500%_100%] bg-[25%] "></div>
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889492/fastrack/banners/ecvbquigt4fanpiap1ln.jpg')] bg-[length:500%_100%] bg-[50%] "></div>
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889492/fastrack/banners/ecvbquigt4fanpiap1ln.jpg')] bg-[length:500%_100%] bg-[75%]"></div>
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889492/fastrack/banners/ecvbquigt4fanpiap1ln.jpg')] bg-[length:500%_100%] bg-[100%]"></div>
+                
+              </div>
+              <div class="slide2 absolute z-[2] h-[100%] w-[100%] flex top-0 ">
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889496/fastrack/banners/alf5uaatazeshnltvmp7.jpg')] bg-[length:500%_100%] "></div>
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889496/fastrack/banners/alf5uaatazeshnltvmp7.jpg')] bg-[length:500%_100%] bg-[25%] "></div>
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889496/fastrack/banners/alf5uaatazeshnltvmp7.jpg')] bg-[length:500%_100%] bg-[50%] "></div>
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889496/fastrack/banners/alf5uaatazeshnltvmp7.jpg')] bg-[length:500%_100%] bg-[75%]"></div>
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889496/fastrack/banners/alf5uaatazeshnltvmp7.jpg')] bg-[length:500%_100%] bg-[100%]"></div>
+                
+              </div>
+              <div class="slide3 absolute z-[1] h-[100%] w-[100%] flex top-0 ">
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889510/fastrack/banners/a4hyu3uo9uyyawub1orj.jpg')] bg-[length:500%_100%] "></div>
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889510/fastrack/banners/a4hyu3uo9uyyawub1orj.jpg')] bg-[length:500%_100%] bg-[25%] "></div>
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889510/fastrack/banners/a4hyu3uo9uyyawub1orj.jpg')] bg-[length:500%_100%] bg-[50%] "></div>
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889510/fastrack/banners/a4hyu3uo9uyyawub1orj.jpg')] bg-[length:500%_100%] bg-[75%]"></div>
+  
+                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1720889510/fastrack/banners/a4hyu3uo9uyyawub1orj.jpg')] bg-[length:500%_100%] bg-[100%]"></div>
+                
+              </div>
+              
+            </div>
+  
+            
+  
+          </div>
+  
+          
+  
+  
+        </div>
+
+        <div class="bestSeller">
           <div
-            class="slidewrapper grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 w-full relative gap-3 sm:gap-6 overflow-hidden"
+            class="heading h-[200px] flex flex-col w-max m-auto justify-center my-7"
           >
-            <div
-              class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
+            <h1
+              class="textShadow text-white text-center scale-[4] font-bold w-max relative"
             >
-              <div class="imgBox">
-                <img
-                  class="lg:w-[200px] w-[170px]"
-                  src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
-                  alt=""
-                />
-              </div>
-
-              <div
-                class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
-              >
-                <h2 class="text-white relative font-bold text-2xl">
-                  REFLEX PLAY
-                </h2>
-                <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
-                  UNISEX WATCH
-                </p>
-                <div
-                  class="bestSeller-price flex gap-2 items-center justify-center"
-                >
-                  <div class="font-semibold text-white text-[16px] md:text-xl">
-                    &#8377; 2999
-                  </div>
-                  <div
-                    class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
-                  >
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-                <div class="bestSeller-button w-full flex justify-center">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
-                  >
-                    BUY NOW
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
-            >
-              <div class="imgBox">
-                <img
-                  class="lg:w-[200px] w-[170px]"
-                  src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
-                  alt=""
-                />
-              </div>
-
-              <div
-                class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
-              >
-                <h2 class="text-white relative font-bold text-2xl">
-                  REFLEX PLAY
-                </h2>
-                <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
-                  UNISEX WATCH
-                </p>
-                <div
-                  class="bestSeller-price flex gap-2 items-center justify-center"
-                >
-                  <div class="font-semibold text-white text-[16px] md:text-xl">
-                    &#8377; 2999
-                  </div>
-                  <div
-                    class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
-                  >
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-                <div class="bestSeller-button w-full flex justify-center">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
-                  >
-                    BUY NOW
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
-            >
-              <div class="imgBox">
-                <img
-                  class="lg:w-[200px] w-[170px]"
-                  src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
-                  alt=""
-                />
-              </div>
-
-              <div
-                class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
-              >
-                <h2 class="text-white relative font-bold text-2xl">
-                  REFLEX PLAY
-                </h2>
-                <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
-                  UNISEX WATCH
-                </p>
-                <div
-                  class="bestSeller-price flex gap-2 items-center justify-center"
-                >
-                  <div class="font-semibold text-white text-[16px] md:text-xl">
-                    &#8377; 2999
-                  </div>
-                  <div
-                    class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
-                  >
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-                <div class="bestSeller-button w-full flex justify-center">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
-                  >
-                    BUY NOW
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
-            >
-              <div class="imgBox">
-                <img
-                  class="lg:w-[200px] w-[170px]"
-                  src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
-                  alt=""
-                />
-              </div>
-
-              <div
-                class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
-              >
-                <h2 class="text-white relative font-bold text-2xl">
-                  REFLEX PLAY
-                </h2>
-                <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
-                  UNISEX WATCH
-                </p>
-                <div
-                  class="bestSeller-price flex gap-2 items-center justify-center"
-                >
-                  <div class="font-semibold text-white text-[16px] md:text-xl">
-                    &#8377; 2999
-                  </div>
-                  <div
-                    class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
-                  >
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-                <div class="bestSeller-button w-full flex justify-center">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
-                  >
-                    BUY NOW
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
-            >
-              <div class="imgBox">
-                <img
-                  class="lg:w-[200px] w-[170px]"
-                  src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
-                  alt=""
-                />
-              </div>
-
-              <div
-                class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
-              >
-                <h2 class="text-white relative font-bold text-2xl">
-                  REFLEX PLAY
-                </h2>
-                <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
-                  UNISEX WATCH
-                </p>
-                <div
-                  class="bestSeller-price flex gap-2 items-center justify-center"
-                >
-                  <div class="font-semibold text-white text-[16px] md:text-xl">
-                    &#8377; 2999
-                  </div>
-                  <div
-                    class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
-                  >
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-                <div class="bestSeller-button w-full flex justify-center">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
-                  >
-                    BUY NOW
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
-            >
-              <div class="imgBox">
-                <img
-                  class="lg:w-[200px] w-[170px]"
-                  src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
-                  alt=""
-                />
-              </div>
-
-              <div
-                class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
-              >
-                <h2 class="text-white relative font-bold text-2xl">
-                  REFLEX PLAY
-                </h2>
-                <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
-                  UNISEX WATCH
-                </p>
-                <div
-                  class="bestSeller-price flex gap-2 items-center justify-center"
-                >
-                  <div class="font-semibold text-white text-[16px] md:text-xl">
-                    &#8377; 2999
-                  </div>
-                  <div
-                    class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
-                  >
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-                <div class="bestSeller-button w-full flex justify-center">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
-                  >
-                    BUY NOW
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
-            >
-              <div class="imgBox">
-                <img
-                  class="lg:w-[200px] w-[170px]"
-                  src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
-                  alt=""
-                />
-              </div>
-
-              <div
-                class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
-              >
-                <h2 class="text-white relative font-bold text-2xl">
-                  REFLEX PLAY
-                </h2>
-                <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
-                  UNISEX WATCH
-                </p>
-                <div
-                  class="bestSeller-price flex gap-2 items-center justify-center"
-                >
-                  <div class="font-semibold text-white text-[16px] md:text-xl">
-                    &#8377; 2999
-                  </div>
-                  <div
-                    class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
-                  >
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-                <div class="bestSeller-button w-full flex justify-center">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
-                  >
-                    BUY NOW
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
-            >
-              <div class="imgBox">
-                <img
-                  class="lg:w-[200px] w-[170px]"
-                  src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
-                  alt=""
-                />
-              </div>
-
-              <div
-                class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
-              >
-                <h2 class="text-white relative font-bold text-2xl">
-                  REFLEX PLAY
-                </h2>
-                <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
-                  UNISEX WATCH
-                </p>
-                <div
-                  class="bestSeller-price flex gap-2 items-center justify-center"
-                >
-                  <div class="font-semibold text-white text-[16px] md:text-xl">
-                    &#8377; 2999
-                  </div>
-                  <div
-                    class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
-                  >
-                    &#8377; 7000
-                  </div>
-                  <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                </div>
-                <div class="bestSeller-button w-full flex justify-center">
-                  <div
-                    class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
-                  >
-                    BUY NOW
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer font-[poppins] py-10 px-8 bg-[#100F0F] overflow-hidden">
-          <div class="flex justify-between">
-            <div class="w-[230px]">
+              BEST SELLERS
               <img
-                src=" https://res.cloudinary.com/dojcchveo/image/upload/v1720950430/fastrack/t9tmr1zpecmjeuxgd29n.png "
+                class="w-[30%] absolute top-[-10%]"
+                src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
                 alt=""
-                class="w-full"
               />
-            </div>
-            <div
-              class="flex items-center bg-black rounded-full w-[50%] border border-[#FF721D]"
-            >
-              <input
-                type="email"
-                placeholder="Your Email"
-                class="px-5 text-[15px] font-semibold py-3 bg-black text-white rounded-full outline-none border-none flex-grow"
-              />
-              <button
-                class="bg-gradient-to-r from-[#FF721D] to-[#972b07] font-semibold text-white py-3 px-10 rounded-full"
-              >
-                SUBSCRIBE
-              </button>
-            </div>
+            </h1>
           </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-4 mt-20 gap-20 text-white">
-            <div>
-              <span class="font-semibold text-2xl">CUSTOMER SERVICES</span>
-              <ul class="mt-7 text-xs space-y-1">
-                <li>Payment Options</li>
-                <li>Track Order</li>
-                <li>Find a Store</li>
-                <li>Encircle Program</li>
-              </ul>
-            </div>
-
-            <div>
-              <span class="font-semibold text-2xl">OUR POLICIES</span>
-              <ul class="mt-7 text-xs space-y-1">
-                <li>Brand Protection</li>
-                <li>Cancellation</li>
-                <li>Shipping Warranty</li>
-                <li>Policies</li>
-              </ul>
-            </div>
-
-            <div>
-              <span class="font-semibold text-2xl">ABOUT FASTRACK</span>
-              <ul class="mt-7 text-xs space-y-1">
-                <li>About Us</li>
-                <li>Help & Contact</li>
-                <li>Careers</li>
-              </ul>
-            </div>
-
-            <div>
-              <span class="font-semibold text-2xl">CONTACT US</span>
-              <ul class="mt-7 space-y-1 text-xs">
-                <li>Phone: 1800-266-0123</li>
-                <li>Email: customercare@titan.co.in</li>
-                <li>FAQs</li>
-              </ul>
-            </div>
-
-            <div>
-              <span class="font-semibold text-2xl">DOWNLOAD THE TITAN APP</span>
-              <div class="flex gap-2 mt-7">
-                <img
-                  class="cursor-pointer"
-                  src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw42175e01/images/footer/appstoreM.svg"
-                  alt=""
-                />
-                <img
-                  class="cursor-pointer"
-                  src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw8bd19073/images/footer/googleplayFM.svg"
-                  alt=""
-                />
+  
+          <div class="slideContainer p-5 w-[95%] m-auto">
+            <div
+              class="slidewrapper grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 w-full relative gap-3 sm:gap-6 overflow-hidden"
+            >
+              <div
+                class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
+              >
+                <div class="imgBox">
+                  <img
+                    class="lg:w-[200px] w-[170px]"
+                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
+                    alt=""
+                  />
+                </div>
+  
+                <div
+                  class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
+                >
+                  <h2 class="text-white relative font-bold text-2xl">
+                    REFLEX PLAY
+                  </h2>
+                  <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
+                    UNISEX WATCH
+                  </p>
+                  <div
+                    class="bestSeller-price flex gap-2 items-center justify-center"
+                  >
+                    <div class="font-semibold text-white text-[16px] md:text-xl">
+                      &#8377; 2999
+                    </div>
+                    <div
+                      class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
+                    >
+                      &#8377; 7000
+                    </div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+                  <div class="bestSeller-button w-full flex justify-center">
+                    <div
+                      class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
+                    >
+                      BUY NOW
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
+              >
+                <div class="imgBox">
+                  <img
+                    class="lg:w-[200px] w-[170px]"
+                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
+                    alt=""
+                  />
+                </div>
+  
+                <div
+                  class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
+                >
+                  <h2 class="text-white relative font-bold text-2xl">
+                    REFLEX PLAY
+                  </h2>
+                  <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
+                    UNISEX WATCH
+                  </p>
+                  <div
+                    class="bestSeller-price flex gap-2 items-center justify-center"
+                  >
+                    <div class="font-semibold text-white text-[16px] md:text-xl">
+                      &#8377; 2999
+                    </div>
+                    <div
+                      class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
+                    >
+                      &#8377; 7000
+                    </div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+                  <div class="bestSeller-button w-full flex justify-center">
+                    <div
+                      class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
+                    >
+                      BUY NOW
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
+              >
+                <div class="imgBox">
+                  <img
+                    class="lg:w-[200px] w-[170px]"
+                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
+                    alt=""
+                  />
+                </div>
+  
+                <div
+                  class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
+                >
+                  <h2 class="text-white relative font-bold text-2xl">
+                    REFLEX PLAY
+                  </h2>
+                  <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
+                    UNISEX WATCH
+                  </p>
+                  <div
+                    class="bestSeller-price flex gap-2 items-center justify-center"
+                  >
+                    <div class="font-semibold text-white text-[16px] md:text-xl">
+                      &#8377; 2999
+                    </div>
+                    <div
+                      class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
+                    >
+                      &#8377; 7000
+                    </div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+                  <div class="bestSeller-button w-full flex justify-center">
+                    <div
+                      class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
+                    >
+                      BUY NOW
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
+              >
+                <div class="imgBox">
+                  <img
+                    class="lg:w-[200px] w-[170px]"
+                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
+                    alt=""
+                  />
+                </div>
+  
+                <div
+                  class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
+                >
+                  <h2 class="text-white relative font-bold text-2xl">
+                    REFLEX PLAY
+                  </h2>
+                  <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
+                    UNISEX WATCH
+                  </p>
+                  <div
+                    class="bestSeller-price flex gap-2 items-center justify-center"
+                  >
+                    <div class="font-semibold text-white text-[16px] md:text-xl">
+                      &#8377; 2999
+                    </div>
+                    <div
+                      class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
+                    >
+                      &#8377; 7000
+                    </div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+                  <div class="bestSeller-button w-full flex justify-center">
+                    <div
+                      class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
+                    >
+                      BUY NOW
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
+              >
+                <div class="imgBox">
+                  <img
+                    class="lg:w-[200px] w-[170px]"
+                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
+                    alt=""
+                  />
+                </div>
+  
+                <div
+                  class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
+                >
+                  <h2 class="text-white relative font-bold text-2xl">
+                    REFLEX PLAY
+                  </h2>
+                  <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
+                    UNISEX WATCH
+                  </p>
+                  <div
+                    class="bestSeller-price flex gap-2 items-center justify-center"
+                  >
+                    <div class="font-semibold text-white text-[16px] md:text-xl">
+                      &#8377; 2999
+                    </div>
+                    <div
+                      class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
+                    >
+                      &#8377; 7000
+                    </div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+                  <div class="bestSeller-button w-full flex justify-center">
+                    <div
+                      class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
+                    >
+                      BUY NOW
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
+              >
+                <div class="imgBox">
+                  <img
+                    class="lg:w-[200px] w-[170px]"
+                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
+                    alt=""
+                  />
+                </div>
+  
+                <div
+                  class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
+                >
+                  <h2 class="text-white relative font-bold text-2xl">
+                    REFLEX PLAY
+                  </h2>
+                  <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
+                    UNISEX WATCH
+                  </p>
+                  <div
+                    class="bestSeller-price flex gap-2 items-center justify-center"
+                  >
+                    <div class="font-semibold text-white text-[16px] md:text-xl">
+                      &#8377; 2999
+                    </div>
+                    <div
+                      class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
+                    >
+                      &#8377; 7000
+                    </div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+                  <div class="bestSeller-button w-full flex justify-center">
+                    <div
+                      class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
+                    >
+                      BUY NOW
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
+              >
+                <div class="imgBox">
+                  <img
+                    class="lg:w-[200px] w-[170px]"
+                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
+                    alt=""
+                  />
+                </div>
+  
+                <div
+                  class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
+                >
+                  <h2 class="text-white relative font-bold text-2xl">
+                    REFLEX PLAY
+                  </h2>
+                  <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
+                    UNISEX WATCH
+                  </p>
+                  <div
+                    class="bestSeller-price flex gap-2 items-center justify-center"
+                  >
+                    <div class="font-semibold text-white text-[16px] md:text-xl">
+                      &#8377; 2999
+                    </div>
+                    <div
+                      class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
+                    >
+                      &#8377; 7000
+                    </div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+                  <div class="bestSeller-button w-full flex justify-center">
+                    <div
+                      class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
+                    >
+                      BUY NOW
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bestSeller-slide h-[400px] relative rounded-xl bg-[#100F0F] overflow-hidden"
+              >
+                <div class="imgBox">
+                  <img
+                    class="lg:w-[200px] w-[170px]"
+                    src="https://res.cloudinary.com/dojcchveo/image/upload/v1721026370/fastrack/qoezjdkhrrpl26uz7dly.png"
+                    alt=""
+                  />
+                </div>
+  
+                <div
+                  class="contentBox py-[17px] md:py-[30px] flex flex-col gap-3"
+                >
+                  <h2 class="text-white relative font-bold text-2xl">
+                    REFLEX PLAY
+                  </h2>
+                  <p class="bestSeller-cate text-[grey] text-[10px] leading-3">
+                    UNISEX WATCH
+                  </p>
+                  <div
+                    class="bestSeller-price flex gap-2 items-center justify-center"
+                  >
+                    <div class="font-semibold text-white text-[16px] md:text-xl">
+                      &#8377; 2999
+                    </div>
+                    <div
+                      class="font-semibold line-through text-[grey] text-[16px] md:text-xl"
+                    >
+                      &#8377; 7000
+                    </div>
+                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+                  </div>
+                  <div class="bestSeller-button w-full flex justify-center">
+                    <div
+                      class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[white] text-[12px] md:text-[16px] text-center font-bold tracking-wide w-[70%]"
+                    >
+                      BUY NOW
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+  
+        <div class="featuredProduct">
+          <div class="heading h-[200px] flex flex-col   w-max m-auto justify-center my-10" > 
+            <h1 class="textShadow text-white text-center scale-[4] font-bold w-max relative">
+              FEATURED PRODUCT
+              <img class=" w-[30%] absolute top-[-20%]" src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="">
+            </h1>
+          </div>
+  
+    
+        </div>
 
-          <div class="flex gap-8 mt-20">
-            <img
-              class="w-[55px]"
-              src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw6c411e8e/images/footer/visaFM.svg"
-              alt=""
-            />
-            <img
-              class="w-[45px]"
-              src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dwafe7e638/images/footer/mastercardiconFM.svg"
-              alt=""
-            />
-            <img
-              class="w-[70px]"
-              src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw32ce3fc2/images/footer/paypalFM.svg"
-              alt=""
-            />
-            <img
-              class="w-[50px]"
-              src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dwbf6c3563/images/footer/maestro.svg"
-              alt=""
-            />
-            <img
-              class="w-[70px]"
-              src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw737e363a/images/footer/rupayFM.svg"
-              alt=""
-            />
-            <img
-              class="w-[90px]"
-              src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dwacdbb9b8/images/footer/axisbankFM.svg"
-              alt=""
-            />
-            <img
-              class="w-[90px]"
-              src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dwb4844a5a/images/footer/icicibankFM.svg"
-              alt=""
-            />
-            <img
-              class="w-[80px]"
-              src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw6132f9de/images/footer/dinnerclubFM.svg"
-              alt=""
-            />
-            <img
-              class="w-[30px]"
-              src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw64f51fff/images/footer/AmericanexpressFm.svg"
-              alt=""
-            />
+        <div>
+          <div class="footer font-[poppins] py-10 px-8 bg-[#100F0F] overflow-hidden">
+            <div class="flex justify-between">
+              <div class="w-[230px]">
+                <img
+                  src=" https://res.cloudinary.com/dojcchveo/image/upload/v1720950430/fastrack/t9tmr1zpecmjeuxgd29n.png "
+                  alt=""
+                  class="w-full"
+                />
+              </div>
+              <div
+                class="flex items-center bg-black rounded-full w-[50%] border border-[#FF721D]"
+              >
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  class="px-5 text-[15px] font-semibold py-3 bg-black text-white rounded-full outline-none border-none flex-grow"
+                />
+                <button
+                  class="bg-gradient-to-r from-[#FF721D] to-[#972b07] font-semibold text-white py-3 px-10 rounded-full"
+                >
+                  SUBSCRIBE
+                </button>
+              </div>
+            </div>
+  
+            <div class="grid grid-cols-1 md:grid-cols-4 mt-20 gap-20 text-white">
+              <div>
+                <span class="font-semibold text-2xl">CUSTOMER SERVICES</span>
+                <ul class="mt-7 text-xs space-y-1">
+                  <li>Payment Options</li>
+                  <li>Track Order</li>
+                  <li>Find a Store</li>
+                  <li>Encircle Program</li>
+                </ul>
+              </div>
+  
+              <div>
+                <span class="font-semibold text-2xl">OUR POLICIES</span>
+                <ul class="mt-7 text-xs space-y-1">
+                  <li>Brand Protection</li>
+                  <li>Cancellation</li>
+                  <li>Shipping Warranty</li>
+                  <li>Policies</li>
+                </ul>
+              </div>
+  
+              <div>
+                <span class="font-semibold text-2xl">ABOUT FASTRACK</span>
+                <ul class="mt-7 text-xs space-y-1">
+                  <li>About Us</li>
+                  <li>Help & Contact</li>
+                  <li>Careers</li>
+                </ul>
+              </div>
+  
+              <div>
+                <span class="font-semibold text-2xl">CONTACT US</span>
+                <ul class="mt-7 space-y-1 text-xs">
+                  <li>Phone: 1800-266-0123</li>
+                  <li>Email: customercare@titan.co.in</li>
+                  <li>FAQs</li>
+                </ul>
+              </div>
+  
+              <div>
+                <span class="font-semibold text-2xl">DOWNLOAD THE TITAN APP</span>
+                <div class="flex gap-2 mt-7">
+                  <img
+                    class="cursor-pointer"
+                    src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw42175e01/images/footer/appstoreM.svg"
+                    alt=""
+                  />
+                  <img
+                    class="cursor-pointer"
+                    src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw8bd19073/images/footer/googleplayFM.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+  
+            <div class="flex gap-8 mt-20">
+              <img
+                class="w-[55px]"
+                src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw6c411e8e/images/footer/visaFM.svg"
+                alt=""
+              />
+              <img
+                class="w-[45px]"
+                src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dwafe7e638/images/footer/mastercardiconFM.svg"
+                alt=""
+              />
+              <img
+                class="w-[70px]"
+                src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw32ce3fc2/images/footer/paypalFM.svg"
+                alt=""
+              />
+              <img
+                class="w-[50px]"
+                src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dwbf6c3563/images/footer/maestro.svg"
+                alt=""
+              />
+              <img
+                class="w-[70px]"
+                src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw737e363a/images/footer/rupayFM.svg"
+                alt=""
+              />
+              <img
+                class="w-[90px]"
+                src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dwacdbb9b8/images/footer/axisbankFM.svg"
+                alt=""
+              />
+              <img
+                class="w-[90px]"
+                src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dwb4844a5a/images/footer/icicibankFM.svg"
+                alt=""
+              />
+              <img
+                class="w-[80px]"
+                src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw6132f9de/images/footer/dinnerclubFM.svg"
+                alt=""
+              />
+              <img
+                class="w-[30px]"
+                src="https://www.fastrack.in/on/demandware.static/-/Library-Sites-FastrackSharedLibrary/default/dw64f51fff/images/footer/AmericanexpressFm.svg"
+                alt=""
+              />
+            </div>
+          </div>
+  
+          <div class="last w-full"></div>
+          <div class="bg-gradient-to-r from-orange-500 to-orange-700 py-4">
+            <p class="text-center text-white">
+              © 2024 Titan Company Limited. All Rights Reserved.
+            </p>
           </div>
         </div>
 
-        <div class="last w-full"></div>
-        <div class="bg-gradient-to-r from-orange-500 to-orange-700 py-4">
-          <p class="text-center text-white">
-            © 2024 Titan Company Limited. All Rights Reserved.
-          </p>
-        </div>
       </div>
     </div>
 
@@ -1494,7 +1286,7 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <script type="module" src="/Animation.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.5/dist/lenis.min.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
