@@ -313,3 +313,70 @@ document.addEventListener("DOMContentLoaded", function () {
     ease: "power4.out",
   });
 });
+
+//BestSeller
+async function bestSeller(){
+  const res = await fetch("http://localhost:5173/assets.json");
+  const data = await res.json();
+  const arr = data.Bestseller
+  const wrapper = document.querySelector('.bs-wrapper')
+
+  arr.forEach((element) => {
+    wrapper.innerHTML = wrapper.innerHTML + `
+        <div
+                class="bestSeller-slide h-[340px] custom:h-[400px] relative rounded-xl bg-[#1D1C1C] overflow-hidden"
+              >
+                <div class="imgBox">
+                  <img
+                    class="lg:w-[200px] custom:w-[170px] w-[140px]"
+                    src="${element.img}"
+                    alt=""
+                  />
+                </div>
+
+                <div
+                  class="contentBox pt-[30px] flex flex-col gap-2 custom:gap-3"
+                >
+                  <h2
+                    class="text-white relative font-bold text-lg custom:text-xl sm:text-2xl  capitalize"
+                  >
+                    ${element.name}
+                  </h2>
+                  <p
+                    class="bestSeller-cate text-[#7d7d7d] text-[10px] leading-3"
+                  >
+                    ${element.cate}
+                  </p>
+                  <div
+                    class="bestSeller-price flex gap-2 items-center justify-center"
+                  >
+                    <div
+                      class="font-semibold text-white text-[13px] custom:text-[15px] md:text-lg lg:text-xl"
+                    >
+                      &#8377; ${element.price}
+                    </div>
+                    <div
+                      class="font-semibold line-through text-[grey] text-[13px] custom:text-[15px] md:text-lg lg:text-xl"
+                    >
+                      &#8377; 7000
+                    </div>
+                    <div
+                      class="discount text-[#FF721D] text-[9px] custom:text-xs"
+                    >
+                      62% OFF
+                    </div>
+                  </div>
+                  <div class="bestSeller-button w-full flex justify-center">
+                    <div
+                      class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-md text-[white] text-[12px] md:text-[15px] text-center font-bold tracking-widest w-[80%] sm:w-[70%]"
+                    >
+                      BUY NOW
+                    </div>
+                  </div>
+                </div>
+              </div>
+    `
+  });
+}
+
+bestSeller()
