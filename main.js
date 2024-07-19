@@ -338,7 +338,7 @@ async function bestSeller(){
                   class="contentBox pt-[30px] flex flex-col gap-2 custom:gap-3"
                 >
                   <h2
-                    class="text-white relative font-bold text-lg custom:text-xl sm:text-2xl  capitalize"
+                    class="text-white relative font-bold text-lg custom:text-xl sm:text-2xl"
                   >
                     ${element.name}
                   </h2>
@@ -380,3 +380,180 @@ async function bestSeller(){
 }
 
 bestSeller()
+
+//Category
+document.querySelector(".l-btn1").addEventListener("mousemove", function () {
+  const centerCenterElement = document.querySelector(".center-center1");
+  const contentElement = document.querySelector(".content-1");
+  if (window.matchMedia("(max-width: 540px)").matches) {
+    centerCenterElement.style.height = "22vh";
+    contentElement.style.width = "80vw";
+  } else if (window.matchMedia("(max-width: 640px)").matches) {
+    centerCenterElement.style.height = "35vh";
+    contentElement.style.width = "80vw";
+  } else if (window.matchMedia("(max-width: 1024px)").matches) {
+    centerCenterElement.style.height = "35vh";
+    contentElement.style.width = "40vw";
+  } else {
+    centerCenterElement.style.height = "70vh";
+    contentElement.style.width = "30vw";
+  }
+  document.querySelector(".l-btn1").style.background =
+    "linear-gradient(to right, #ff721d, #d64312)";
+  document.querySelector(".l-btn1").style.color = "white";
+  document.querySelector(".l-btn1").style.border = "none";
+  document.querySelector(".content-1").style.opacity = "1";
+  document.querySelector(".content-1").style.filter = "blur(0.5px)";
+});
+
+document.querySelector(".l-btn1").addEventListener("mouseleave", function () {
+  document.querySelector(".center-center1").style.height = "0";
+  document.querySelector(".l-btn1").style.background = "initial";
+  document.querySelector(".l-btn1").style.color = "grey";
+  document.querySelector(".l-btn1").style.border = "1px solid grey";
+  document.querySelector(".content-1").style.width = "20vw";
+  document.querySelector(".content-1").style.opacity = "0";
+  document.querySelector(".content-1").style.filter = "blur(10px)";
+});
+
+document.querySelector(".l-btn2").addEventListener("mousemove", function () {
+  const centerCenterElement = document.querySelector(".center-center2");
+  const contentElement = document.querySelector(".content-2");
+  if (window.matchMedia("(max-width: 540px)").matches) {
+    centerCenterElement.style.height = "22vh";
+    contentElement.style.width = "80vw";
+  } else if (window.matchMedia("(max-width: 640px)").matches) {
+    centerCenterElement.style.height = "35vh";
+    contentElement.style.width = "80vw";
+  } else if (window.matchMedia("(max-width: 1024px)").matches) {
+    centerCenterElement.style.height = "35vh";
+    contentElement.style.width = "40vw";
+  } else {
+    centerCenterElement.style.height = "70vh";
+    contentElement.style.width = "30vw";
+  }
+  document.querySelector(".l-btn2").style.background =
+    "linear-gradient(to right, #ff721d, #d64312)";
+  document.querySelector(".l-btn2").style.color = "white";
+  document.querySelector(".l-btn2").style.border = "none";
+  document.querySelector(".content-2").style.opacity = "1";
+  document.querySelector(".content-2").style.filter = "blur(0.5px)";
+});
+document.querySelector(".l-btn2").addEventListener("mouseleave", function () {
+  document.querySelector(".center-center2").style.height = "0";
+  document.querySelector(".l-btn2").style.background = "initial";
+  document.querySelector(".l-btn2").style.color = "grey";
+  document.querySelector(".l-btn2").style.border = "1px solid grey";
+  document.querySelector(".content-2").style.width = "20vw";
+  document.querySelector(".content-2").style.opacity = "0";
+  document.querySelector(".content-2").style.filter = "blur(10px)";
+});
+
+document.querySelector(".r-btn1").addEventListener("mousemove", function () {
+  const centerCenterElement = document.querySelector(".center-center3");
+  const contentElement = document.querySelector(".content-3");
+  if (window.matchMedia("(max-width: 540px)").matches) {
+    centerCenterElement.style.height = "22vh";
+    contentElement.style.width = "80vw";
+  } else if (window.matchMedia("(max-width: 640px)").matches) {
+    centerCenterElement.style.height = "35vh";
+    contentElement.style.width = "80vw";
+  } else if (window.matchMedia("(max-width: 1024px)").matches) {
+    centerCenterElement.style.height = "35vh";
+    contentElement.style.width = "40vw";
+  } else {
+    centerCenterElement.style.height = "70vh";
+    contentElement.style.width = "30vw";
+  }
+  document.querySelector(".r-btn1").style.background =
+    "linear-gradient(to right, #ff721d, #d64312)";
+  document.querySelector(".r-btn1").style.color = "white";
+  document.querySelector(".r-btn1").style.border = "none";
+  document.querySelector(".content-3").style.opacity = "1";
+  document.querySelector(".content-3").style.filter = "blur(0.5px)";
+});
+
+document.querySelector(".r-btn1").addEventListener("mouseleave", function () {
+  document.querySelector(".center-center3").style.height = "0";
+  document.querySelector(".r-btn1").style.background = "initial";
+  document.querySelector(".r-btn1").style.color = "grey";
+  document.querySelector(".r-btn1").style.border = "1px solid grey";
+  document.querySelector(".content-3").style.width = "20vw";
+  document.querySelector(".content-3").style.opacity = "0";
+  document.querySelector(".content-3").style.filter = "blur(10px)";
+});
+
+document.querySelector(".r-btn2").addEventListener("mousemove", function () {
+  const centerCenterElement = document.querySelector(".center-center4");
+  const contentElement = document.querySelector(".content-4");
+  if (window.matchMedia("(max-width: 540px)").matches) {
+    centerCenterElement.style.height = "22vh";
+    contentElement.style.width = "80vw";
+  } else if (window.matchMedia("(max-width: 640px)").matches) {
+    centerCenterElement.style.height = "35vh";
+    contentElement.style.width = "80vw";
+  } else if (window.matchMedia("(max-width: 1024px)").matches) {
+    centerCenterElement.style.height = "35vh";
+    contentElement.style.width = "40vw";
+  } else {
+    centerCenterElement.style.height = "70vh";
+    contentElement.style.width = "30vw";
+  }
+  document.querySelector(".r-btn2").style.background =
+    "linear-gradient(to right, #ff721d, #d64312)";
+  document.querySelector(".r-btn2").style.color = "white";
+  document.querySelector(".r-btn2").style.border = "none";
+  document.querySelector(".content-4").style.opacity = "1";
+  document.querySelector(".content-4").style.filter = "blur(0.5px)";
+});
+document.querySelector(".r-btn2").addEventListener("mouseleave", function () {
+  document.querySelector(".center-center4").style.height = "0";
+  document.querySelector(".r-btn2").style.background = "initial";
+  document.querySelector(".r-btn2").style.color = "grey";
+  document.querySelector(".r-btn2").style.border = "1px solid grey";
+  document.querySelector(".content-4").style.width = "20vw";
+  document.querySelector(".content-4").style.opacity = "0";
+  document.querySelector(".content-4").style.filter = "blur(10px)";
+});
+
+//Trending
+// async function fillTrending(){
+//   const res = await fetch("http://localhost:5173/assets.json");
+//   const data = await res.json();
+//   const arr = data.trending
+//   const wrapper = document.querySelector('.trending-wrapper');
+//     arr.forEach((element, idx) => {
+//     wrapper.innerHTML = wrapper.innerHTML + `
+//                     <div style="--position:${idx}" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
+//                 <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
+  
+//                   <div class="logo w-[25%]">
+//                     <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+//                   </div>
+    
+//                   <div class="itemName text-white">
+//                     <p>${element.name}</p>
+//                   </div>
+  
+//                   <div class=" text-[grey] text-[8px] leading-3">
+//                     ${element.cate}
+//                   </div>
+  
+//                   <div class="price flex gap-2 items-center">
+//                     <div class="sp text-white text-sm">&#8377; ${element.price}</div>
+//                     <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
+//                     <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+//                   </div>
+  
+//                   <div class="buttonContainer flex gap-3">
+//                     <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+//                     <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+//                   </div>
+    
+  
+//                 </div>
+  
+//               </div>
+//     `
+//     })
+// }

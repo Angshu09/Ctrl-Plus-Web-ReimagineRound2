@@ -194,6 +194,15 @@
         transition-delay: 0.5s;
       }
 
+      .all-content{
+        position: absolute;
+        pointer-events: none;
+        transition: all cubic-bezier(0.19, 1, 0.22, 1)1.3s;
+        width: 0vw;
+        opacity: 0;
+        filter: blur(10px);
+      }
+
       @keyframes autoRun {
         from {
           left: 100%;
@@ -304,7 +313,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div>    
 
         <div class="heroSection relative">
   
@@ -323,16 +332,74 @@
   
         </div>
 
-        <div class="scrollHorizontal overflow-x-hidden ">
-          <div class="heading h-[200px] flex flex-col   w-max m-auto justify-center my-10" >
-            
-            <h1 class="textShadow text-white text-center scale-[4] font-bold w-max relative">
-              NEW LAUNCHES
-              <img class=" w-[30%] absolute top-[-20%]" src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="">
-            </h1>
+        <div class="main-category bg-[#100F0F] w-[100vw] h-[100vh] flex items-center overflow-hidden relative">
+
+          <div class="left w-[20%] h-[100%] font-redhat font-[500] text-[grey]">
+              <div class="left-top h-[50%] relative">
+                  <div class="l-btn1 py-2 px-5 border transition duration-500 rounded-full left-[20%] sm:left-1/2 sm:-translate-x-1/2 top-[20%] sm:top-1/2 sm:-translate-y-1/2 absolute cursor-pointer">
+                      <h3 class="text-[15px]">Watches</h3>
+                  </div>
+              </div>
+              <div class="left-bottom h-[50%] relative">
+                  <div class="l-btn2 py-2 px-5 border rounded-full transition duration-500 left-[20%] sm:left-1/2 sm:-translate-x-1/2 bottom-[20%] sm:bottom-1/2 sm:translate-y-1/2 absolute cursor-pointer">
+                      <h3 class="text-[15px]">Glasses</h3>
+                  </div>
+              </div>
           </div>
   
+          <div class="center w-[60%] h-[130vh] text-[4.5rem] sm:text-[5.5rem] md:text-[6.5rem] lg:text-[8rem] font-semibold text-[#b6b5b5] flex flex-col justify-center">
   
+              <div class="center-top w-full h-[50%] flex items-end justify-center">
+                  <h1 class="leading-[3.3rem] sm:leading-[4rem] md:leading-[4.8rem] lg:leading-[5.7rem] tracking-tighter text-center">EXPLORE <br> OUR</h1>
+              </div>
+  
+              <div class="center-center1 h-0 w-full" style="transition: all cubic-bezier(0.19, 1, 0.22, 1)1.3s "></div>
+              <div class="center-center2  h-0 w-full " style="transition: all cubic-bezier(0.19, 1, 0.22, 1)1.3s"></div>
+              <div class="center-center3  h-0 w-full " style="transition: all cubic-bezier(0.19, 1, 0.22, 1)1.3s"></div>
+              <div class="center-center4  h-0 w-full" style="transition: all cubic-bezier(0.19, 1, 0.22, 1)1.3s"></div>
+  
+              <div class="center-bottom w-full h-[50%] flex items-start justify-center">
+                  <h1 class="leading-[3.3rem] sm:leading-[4rem] md:leading-[4.8rem] lg:leading-[5.7rem] tracking-tighter text-center">CURATED <br> ITEMS</h1>
+              </div>
+  
+          </div>
+          
+          <div class="right w-[20%] h-[100%] font-redhat font-[500] text-[grey]">
+              <div class="right-top items-center h-[50%] relative">
+                  <div class="r-btn1 py-2 px-5 border  rounded-full transition duration-500 right-[20%] sm:right-1/2 sm:translate-x-1/2 top-[20%] sm:top-1/2 sm:-translate-y-1/2 absolute cursor-pointer">
+                      <h3 class="text-[15px]">Hearables</h3>
+                  </div>
+              </div>
+              <div class="right-bottom h-[50%] relative">
+                  <div class="r-btn2  py-2 px-5 border rounded-full transition duration-500 right-[20%] sm:right-1/2 sm:translate-x-1/2 bottom-[20%] sm:bottom-1/2 sm:translate-y-1/2 absolute cursor-pointer">
+                      <h3 class="text-[15px]">Perfumes</h3>
+                  </div>
+              </div>
+          </div>
+  
+          <div id="one" class="all-content content-1 left-1/2 sm:translate-y-0 translate-y-1/2 sm:translate-x-0 -translate-x-1/2 bottom-[50%] sm:left-[20%] ">
+              <video class="w-full" autoplay loop muted>
+                  <source src="https://res.cloudinary.com/dojcchveo/video/upload/v1721405156/fastrack/Category/nypru0sd4t71o6bx1xsa.mp4">
+              </video>
+          </div>
+          <div id="two" class="all-content content-2 left-1/2 sm:translate-y-0 -translate-y-1/2 sm:translate-x-0 -translate-x-1/2 top-[50%] sm:left-[20%]">
+              <video class="w-full" autoplay loop muted >
+                  <source src="https://res.cloudinary.com/dojcchveo/video/upload/v1721405109/fastrack/Category/ggsueczfb86cacg8cdis.mp4">
+              </video>
+          </div>
+          <div id="three" class="all-content content-3 right-1/2 sm:translate-y-0 translate-y-1/2 sm:translate-x-0 translate-x-1/2 bottom-[50%] sm:right-[20%]">
+              <video class="w-full" autoplay loop muted>
+                  <source src="https://res.cloudinary.com/dojcchveo/video/upload/v1721406649/fastrack/Category/yyvxt7hdroxtrhsd8ozg.mp4">
+              </video>
+          </div>
+          <div id="four" class="all-content content-4 right-1/2 sm:translate-y-0 -translate-y-1/2 sm:translate-x-0 translate-x-1/2 top-[50%] sm:right-[20%]">
+              <video class="w-full" autoplay loop muted>
+                  <source src="https://res.cloudinary.com/dojcchveo/video/upload/v1721405141/fastrack/Category/gcn5fgimpqkr19oxl0aw.mp4">
+              </video>
+          </div>
+        </div>    
+
+        <div class="scrollHorizontal overflow-x-hidden ">  
           <div class="tabContainer flex  w-[400vw] ">
             <div class="tab w-[100vw] h-[100vh]  bg-orange-700 pt-[80px]"></div>
             <div class="tab w-[100vw] h-[100vh]  bg-orange-600 pt-[80px]"></div>
@@ -539,7 +606,7 @@
           </div>
           
           <div class="slideContainer  overflow-x-scroll p-5 w-[90%] m-auto ">
-            <div class="slidewrapper flex w-[100%] h-[250px] min-w-[1700px] relative">
+            <div class="slidewrapper trending-wrapper flex w-[100%] h-[250px] min-w-[1700px] relative">
               <div style="--position:0" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
                 <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
   
