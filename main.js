@@ -193,29 +193,6 @@ function scaleImage(img,ctx){
 canvas()
 
 
-// //method 1
-
-// // ScrollTrigger.create({
-// //   trigger:".page1>canvas",
-// //   pin:true,
-// //   scroller:`#main`,
-// //   start:`top top`,
-// //   end:`600% top`
-
-// // });
-
-//method 2
-// gsap.to('.why-heading .center',{
-//   scrollTrigger:{
-//     trigger:'.why-heading .center',
-//     pin:true,
-//     scroller:'#main',
-//     start:'50% 0%',
-//     end:'200% 50%',
-//     scrub:2,
-//   }
-// })
-
 
 function loader(){
 
@@ -822,7 +799,7 @@ document.querySelector(".r-btn2").addEventListener("mouseleave", function () {
 
  // Trending
 async function fillTrending() {
-  const res = await fetch("http://localhost:5175/assets.json");
+  const res = await fetch("https://jayasaha811733.github.io/ReImagine_2_API/assets.json");
   const data = await res.json();
   const arr = data.trending;
   const wrapper = document.querySelector(".trending-wrapper");
@@ -912,7 +889,7 @@ fillTrending();
 
 
 async function bestSeller() {
-  const res = await fetch("http://localhost:5175/assets.json");
+  const res = await fetch("https://jayasaha811733.github.io/ReImagine_2_API/assets.json");
   const data = await res.json();
   const arr = data.Bestseller;
   const wrapper = document.querySelector(".bs-wrapper");
