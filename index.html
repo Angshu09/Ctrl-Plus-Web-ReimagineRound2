@@ -19,6 +19,13 @@
       rel="stylesheet"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <style>
       * {
@@ -194,13 +201,31 @@
         transition-delay: 0.5s;
       }
 
-      .all-content{
+      .all-content {
         position: absolute;
         pointer-events: none;
-        transition: all cubic-bezier(0.19, 1, 0.22, 1)1.3s;
+        transition: all cubic-bezier(0.19, 1, 0.22, 1) 1.3s;
         width: 0vw;
         opacity: 0;
         filter: blur(10px);
+      }
+
+      .trending-slide:hover .watch-img {
+        height: 115%;
+      }
+
+      .feature-p::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        border-bottom: 2px solid #d9d9d9;
+        transition: all 0.5s;
+      }
+
+      .feature-p:hover::after {
+        width: 100%;
       }
 
       @keyframes autoRun {
@@ -226,7 +251,7 @@
   <body>
     <div id="main" class="bg-[#242424] min-h-[100vh] w-[100vw] overflow-hidden">
       <div class="mainContainer w-[100%]">
-        <div class="loader fixed pointer-events-none z-[50] bg-[#242424] text-[white] overflow-hidden"
+        <!-- <div class="loader fixed pointer-events-none z-[50] bg-[#242424] text-[white] overflow-hidden"
         >
           <div
             class="fastrack w-[100vw] h-[100vh] flex justify-center items-center rounded-full"
@@ -285,14 +310,21 @@
           >
             <img src="belt.png" alt="" />
           </div>
-        </div>
+        </div> -->
 
-        <div class="navbar h-[80px] w-full opacity-0 fixed z-[8] items-center flex justify-between px-2">  
-          <div class="brandLogo w-[20%] ">
-            <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
+        <div
+          class="navbar h-[80px] w-full opacity-0 fixed z-[8] items-center flex justify-between px-2"
+        >
+          <div class="brandLogo w-[20%]">
+            <img
+              src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
+              alt="logo"
+            />
           </div>
-  
-          <div class="navCategory text-[#ffffffc4] flex items-center justify-between w-[60%]">
+
+          <div
+            class="navCategory text-[#ffffffc4] flex items-center justify-between w-[60%]"
+          >
             <ul class="flex gap-2">
               <li class="p-2">Watches</li>
               <li class="p-2">Men</li>
@@ -305,254 +337,260 @@
               </li>
               <li class="cartIcon relative p-2">
                 <i class="fa-solid fa-bag-shopping"></i>
-                <label for="cartCount" class=" cartCount absolute text-xs sm:text-sm px-1 top-[0px] font-bold left-[-10px] text-[red] bg-[#ffffffb9] rounded-full text-center">0</label>
-                
+                <label
+                  for="cartCount"
+                  class="cartCount absolute text-xs sm:text-sm px-1 top-[0px] font-bold left-[-10px] text-[red] bg-[#ffffffb9] rounded-full text-center"
+                  >0</label
+                >
               </li>
               <li class="p-2">
                 <i class="fa-solid fa-user"></i>
               </li>
             </ul>
           </div>
-        </div>    
+        </div>
 
         <div class="heroSection relative">
-  
-          <video autoplay loop muted >
-            <source src="https://res.cloudinary.com/dojcchveo/video/upload/v1721215868/tz4tx0ws8kktdcn2l4kk.mp4">
+          <video autoplay loop muted>
+            <source
+              src="https://res.cloudinary.com/dojcchveo/video/upload/v1721215868/tz4tx0ws8kktdcn2l4kk.mp4"
+            />
           </video>
-  
-          <div class="overCast aspect-video w-full absolute bg-[#2b2b2b78] top-[0] flex justify-center items-center flex-col text-[white] gap-8">
-  
-            <h1 class="scale-[5] textShadow font-bold">WEAR THE CLASS</h1>
-            <p class="text-2xl font-bold">YOUR <span class="text-[#FF721D]">FASTRACK</span> WATCH TELLS MORE THAN JUST TIME</p>
-  
-          </div>
-  
-  
-  
-        </div>
 
-        <div class="main-category bg-[#100F0F] w-[100vw] h-[100vh] flex items-center overflow-hidden relative">
-
-          <div class="left w-[20%] h-[100%] font-redhat font-[500] text-[grey]">
-              <div class="left-top h-[50%] relative">
-                  <div class="l-btn1 py-2 px-5 border transition duration-500 rounded-full left-[20%] sm:left-1/2 sm:-translate-x-1/2 top-[20%] sm:top-1/2 sm:-translate-y-1/2 absolute cursor-pointer">
-                      <h3 class="text-[15px]">Watches</h3>
-                  </div>
-              </div>
-              <div class="left-bottom h-[50%] relative">
-                  <div class="l-btn2 py-2 px-5 border rounded-full transition duration-500 left-[20%] sm:left-1/2 sm:-translate-x-1/2 bottom-[20%] sm:bottom-1/2 sm:translate-y-1/2 absolute cursor-pointer">
-                      <h3 class="text-[15px]">Glasses</h3>
-                  </div>
-              </div>
-          </div>
-  
-          <div class="center w-[60%] h-[130vh] text-[4.5rem] sm:text-[5.5rem] md:text-[6.5rem] lg:text-[8rem] font-semibold text-[#b6b5b5] flex flex-col justify-center">
-  
-              <div class="center-top w-full h-[50%] flex items-end justify-center">
-                  <h1 class="leading-[3.3rem] sm:leading-[4rem] md:leading-[4.8rem] lg:leading-[5.7rem] tracking-tighter text-center">EXPLORE <br> OUR</h1>
-              </div>
-  
-              <div class="center-center1 h-0 w-full" style="transition: all cubic-bezier(0.19, 1, 0.22, 1)1.3s "></div>
-              <div class="center-center2  h-0 w-full " style="transition: all cubic-bezier(0.19, 1, 0.22, 1)1.3s"></div>
-              <div class="center-center3  h-0 w-full " style="transition: all cubic-bezier(0.19, 1, 0.22, 1)1.3s"></div>
-              <div class="center-center4  h-0 w-full" style="transition: all cubic-bezier(0.19, 1, 0.22, 1)1.3s"></div>
-  
-              <div class="center-bottom w-full h-[50%] flex items-start justify-center">
-                  <h1 class="leading-[3.3rem] sm:leading-[4rem] md:leading-[4.8rem] lg:leading-[5.7rem] tracking-tighter text-center">CURATED <br> ITEMS</h1>
-              </div>
-  
-          </div>
-          
-          <div class="right w-[20%] h-[100%] font-redhat font-[500] text-[grey]">
-              <div class="right-top items-center h-[50%] relative">
-                  <div class="r-btn1 py-2 px-5 border  rounded-full transition duration-500 right-[20%] sm:right-1/2 sm:translate-x-1/2 top-[20%] sm:top-1/2 sm:-translate-y-1/2 absolute cursor-pointer">
-                      <h3 class="text-[15px]">Hearables</h3>
-                  </div>
-              </div>
-              <div class="right-bottom h-[50%] relative">
-                  <div class="r-btn2  py-2 px-5 border rounded-full transition duration-500 right-[20%] sm:right-1/2 sm:translate-x-1/2 bottom-[20%] sm:bottom-1/2 sm:translate-y-1/2 absolute cursor-pointer">
-                      <h3 class="text-[15px]">Perfumes</h3>
-                  </div>
-              </div>
-          </div>
-  
-          <div id="one" class="all-content content-1 left-1/2 sm:translate-y-0 translate-y-1/2 sm:translate-x-0 -translate-x-1/2 bottom-[50%] sm:left-[20%] ">
-              <video class="w-full" autoplay loop muted>
-                  <source src="https://res.cloudinary.com/dojcchveo/video/upload/v1721405156/fastrack/Category/nypru0sd4t71o6bx1xsa.mp4">
-              </video>
-          </div>
-          <div id="two" class="all-content content-2 left-1/2 sm:translate-y-0 -translate-y-1/2 sm:translate-x-0 -translate-x-1/2 top-[50%] sm:left-[20%]">
-              <video class="w-full" autoplay loop muted >
-                  <source src="https://res.cloudinary.com/dojcchveo/video/upload/v1721405109/fastrack/Category/ggsueczfb86cacg8cdis.mp4">
-              </video>
-          </div>
-          <div id="three" class="all-content content-3 right-1/2 sm:translate-y-0 translate-y-1/2 sm:translate-x-0 translate-x-1/2 bottom-[50%] sm:right-[20%]">
-              <video class="w-full" autoplay loop muted>
-                  <source src="https://res.cloudinary.com/dojcchveo/video/upload/v1721406649/fastrack/Category/yyvxt7hdroxtrhsd8ozg.mp4">
-              </video>
-          </div>
-          <div id="four" class="all-content content-4 right-1/2 sm:translate-y-0 -translate-y-1/2 sm:translate-x-0 translate-x-1/2 top-[50%] sm:right-[20%]">
-              <video class="w-full" autoplay loop muted>
-                  <source src="https://res.cloudinary.com/dojcchveo/video/upload/v1721405141/fastrack/Category/gcn5fgimpqkr19oxl0aw.mp4">
-              </video>
-          </div>
-        </div>    
-
-        <div class="scrollHorizontal overflow-x-hidden ">  
-          <div class="tabContainer flex  w-[400vw] ">
-            <div class="tab w-[100vw] h-[100vh]  bg-orange-700 pt-[80px]"></div>
-            <div class="tab w-[100vw] h-[100vh]  bg-orange-600 pt-[80px]"></div>
-            <div class="tab w-[100vw] h-[100vh]  bg-orange-500 pt-[80px]"></div>
-            <div class="tab w-[100vw] h-[100vh] 
-            bg-orange-400 pt-[80px]" ></div>
-          </div>
-        </div>
-
-        <div class="services h-[400px] w-full mt-20">
-  
-          <div class="line h-[50%] w-full border-b-[3px] border-dashed border-[#f1caad] flex " >
-  
-            <div class="section w-1/4 relative ">
-              <div class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"></div>
-  
-              <div class="chekout w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center">
-  
-                <img class="w-[95%] h-[85%] " src="security.png" alt="">
-  
-                <div class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute bottom-[-50%] translate-y-[50%] left-[50%] translate-x-[-50%] w-max">SAFE AND SECURE <br> CHECKOUT</div>
-  
-              </div>
-  
-              
-  
-              
-            </div>
-            <div class="section  w-1/4 relative ">
-  
-              <div class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"></div>
-  
-              <div class="quality w-[12vw] h-[12vw]  md:w-[9vw] md:h-[9vw]  border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center">
-  
-                <img class="w-[75%] h-[75%] " src="quality.png" alt="">
-  
-                <div class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute top-[-50%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-max">PREMIUM QUALITY <br> PRODUCT</div>
-  
-              </div>
-            </div>
-            <div class="section  w-1/4 relative ">
-  
-              <div class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"></div>
-  
-              <div class="return w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center">
-  
-                <img class="w-[75%] h-[75%] " src="return-box.png" alt="">
-  
-                <div class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute bottom-[-50%] translate-y-[50%] left-[50%] translate-x-[-50%] w-max">7 DAY RETURN</div>
-  
-              </div>
-            </div>
-            <div class="section  w-1/4 relative ">
-  
-              <div class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"></div>
-  
-              <div class="shipping w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center">   
-  
-                <img class="w-[75%] h-[75%] " src="fast-delivery.png" alt="">
-  
-                <div class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute top-[-50%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-max">FREE SHIPPING <br> NATIONWIDE</div>
-  
-              </div>
-  
-              <div class="shadow w-[80px] h-[80px] "></div>
-              
-            </div>
-  
-            
-         
-            
-          </div>
-  
-        </div>
-
-        <div class="featuredProduct font-poppins">
           <div
-            class="heading h-[200px] flex flex-col w-max m-auto justify-center my-10"
+            class="overCast aspect-video w-full absolute bg-[#2b2b2b78] top-[0] flex justify-center items-center flex-col text-[white] gap-8"
+          >
+            <h1 class="scale-[5] textShadow font-bold">WEAR THE CLASS</h1>
+            <p class="text-2xl font-bold">
+              YOUR <span class="text-[#FF721D]">FASTRACK</span> WATCH TELLS MORE
+              THAN JUST TIME
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="main-category bg-[#100F0F] w-[100vw] h-[100vh] flex items-center overflow-hidden relative"
+        >
+          <div class="left w-[20%] h-[100%] font-redhat font-[500] text-[grey]">
+            <div class="left-top h-[50%] relative">
+              <div
+                class="l-btn1 py-2 px-5 border transition duration-500 rounded-full left-[20%] sm:left-1/2 sm:-translate-x-1/2 top-[20%] sm:top-1/2 sm:-translate-y-1/2 absolute cursor-pointer"
+              >
+                <h3 class="text-[15px]">Watches</h3>
+              </div>
+            </div>
+            <div class="left-bottom h-[50%] relative">
+              <div
+                class="l-btn2 py-2 px-5 border rounded-full transition duration-500 left-[20%] sm:left-1/2 sm:-translate-x-1/2 bottom-[20%] sm:bottom-1/2 sm:translate-y-1/2 absolute cursor-pointer"
+              >
+                <h3 class="text-[15px]">Glasses</h3>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="center w-[60%] h-[130vh] text-[4.5rem] sm:text-[5.5rem] md:text-[6.5rem] lg:text-[8rem] font-semibold text-[#b6b5b5] flex flex-col justify-center"
+          >
+            <div
+              class="center-top w-full h-[50%] flex items-end justify-center"
+            >
+              <h1
+                class="leading-[3.3rem] sm:leading-[4rem] md:leading-[4.8rem] lg:leading-[5.7rem] tracking-tighter text-center"
+              >
+                EXPLORE <br />
+                OUR
+              </h1>
+            </div>
+
+            <div
+              class="center-center1 h-0 w-full"
+              style="transition: all cubic-bezier(0.19, 1, 0.22, 1) 1.3s"
+            ></div>
+            <div
+              class="center-center2 h-0 w-full"
+              style="transition: all cubic-bezier(0.19, 1, 0.22, 1) 1.3s"
+            ></div>
+            <div
+              class="center-center3 h-0 w-full"
+              style="transition: all cubic-bezier(0.19, 1, 0.22, 1) 1.3s"
+            ></div>
+            <div
+              class="center-center4 h-0 w-full"
+              style="transition: all cubic-bezier(0.19, 1, 0.22, 1) 1.3s"
+            ></div>
+
+            <div
+              class="center-bottom w-full h-[50%] flex items-start justify-center"
+            >
+              <h1
+                class="leading-[3.3rem] sm:leading-[4rem] md:leading-[4.8rem] lg:leading-[5.7rem] tracking-tighter text-center"
+              >
+                CURATED <br />
+                ITEMS
+              </h1>
+            </div>
+          </div>
+
+          <div
+            class="right w-[20%] h-[100%] font-redhat font-[500] text-[grey]"
+          >
+            <div class="right-top items-center h-[50%] relative">
+              <div
+                class="r-btn1 py-2 px-5 border rounded-full transition duration-500 right-[20%] sm:right-1/2 sm:translate-x-1/2 top-[20%] sm:top-1/2 sm:-translate-y-1/2 absolute cursor-pointer"
+              >
+                <h3 class="text-[15px]">Hearables</h3>
+              </div>
+            </div>
+            <div class="right-bottom h-[50%] relative">
+              <div
+                class="r-btn2 py-2 px-5 border rounded-full transition duration-500 right-[20%] sm:right-1/2 sm:translate-x-1/2 bottom-[20%] sm:bottom-1/2 sm:translate-y-1/2 absolute cursor-pointer"
+              >
+                <h3 class="text-[15px]">Perfumes</h3>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="one"
+            class="all-content content-1 left-1/2 sm:translate-y-0 translate-y-1/2 sm:translate-x-0 -translate-x-1/2 bottom-[50%] sm:left-[20%]"
+          >
+            <video class="w-full" autoplay loop muted>
+              <source
+                src="https://res.cloudinary.com/dojcchveo/video/upload/v1721405156/fastrack/Category/nypru0sd4t71o6bx1xsa.mp4"
+              />
+            </video>
+          </div>
+          <div
+            id="two"
+            class="all-content content-2 left-1/2 sm:translate-y-0 -translate-y-1/2 sm:translate-x-0 -translate-x-1/2 top-[50%] sm:left-[20%]"
+          >
+            <video class="w-full" autoplay loop muted>
+              <source
+                src="https://res.cloudinary.com/dojcchveo/video/upload/v1721405109/fastrack/Category/ggsueczfb86cacg8cdis.mp4"
+              />
+            </video>
+          </div>
+          <div
+            id="three"
+            class="all-content content-3 right-1/2 sm:translate-y-0 translate-y-1/2 sm:translate-x-0 translate-x-1/2 bottom-[50%] sm:right-[20%]"
+          >
+            <video class="w-full" autoplay loop muted>
+              <source
+                src="https://res.cloudinary.com/dojcchveo/video/upload/v1721406649/fastrack/Category/yyvxt7hdroxtrhsd8ozg.mp4"
+              />
+            </video>
+          </div>
+          <div
+            id="four"
+            class="all-content content-4 right-1/2 sm:translate-y-0 -translate-y-1/2 sm:translate-x-0 translate-x-1/2 top-[50%] sm:right-[20%]"
+          >
+            <video class="w-full" autoplay loop muted>
+              <source
+                src="https://res.cloudinary.com/dojcchveo/video/upload/v1721405141/fastrack/Category/gcn5fgimpqkr19oxl0aw.mp4"
+              />
+            </video>
+          </div>
+        </div>
+
+        <div class="scrollHorizontal overflow-x-hidden">
+          <div class="tabContainer flex w-[400vw]">
+            <div class="tab w-[100vw] h-[100vh] bg-orange-700 pt-[80px]"></div>
+            <div class="tab w-[100vw] h-[100vh] bg-orange-600 pt-[80px]"></div>
+            <div class="tab w-[100vw] h-[100vh] bg-orange-500 pt-[80px]"></div>
+            <div class="tab w-[100vw] h-[100vh] bg-orange-400 pt-[80px]"></div>
+          </div>
+        </div>
+
+        <div class="featuredProduct font-redhat">
+          <div
+            class="heading h-[200px] flex flex-col w-max m-auto justify-center my-7"
           >
             <h1
-              class="textShadow text-white text-center scale-[4] font-bold w-max relative"
+              class="textShadow text-white text-center scale-[2] custom:scale-[3] sm:scale-[4] font-bold w-max relative"
             >
               FEATURED PRODUCT
               <img
-                class="w-[20%] absolute top-[-18%]"
-                src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
+                class="w-[15%] absolute top-[-10%]"
+                src="https://res.cloudinary.com/dojcchveo/image/upload/v1720950430/fastrack/t9tmr1zpecmjeuxgd29n.png"
                 alt=""
               />
             </h1>
           </div>
 
-          <div class="w-[80%] m-auto">
-            <div class="bg-[#131316] rounded-3xl flex overflow-hidden">
-              <div class=" w-[45%] relative pl-14 pt-10">
-                <div class="w-[150px]">
+          <div class="w-[90%] lg:w-[80%] m-auto">
+            <div
+              class="bg-[#131316] rounded-3xl flex-col md:flex-row flex overflow-hidden"
+            >
+              <div
+                class="w-full border-b-2 md:border-0 border-[#5c5c5c] md:w-[45%] relative"
+              >
+                <div
+                  class="w-[70px] md:w-[60px] lg:w-[90px] xl:w-[140px] absolute right-[8%] top-[8%] md:left-[10%]"
+                >
                   <img
                     class="w-full"
                     src="https://res.cloudinary.com/dojcchveo/image/upload/v1720950430/fastrack/t9tmr1zpecmjeuxgd29n.png"
                     alt=""
                   />
                 </div>
-               
-                
-               
-                <div class=" w-full absolute left-0 bottom-0 z-10">
-                  <div class="mt-16">
-                    <h1
-                      class="font-oswald text-[#393D3B] text-9xl tracking-tighter font-[800] absolute top-[-2%] left-[10%]"
+
+                <div class="w-full h-full flex items-end md:pt-0 pt-8">
+                  <div class="w-[60%] md:w-full relative">
+                    <img
+                      class="transform scale-x-[-1] w-full xl:w-[90%] 2xl:w-[80%] relative z-10"
+                      src="https://res.cloudinary.com/dojcchveo/image/upload/v1721136862/fastrack/featuredProduct/s2zhrqlcpkigubf0q1du.png"
+                      alt=""
+                    />
+
+                    <div
+                      class="absolute top-[20%] -right-[35%] sm:-right-[43%] md:-top-[9%] lg:-top-[18%] md:left-[10%]"
                     >
-                      2024
-                    </h1>
-                  </div>
-                  <div class="w-full">
-                    <img class="transform scale-x-[-1] w-full" src="https://res.cloudinary.com/dojcchveo/image/upload/v1721136862/fastrack/featuredProduct/s2zhrqlcpkigubf0q1du.png" alt="">
+                      <h1
+                        class="font-oswald text-[#393D3B] text-8xl sm:text-9xl md:text-8xl lg:text-9xl tracking-tighter font-[800]"
+                      >
+                        2024
+                      </h1>
+                    </div>
                   </div>
                 </div>
 
-                <div class="absolute left-[-30%] bottom-[30%] h-[200px] w-[200px] bg-[grey] rounded-full blur-[90px]">
-
-                </div>
-
+                <div
+                  class="absolute left-[-30%] bottom-[30%] h-[200px] w-[200px] bg-[grey] rounded-full blur-[90px]"
+                ></div>
               </div>
 
-              <div class="bg-[#131316] w-[55%] px-8 py-10">
-                <div class="flex flex-col gap-7">
+              <div class="bg-[#131316] w-full md:w-[55%] px-8 py-8 lg:py-10">
+                <div class="flex flex-col gap-5 lg:gap-6 xl:gap-7">
                   <div class="flex tracking-wider">
                     <p
-                      class="py-1 text-[#D9D9D9] text-[15px] font-semibold border-b-2 border-[#D9D9D9]"
+                      class="py-1 feature-p text-[#D9D9D9] text-[12px] lg:text-[15px] font-semibold relative cursor-pointer"
                     >
                       DIGI BLACK 2024
                     </p>
                   </div>
                   <div
-                    class="text-8xl font-[760] leading-[5rem] tracking-tighter flex flex-col text-[#D9D9D9]"
+                    class="text-6xl lg:text-7xl xl:text-8xl font-[760] !leading-[3rem] lg:!leading-[3.5rem] xl:!leading-[4.7rem] tracking-tighter flex flex-col text-[#D9D9D9]"
                   >
-                    <h1>ANADIGI</h1>
-                    <h1>BLACK</h1>
+                    <h1>
+                      ANADIGI <br />
+                      BLACK
+                    </h1>
                   </div>
                   <div>
-                    <p class="text-[#D9D9D9] text-[14px]">
+                    <p class="text-[#D9D9D9] text-[11px] lg:text-[14px]">
                       Fastrack AnaDigi Black Dial Plastic Strap Unisex Watch
                     </p>
                   </div>
                   <div>
                     <h2
-                      class="text-[#FF721D] text-5xl tracking-tighter font-[600]"
+                      class="text-[#FF721D] text-3xl lg:text-4xl xl:text-5xl tracking-tighter font-[700]"
                     >
                       &#8377; 1755.00
                     </h2>
                   </div>
                   <div class="flex gap-5">
                     <div
-                      class="w-[100px] h-[100px] flex justify-center items-center bg-[#191818] border border-[#737373]"
+                      class="w-[80px] lg:w-[100px] h-[80px] lg:h-[100px] flex justify-center items-center bg-[#191818] border border-[#737373]"
                     >
                       <img
                         class="w-[80%]"
@@ -561,7 +599,7 @@
                       />
                     </div>
                     <div
-                      class="w-[100px] h-[100px] flex justify-center items-center bg-[#191818] border border-[#737373]"
+                      class="w-[80px] lg:w-[100px] h-[80px] lg:h-[100px] flex justify-center items-center bg-[#191818] border border-[#737373]"
                     >
                       <img
                         class="w-[80%]"
@@ -570,7 +608,7 @@
                       />
                     </div>
                     <div
-                      class="w-[100px] h-[100px] flex justify-center items-center bg-[#191818] border border-[#737373]"
+                      class="w-[80px] lg:w-[100px] h-[80px] lg:h-[100px] flex justify-center items-center bg-[#191818] border border-[#737373]"
                     >
                       <img
                         class="w-[80%]"
@@ -579,14 +617,16 @@
                       />
                     </div>
                   </div>
-                  <div class="buttonContainer my-5 flex gap-4">
+                  <div
+                    class="buttonContainer mt-5 flex custom:flex-row flex-col gap-4"
+                  >
                     <div
-                      class="buyNow w-[45%] py-3 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[18px] text-center font-bold text-white tracking-wide"
+                      class="buyNow w-full custom:w-[45%] py-3 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[13px] lg:text-[16px] xl:text-[18px] text-center font-bold text-white tracking-wide"
                     >
                       BUY NOW
                     </div>
                     <div
-                      class="addToCart w-[45%] py-3 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[18px] text-center font-bold text-white tracking-wide"
+                      class="addToCart w-full custom:w-[45%] py-3 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[13px] lg:text-[16px] xl:text-[18px] text-center font-bold text-white tracking-wide"
                     >
                       + ADD TO CART
                     </div>
@@ -597,391 +637,210 @@
           </div>
         </div>
 
-        <div class="trendings bg-[#242424] ">
-          <div class="heading h-[200px] flex flex-col   w-max m-auto justify-center my-10" > 
-            <h1 class="textShadow text-white text-center scale-[4] font-bold w-max relative">
+        <div class="services h-[400px] w-full mt-20 font-redhat">
+          <div
+            class="line h-[50%] w-full border-b-[3px] border-dashed border-[#f1caad] flex"
+          >
+            <div class="section w-1/4 relative">
+              <div
+                class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"
+              ></div>
+
+              <div
+                class="chekout w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center"
+              >
+                <img class="w-[95%] h-[85%]" src="security.png" alt="" />
+
+                <div
+                  class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute bottom-[-50%] translate-y-[50%] left-[50%] translate-x-[-50%] w-max"
+                >
+                  SAFE AND SECURE <br />
+                  CHECKOUT
+                </div>
+              </div>
+            </div>
+            <div class="section w-1/4 relative">
+              <div
+                class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"
+              ></div>
+
+              <div
+                class="quality w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center"
+              >
+                <img class="w-[75%] h-[75%]" src="quality.png" alt="" />
+
+                <div
+                  class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute top-[-50%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-max"
+                >
+                  PREMIUM QUALITY <br />
+                  PRODUCT
+                </div>
+              </div>
+            </div>
+            <div class="section w-1/4 relative">
+              <div
+                class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"
+              ></div>
+
+              <div
+                class="return w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center"
+              >
+                <img class="w-[75%] h-[75%]" src="return-box.png" alt="" />
+
+                <div
+                  class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute bottom-[-50%] translate-y-[50%] left-[50%] translate-x-[-50%] w-max"
+                >
+                  7 DAY RETURN
+                </div>
+              </div>
+            </div>
+            <div class="section w-1/4 relative">
+              <div
+                class="shadow w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] bg-white top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute rounded-full blur-[4vw]"
+              ></div>
+
+              <div
+                class="shipping w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] border-2 md:border-[3px] rounded-full bg-gradient-to-r from-orange-500 to-orange-950 absolute top-[100%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center items-center"
+              >
+                <img class="w-[75%] h-[75%]" src="fast-delivery.png" alt="" />
+
+                <div
+                  class="serviceText text-white text-[2vw] md:text-[1.5vw] text-center font-light absolute top-[-50%] translate-y-[-50%] left-[50%] translate-x-[-50%] w-max"
+                >
+                  FREE SHIPPING <br />
+                  NATIONWIDE
+                </div>
+              </div>
+
+              <div class="shadow w-[80px] h-[80px]"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="trendings font-redhat bg-[#242424]">
+          <div
+            class="heading h-[200px] flex flex-col w-max m-auto justify-center my-10"
+          >
+            <h1
+              class="textShadow text-white text-center scale-[4] font-bold w-max relative"
+            >
               TRENDINGS
-              <img class=" w-[30%] absolute top-[-20%]" src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="">
+              <img
+                class="w-[30%] absolute top-[-20%]"
+                src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
+                alt=""
+              />
             </h1>
           </div>
-          
-          <div class="slideContainer  overflow-x-scroll p-5 w-[90%] m-auto ">
-            <div class="slidewrapper trending-wrapper flex w-[100%] h-[250px] min-w-[1700px] relative">
-              <div style="--position:0" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
-                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
-  
-                  <div class="logo w-[25%]">
-                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
-                  </div>
-    
-                  <div class="itemName text-white">
-                    <p>Reflex Play - Smart Watch Amoled...</p>
-                  </div>
-  
-                  <div class=" text-[grey] text-[8px] leading-3">
-                    UNISEX WATCHES
-                  </div>
-  
-                  <div class="price flex gap-2 items-center">
-                    <div class="sp text-white text-sm">&#8377; 2999</div>
-                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
-                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                  </div>
-  
-                  <div class="buttonContainer flex gap-3">
-                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
-                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
-                  </div>
-    
-  
-                </div>
-  
-              </div>
-              <div style="--position:1" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
-                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
-  
-                  <div class="logo w-[25%]">
-                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
-                  </div>
-    
-                  <div class="itemName text-white">
-                    <p>Reflex Play - Smart Watch Amoled...</p>
-                  </div>
-  
-                  <div class=" text-[grey] text-[8px] leading-3">
-                    UNISEX WATCHES
-                  </div>
-  
-                  <div class="price flex gap-2 items-center">
-                    <div class="sp text-white text-sm">&#8377; 2999</div>
-                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
-                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                  </div>
-  
-                  <div class="buttonContainer flex gap-3">
-                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
-                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
-                  </div>
-    
-  
-                </div>
-  
-              </div>
-              <div style="--position:2" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
-                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
-  
-                  <div class="logo w-[25%]">
-                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
-                  </div>
-    
-                  <div class="itemName text-white">
-                    <p>Reflex Play - Smart Watch Amoled...</p>
-                  </div>
-  
-                  <div class=" text-[grey] text-[8px] leading-3">
-                    UNISEX WATCHES
-                  </div>
-  
-                  <div class="price flex gap-2 items-center">
-                    <div class="sp text-white text-sm">&#8377; 2999</div>
-                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
-                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                  </div>
-  
-                  <div class="buttonContainer flex gap-3">
-                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
-                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
-                  </div>
-    
-  
-                </div>
-  
-              </div>
-              <div style="--position:3" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
-                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
-  
-                  <div class="logo w-[25%]">
-                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
-                  </div>
-    
-                  <div class="itemName text-white">
-                    <p>Reflex Play - Smart Watch Amoled...</p>
-                  </div>
-  
-                  <div class=" text-[grey] text-[8px] leading-3">
-                    UNISEX WATCHES
-                  </div>
-  
-                  <div class="price flex gap-2 items-center">
-                    <div class="sp text-white text-sm">&#8377; 2999</div>
-                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
-                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                  </div>
-  
-                  <div class="buttonContainer flex gap-3">
-                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
-                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
-                  </div>
-    
-  
-                </div>
-  
-              </div>
-              <div style="--position:4" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
-                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
-  
-                  <div class="logo w-[25%]">
-                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
-                  </div>
-    
-                  <div class="itemName text-white">
-                    <p>Reflex Play - Smart Watch Amoled...</p>
-                  </div>
-  
-                  <div class=" text-[grey] text-[8px] leading-3">
-                    UNISEX WATCHES
-                  </div>
-  
-                  <div class="price flex gap-2 items-center">
-                    <div class="sp text-white text-sm">&#8377; 2999</div>
-                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
-                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                  </div>
-  
-                  <div class="buttonContainer flex gap-3">
-                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
-                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
-                  </div>
-    
-  
-                </div>
-  
-              </div>
-              
-            </div>
+
+          <div
+            class="slideContainer trending-slideContainer p-5 w-[95%] m-auto"
+          >
+            <div
+              class="slidewrapper trending-wrapper flex w-[100%] h-[250px] min-w-[1700px] relative"
+            ></div>
           </div>
-  
-          <div class="slideContainer2  overflow-x-scroll p-5 w-[90%] m-auto ">
-            <div class="slidewrapper2 flex w-[100%] h-[250px] min-w-[1700px] relative">
-              <div style="--position:0" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
-                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
-  
-                  <div class="logo w-[25%]">
-                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
-                  </div>
-    
-                  <div class="itemName text-white">
-                    <p>Reflex Play - Smart Watch Amoled...</p>
-                  </div>
-  
-                  <div class=" text-[grey] text-[8px] leading-3">
-                    UNISEX WATCHES
-                  </div>
-  
-                  <div class="price flex gap-2 items-center">
-                    <div class="sp text-white text-sm">&#8377; 2999</div>
-                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
-                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                  </div>
-  
-                  <div class="buttonContainer flex gap-3">
-                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
-                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
-                  </div>
-    
-  
-                </div>
-  
-              </div>
-              <div style="--position:1" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
-                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
-  
-                  <div class="logo w-[25%]">
-                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
-                  </div>
-    
-                  <div class="itemName text-white">
-                    <p>Reflex Play - Smart Watch Amoled...</p>
-                  </div>
-  
-                  <div class=" text-[grey] text-[8px] leading-3">
-                    UNISEX WATCHES
-                  </div>
-  
-                  <div class="price flex gap-2 items-center">
-                    <div class="sp text-white text-sm">&#8377; 2999</div>
-                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
-                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                  </div>
-  
-                  <div class="buttonContainer flex gap-3">
-                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
-                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
-                  </div>
-    
-  
-                </div>
-  
-              </div>
-              <div style="--position:2" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
-                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
-  
-                  <div class="logo w-[25%]">
-                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
-                  </div>
-    
-                  <div class="itemName text-white">
-                    <p>Reflex Play - Smart Watch Amoled...</p>
-                  </div>
-  
-                  <div class=" text-[grey] text-[8px] leading-3">
-                    UNISEX WATCHES
-                  </div>
-  
-                  <div class="price flex gap-2 items-center">
-                    <div class="sp text-white text-sm">&#8377; 2999</div>
-                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
-                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                  </div>
-  
-                  <div class="buttonContainer flex gap-3">
-                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
-                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
-                  </div>
-    
-  
-                </div>
-  
-              </div>
-              <div style="--position:3" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
-                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
-  
-                  <div class="logo w-[25%]">
-                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
-                  </div>
-    
-                  <div class="itemName text-white">
-                    <p>Reflex Play - Smart Watch Amoled...</p>
-                  </div>
-  
-                  <div class=" text-[grey] text-[8px] leading-3">
-                    UNISEX WATCHES
-                  </div>
-  
-                  <div class="price flex gap-2 items-center">
-                    <div class="sp text-white text-sm">&#8377; 2999</div>
-                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
-                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                  </div>
-  
-                  <div class="buttonContainer flex gap-3">
-                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
-                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
-                  </div>
-    
-  
-                </div>
-  
-              </div>
-              <div style="--position:4" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
-                <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
-  
-                  <div class="logo w-[25%]">
-                    <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
-                  </div>
-    
-                  <div class="itemName text-white">
-                    <p>Reflex Play - Smart Watch Amoled...</p>
-                  </div>
-  
-                  <div class=" text-[grey] text-[8px] leading-3">
-                    UNISEX WATCHES
-                  </div>
-  
-                  <div class="price flex gap-2 items-center">
-                    <div class="sp text-white text-sm">&#8377; 2999</div>
-                    <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
-                    <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-                  </div>
-  
-                  <div class="buttonContainer flex gap-3">
-                    <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
-                    <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
-                  </div>
-    
-  
-                </div>
-  
-              </div>
-              
-            </div>
+
+          <div
+            class="slideContainer2 trending-slideContainer2 p-5 w-[95%] m-auto"
+          >
+            <div
+              class="slidewrapper2 trending-wrapper2 flex w-[100%] h-[250px] min-w-[1700px] relative"
+            ></div>
           </div>
-  
         </div>
 
         <div class="shopYourVibe my-6">
-          <div class="heading h-[200px] flex flex-col   w-max m-auto justify-center my-10" > 
-            <h1 class="textShadow text-white text-center scale-[4] font-bold w-max relative">
+          <div
+            class="heading h-[200px] flex flex-col w-max m-auto justify-center my-10"
+          >
+            <h1
+              class="textShadow text-white text-center scale-[4] font-bold w-max relative"
+            >
               SHOP YOUR VIBE
-              <img class=" w-[30%] absolute top-[-20%]" src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="">
+              <img
+                class="w-[30%] absolute top-[-20%]"
+                src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
+                alt=""
+              />
             </h1>
           </div>
-  
-          <div class="sliderContainer ">
+
+          <div class="sliderContainer">
             <div class="slider w-[100%] h-max relative">
-              <img class="w-[100%] opacity-0 overflow-hidden" src="https://res.cloudinary.com/dojcchveo/image/upload/v1721241839/fastrack/banners/qpgmgsigxigwno2czk1y.jpg" alt="">
-              <div class="slide1 absolute z-[3] h-[100%] w-[100%] flex top-0 ">
-  
-                <div class="image h-[100%] w-[20%]  bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241842/fastrack/banners/gw3jzocqzvmm7yi06ym1.jpg')] bg-[length:500%_100%] "></div>
-  
-                <div class="image h-[100%] w-[20%]  bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241842/fastrack/banners/gw3jzocqzvmm7yi06ym1.jpg')] bg-[length:500%_100%] bg-[25%] "></div>
-  
-                <div class="image h-[100%] w-[20%]  bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241842/fastrack/banners/gw3jzocqzvmm7yi06ym1.jpg')] bg-[length:500%_100%] bg-[50%] "></div>
-  
-                <div class="image h-[100%] w-[20%]  bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241842/fastrack/banners/gw3jzocqzvmm7yi06ym1.jpg')] bg-[length:500%_100%] bg-[75%]"></div>
-  
-                <div class="image h-[100%] w-[20%]  bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241842/fastrack/banners/gw3jzocqzvmm7yi06ym1.jpg')] bg-[length:500%_100%] bg-[100%]"></div>
-                
+              <img
+                class="w-[100%] opacity-0 overflow-hidden"
+                src="https://res.cloudinary.com/dojcchveo/image/upload/v1721241839/fastrack/banners/qpgmgsigxigwno2czk1y.jpg"
+                alt=""
+              />
+              <div class="slide1 absolute z-[3] h-[100%] w-[100%] flex top-0">
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241842/fastrack/banners/gw3jzocqzvmm7yi06ym1.jpg')] bg-[length:500%_100%]"
+                ></div>
+
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241842/fastrack/banners/gw3jzocqzvmm7yi06ym1.jpg')] bg-[length:500%_100%] bg-[25%]"
+                ></div>
+
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241842/fastrack/banners/gw3jzocqzvmm7yi06ym1.jpg')] bg-[length:500%_100%] bg-[50%]"
+                ></div>
+
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241842/fastrack/banners/gw3jzocqzvmm7yi06ym1.jpg')] bg-[length:500%_100%] bg-[75%]"
+                ></div>
+
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241842/fastrack/banners/gw3jzocqzvmm7yi06ym1.jpg')] bg-[length:500%_100%] bg-[100%]"
+                ></div>
               </div>
-              <div class="slide2 absolute z-[2] h-[100%] w-[100%] flex top-0 ">
-  
-                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241844/fastrack/banners/rogwfdl2195g01yasv6e.jpg')] bg-[length:500%_100%] "></div>
-  
-                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241844/fastrack/banners/rogwfdl2195g01yasv6e.jpg')] bg-[length:500%_100%] bg-[25%] "></div>
-  
-                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241844/fastrack/banners/rogwfdl2195g01yasv6e.jpg')] bg-[length:500%_100%] bg-[50%] "></div>
-  
-                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241844/fastrack/banners/rogwfdl2195g01yasv6e.jpg')] bg-[length:500%_100%] bg-[75%]"></div>
-  
-                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241844/fastrack/banners/rogwfdl2195g01yasv6e.jpg')] bg-[length:500%_100%] bg-[100%]"></div>
-                
+              <div class="slide2 absolute z-[2] h-[100%] w-[100%] flex top-0">
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241844/fastrack/banners/rogwfdl2195g01yasv6e.jpg')] bg-[length:500%_100%]"
+                ></div>
+
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241844/fastrack/banners/rogwfdl2195g01yasv6e.jpg')] bg-[length:500%_100%] bg-[25%]"
+                ></div>
+
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241844/fastrack/banners/rogwfdl2195g01yasv6e.jpg')] bg-[length:500%_100%] bg-[50%]"
+                ></div>
+
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241844/fastrack/banners/rogwfdl2195g01yasv6e.jpg')] bg-[length:500%_100%] bg-[75%]"
+                ></div>
+
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241844/fastrack/banners/rogwfdl2195g01yasv6e.jpg')] bg-[length:500%_100%] bg-[100%]"
+                ></div>
               </div>
-              <div class="slide3 absolute z-[1] h-[100%] w-[100%] flex top-0 ">
-  
-                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241839/fastrack/banners/qpgmgsigxigwno2czk1y.jpg')] bg-[length:500%_100%] "></div>
-  
-                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241839/fastrack/banners/qpgmgsigxigwno2czk1y.jpg')] bg-[length:500%_100%] bg-[25%] "></div>
-  
-                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241839/fastrack/banners/qpgmgsigxigwno2czk1y.jpg')] bg-[length:500%_100%] bg-[50%] "></div>
-  
-                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241839/fastrack/banners/qpgmgsigxigwno2czk1y.jpg')] bg-[length:500%_100%] bg-[75%]"></div>
-  
-                <div class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241839/fastrack/banners/qpgmgsigxigwno2czk1y.jpg')] bg-[length:500%_100%] bg-[100%]"></div>
-                
+              <div class="slide3 absolute z-[1] h-[100%] w-[100%] flex top-0">
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241839/fastrack/banners/qpgmgsigxigwno2czk1y.jpg')] bg-[length:500%_100%]"
+                ></div>
+
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241839/fastrack/banners/qpgmgsigxigwno2czk1y.jpg')] bg-[length:500%_100%] bg-[25%]"
+                ></div>
+
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241839/fastrack/banners/qpgmgsigxigwno2czk1y.jpg')] bg-[length:500%_100%] bg-[50%]"
+                ></div>
+
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241839/fastrack/banners/qpgmgsigxigwno2czk1y.jpg')] bg-[length:500%_100%] bg-[75%]"
+                ></div>
+
+                <div
+                  class="image h-[100%] w-[20%] bg-[url('https://res.cloudinary.com/dojcchveo/image/upload/v1721241839/fastrack/banners/qpgmgsigxigwno2czk1y.jpg')] bg-[length:500%_100%] bg-[100%]"
+                ></div>
               </div>
-              
             </div>
-  
-            
-  
           </div>
-  
-          
-  
-  
         </div>
 
-        <div class="bestSeller">
+        <div class="bestSeller font-redhat">
           <div
             class="heading h-[200px] flex flex-col w-max m-auto justify-center my-7"
           >
@@ -990,19 +849,17 @@
             >
               BEST SELLERS
               <img
-                class="w-[30%] absolute top-[-10%]"
-                src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png"
+                class="w-[25%] absolute top-[-8%]"
+                src="https://res.cloudinary.com/dojcchveo/image/upload/v1720950430/fastrack/t9tmr1zpecmjeuxgd29n.png"
                 alt=""
               />
             </h1>
           </div>
 
-          <div class="slideContainer font-poppins py-2 sm:py-4 w-[95%] m-auto">
+          <div class="slideContainer py-2 sm:py-4 w-[95%] m-auto">
             <div
               class="slidewrapper bs-wrapper grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 w-full relative gap-3 sm:gap-6 overflow-hidden"
-            >
-
-            </div>
+            ></div>
           </div>
         </div>
 

@@ -5,7 +5,8 @@ export default {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
-        oswald: ['Oswald', 'sans-serif']
+        oswald: ['Oswald', 'sans-serif'],
+        redhat: ['Red Hat Display', 'sans-serif'],
       },
       screens: {
         'custom': '415px',

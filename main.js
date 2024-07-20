@@ -315,14 +315,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //BestSeller
-async function bestSeller(){
+async function bestSeller() {
   const res = await fetch("http://localhost:5173/assets.json");
   const data = await res.json();
-  const arr = data.Bestseller
-  const wrapper = document.querySelector('.bs-wrapper')
+  const arr = data.Bestseller;
+  const wrapper = document.querySelector(".bs-wrapper");
 
   arr.forEach((element) => {
-    wrapper.innerHTML = wrapper.innerHTML + `
+    wrapper.innerHTML =
+      wrapper.innerHTML +
+      `
         <div
                 class="bestSeller-slide h-[340px] custom:h-[400px] relative rounded-xl bg-[#1D1C1C] overflow-hidden"
               >
@@ -375,11 +377,11 @@ async function bestSeller(){
                   </div>
                 </div>
               </div>
-    `
+    `;
   });
 }
 
-bestSeller()
+bestSeller();
 
 //Category
 document.querySelector(".l-btn1").addEventListener("mousemove", function () {
@@ -516,44 +518,92 @@ document.querySelector(".r-btn2").addEventListener("mouseleave", function () {
   document.querySelector(".content-4").style.filter = "blur(10px)";
 });
 
-//Trending
-// async function fillTrending(){
-//   const res = await fetch("http://localhost:5173/assets.json");
-//   const data = await res.json();
-//   const arr = data.trending
-//   const wrapper = document.querySelector('.trending-wrapper');
-//     arr.forEach((element, idx) => {
-//     wrapper.innerHTML = wrapper.innerHTML + `
-//                     <div style="--position:${idx}" class="slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[30px] bg-[#100F0F] p-3 ">
-//                 <div class="desc flex flex-col w-[60%] justify-between p-3 h-[90%] font-bold">
-  
-//                   <div class="logo w-[25%]">
-//                     <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720890348/fastrack/e9y958nw6dfchk7tdczq.png" alt="logo">
-//                   </div>
-    
-//                   <div class="itemName text-white">
-//                     <p>${element.name}</p>
-//                   </div>
-  
-//                   <div class=" text-[grey] text-[8px] leading-3">
-//                     ${element.cate}
-//                   </div>
-  
-//                   <div class="price flex gap-2 items-center">
-//                     <div class="sp text-white text-sm">&#8377; ${element.price}</div>
-//                     <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
-//                     <div class="discount text-[#FF721D] text-xs">62% OFF</div>
-//                   </div>
-  
-//                   <div class="buttonContainer flex gap-3">
-//                     <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
-//                     <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
-//                   </div>
-    
-  
-//                 </div>
-  
-//               </div>
-//     `
-//     })
-// }
+// Trending
+async function fillTrending() {
+  const res = await fetch("http://localhost:5173/assets.json");
+  const data = await res.json();
+  const arr = data.trending;
+  const wrapper = document.querySelector(".trending-wrapper");
+  const wrapper2 = document.querySelector(".trending-wrapper2");
+  for (let i = 0; i < 5; i++) {
+    wrapper.innerHTML =
+      wrapper.innerHTML +
+      `
+        <div style="--position:${i}" class="slide trending-slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[20px] bg-[#100F0F] p-3 relative">
+    <div class="desc flex flex-col w-[60%] justify-between p-3 h-full font-bold">
+
+      <div class="logo w-[30%]">
+        <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720950430/fastrack/t9tmr1zpecmjeuxgd29n.png" alt="logo">
+      </div>
+
+      <div class="itemName text-white">
+        <p>${arr[i].name.slice(0, 35)}...</p>
+      </div>
+
+      <div class=" text-[grey] text-[9px] leading-3">
+        ${arr[i].cate}
+      </div>
+
+      <div class="price flex gap-2 items-center">
+        <div class="sp text-white text-sm">&#8377; ${arr[i].price}</div>
+        <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
+        <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+      </div>
+
+      <div class="buttonContainer flex gap-3 text-white">
+        <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+        <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+      </div>
+
+    </div>
+
+    <div class="watch-img absolute transition-all duration-500 w-[45%] h-[110%] top-1/2 -right-[7%] -translate-y-1/2">
+      <img class="h-full object-cover "  src="${arr[i].img}" alt="">
+    </div>
+
+    </div>   
+    `;
+  }
+
+  for(let i=5; i<10; i++){
+    wrapper2.innerHTML =
+      wrapper2.innerHTML +
+      `
+        <div style="--position:${i-5}" class="slide trending-slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[20px] bg-[#100F0F] p-3 relative">
+    <div class="desc flex flex-col w-[60%] justify-between p-3 h-full font-bold">
+
+      <div class="logo w-[30%]">
+        <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720950430/fastrack/t9tmr1zpecmjeuxgd29n.png" alt="logo">
+      </div>
+
+      <div class="itemName text-white">
+        <p>${arr[i].name.slice(0, 35)}...</p>
+      </div>
+
+      <div class=" text-[grey] text-[9px] leading-3">
+        ${arr[i].cate}
+      </div>
+
+      <div class="price flex gap-2 items-center">
+        <div class="sp text-white text-sm">&#8377; ${arr[i].price}</div>
+        <div class="mrp line-through text-[grey] text-sm">&#8377; 7000</div>
+        <div class="discount text-[#FF721D] text-xs">62% OFF</div>
+      </div>
+
+      <div class="buttonContainer flex gap-3 text-white">
+        <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+        <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+      </div>
+
+    </div>
+
+    <div class="watch-img absolute transition-all duration-500 w-[45%] h-[110%] top-1/2 -right-[7%] -translate-y-1/2">
+      <img class="h-full object-cover "  src="${arr[i].img}" alt="">
+    </div>
+
+    </div>   
+    `;
+  }
+}
+
+fillTrending();
