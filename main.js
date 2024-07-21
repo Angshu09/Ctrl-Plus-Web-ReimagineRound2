@@ -321,10 +321,10 @@ gsap.to('.page1 .video ',{
     pin:true,
     scrub:2,
     start:'top top',
-    end:'90% top',
+    end:'100% top',
     trigger:'.page1 .video',
     scroller:`#main`,
-    markers:false
+    markers:true
 
 
   }
@@ -960,3 +960,33 @@ async function bestSeller() {
 }
 
 bestSeller();
+
+function videoRatio(){
+  const width= window.innerWidth;
+  const height=window.innerHeight;
+  console.log(width , height)
+  const video=document.querySelector('.page1');
+
+  console.log((4/3).toFixed(2), (3/4).toFixed(2));
+
+  function resizeVdo(){
+
+  const width= window.innerWidth;
+      const height=window.innerHeight;
+      console.log((width/height).toFixed(2) , (height/width).toFixed(2))
+      let hRatio=width/height;
+      let vRatio=height/width;
+
+      if(hRatio>vRatio){
+          video.style.aspectRatio=16/9;
+      }else{
+          video.style.aspectRatio=9/16;
+
+      }
+
+  }
+  resizeVdo()
+  
+  window.addEventListener('resize', resizeVdo)
+}
+videoRatio()
