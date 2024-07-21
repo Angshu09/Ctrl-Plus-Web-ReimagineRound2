@@ -808,7 +808,7 @@ async function fillTrending() {
     wrapper.innerHTML =
       wrapper.innerHTML +
       `
-        <div style="--position:${i}" class="slide trending-slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[20px] bg-[#100F0F] p-3 relative">
+        <div style="--position:${i}" class="slide trending-slide max-w-[400px] h-[250px] w-[98vw] border border-[#FF721D] rounded-[20px] bg-[#100F0F] p-3 relative">
     <div class="desc flex flex-col w-[60%] justify-between p-3 h-full font-bold">
 
       <div class="logo w-[30%]">
@@ -848,7 +848,7 @@ async function fillTrending() {
     wrapper2.innerHTML =
       wrapper2.innerHTML +
       `
-        <div style="--position:${i-5}" class="slide trending-slide max-w-[400px] h-[250px] w-[100%] border border-[#FF721D] rounded-[20px] bg-[#100F0F] p-3 relative">
+        <div style="--position:${i-5}" class="slide trending-slide max-w-[400px] h-[250px] w-[98vw] border border-[#FF721D] rounded-[20px] bg-[#100F0F] p-3 relative">
     <div class="desc flex flex-col w-[60%] justify-between p-3 h-full font-bold">
 
       <div class="logo w-[30%]">

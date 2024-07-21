@@ -9,7 +9,7 @@ export default {
         redhat: ['Red Hat Display', 'sans-serif'],
       },
       screens: {
-        'custom': '415px',
+        'custom': '450px',
         'custom2': '885px'
       },
     },
