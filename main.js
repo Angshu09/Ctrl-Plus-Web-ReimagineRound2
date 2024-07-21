@@ -556,6 +556,9 @@ function bestSellerAnimation(){
   
   })
   
+  const slide=document.querySelectorAll('.bestSeller .bestSeller-slide')
+  console.log(slide)
+  
   gsap.from('.bestSeller .bestSeller-slide',{
     opacity:0,
     scale:0,
@@ -575,7 +578,7 @@ function bestSellerAnimation(){
   
 
 }
-bestSellerAnimation();
+// bestSellerAnimation();
 
 
 function whyUs(){
@@ -952,6 +955,8 @@ async function bestSeller() {
               </div>
     `;
   });
+
+  bestSellerAnimation()
 }
 
 bestSeller();
