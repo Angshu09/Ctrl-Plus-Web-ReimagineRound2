@@ -610,7 +610,7 @@ function whyUs(){
   },'a')
 
   //method 2
-gsap.to('.why-heading .center',{
+tlWhy.to('.why-heading .center',{
   scrollTrigger:{
     trigger:'.why-heading .center',
     pin:true,
