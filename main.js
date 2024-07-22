@@ -216,14 +216,16 @@ function scrollHorizontal(){
   }, "<")
 
 
-
+  let listX=['0','-50vw','-50vw'];
+  let listY=['-50vh','50vh','-50vh'];
+  let listRotate=['0deg','45deg','-45deg'];
 
   sections.forEach((stop, index)=> {
 
     if(index===0){
 
       tlScroll.from(stop.querySelector('.image'),{
-        x:'-40vw',
+        x:'-50vw',
         rotate:'-180deg',
         scrollTrigger:{
           trigger:stop.querySelector('.image'),
@@ -237,9 +239,9 @@ function scrollHorizontal(){
     }else{
 
       tlScroll.from(stop.querySelector('.image'),{
-        x:'-40vw',
-        rotate:'-180deg',
-        opacity:0,
+        x:listX[index-1],
+        rotate:listRotate[index-1],
+        y:listY[index-1],
         scrollTrigger:{
           trigger:stop.querySelector('.image'),
           containerAnimation:tlScroll,
@@ -792,9 +794,25 @@ function videoRatio(){
         
     }else{
         video.style.aspectRatio=9/16;
-        scrollAspect.src='https://res.cloudinary.com/dojcchveo/image/upload/v1721617381/fastrack/banners/npye5jpcankbycttov4o.png';
+        scrollAspect.src='https://res.cloudinary.com/dojcchveo/image/upload/v1721630133/fastrack/banners/ryx2jx15eq1nh8qghifv.jpg';
         slider1.forEach((element, idx) => {
-          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721617381/fastrack/banners/npye5jpcankbycttov4o.png')`;
+          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721630133/fastrack/banners/ryx2jx15eq1nh8qghifv.jpg')`;
+
+          element.style.backgroundPosition=`${25 * idx}%`;
+          element.style.backgroundSize=`500% 100%`;
+          // element.style.border='1px solid red'
+          
+        });
+        slider2.forEach((element, idx) => {
+          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721630133/fastrack/banners/qtswpv9pevjy4tcsrswf.jpg')`;
+
+          element.style.backgroundPosition=`${25 * idx}%`;
+          element.style.backgroundSize=`500% 100%`;
+          // element.style.border='1px solid red'
+          
+        });
+        slider3.forEach((element, idx) => {
+          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721630132/fastrack/banners/vjiuqpautekmlmlrskcq.jpg')`;
 
           element.style.backgroundPosition=`${25 * idx}%`;
           element.style.backgroundSize=`500% 100%`;
@@ -812,75 +830,6 @@ function videoRatio(){
   window.addEventListener('resize', resizeVdo)
 }
 videoRatio()
-
-
-// function whyUs(){
-
-//   const tlWhy=gsap.timeline({
-//     scrollTrigger:{
-//       trigger:'.page10 canvas',
-//       start:'50% 50%',
-//       end:'100% 50%',
-//       scrub:2,
-//       pin:true,
-//       markers:false,
-//       scroller:'#main'
-//     }
-//   })
-  
-//   tlWhy.to('.top',{
-//     top:'-50%',
-//   },'a')
-//   tlWhy.to('.bottom',{
-//     bottom:'-90%',
-//     zIndex:-1,
-//   },'a')
-//   tlWhy.to('.top-h',{
-//     top:'70%',
-//   },'a')
-//   tlWhy.to('.bottom-h',{
-//     top:'-70%',
-//   },'a')
-
- 
-
-// // const tlWatch=gsap.timeline({
-// //   scrollTrigger:{
-// //     trigger:'.page11 .sec-2',
-// //     start:'50% 90%',
-// //     end:'50% 50%',
-// //     scrub:true,
-// //     markers:false,
-// //     scroller:'#main'
-// //   }
-// // })
-
-// // tlWatch.to('.watchImage',{
-// //  top:'100%',
-// //  left:'0%'
-
-// // })
-
-// // const tlWatch2=gsap.timeline({
-// //   scrollTrigger:{
-// //     trigger:'.page11 .sec-3',
-// //     start:'50% 90%',
-// //     end:'50% 50%',
-// //     scrub:true,
-// //     markers:false,
-// //     scroller:'#main'
-// //   }
-// // })
-
-// // tlWatch2.to('.watchImage',{
-// //   top:'200%',
-// //   left:'60%'
- 
-// //  })
-
-  
-
-// }
 
 
 
