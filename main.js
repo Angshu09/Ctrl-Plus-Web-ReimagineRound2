@@ -58,19 +58,19 @@ function loader(){
 loaderTl.from('.loader .fastrack',{
   width:0,
   opacity:0,
-  duration:1,
+  duration:.5,
   delay:0.2,
 
 })
 loaderTl.to('.loader .upText',{
   width:'100%',
-  duration:2,
+  duration:1.5,
 })
 loaderTl.to('.loadText',{
   opacity:0,
   scale:0,
   // rotate:720,
-  duration:1,
+  duration:.75,
   delay:0.3
 })
 loaderTl.to('.dialCircle',{
@@ -847,70 +847,70 @@ window.addEventListener('resize', function(){
 })
 
 function files(index){
-  var data=`./feature/feature_000.jpg
-  ./feature/feature_001.jpg
-  ./feature/feature_002.jpg
-  ./feature/feature_003.jpg
-  ./feature/feature_004.jpg
-  ./feature/feature_005.jpg
-  ./feature/feature_006.jpg
-  ./feature/feature_007.jpg
-  ./feature/feature_008.jpg
-  ./feature/feature_009.jpg
-  ./feature/feature_010.jpg
-  ./feature/feature_011.jpg
-  ./feature/feature_012.jpg
-  ./feature/feature_013.jpg
-  ./feature/feature_014.jpg
-  ./feature/feature_015.jpg
-  ./feature/feature_016.jpg
-  ./feature/feature_017.jpg
-  ./feature/feature_018.jpg
-  ./feature/feature_019.jpg
-  ./feature/feature_020.jpg
-  ./feature/feature_021.jpg
-  ./feature/feature_022.jpg
-  ./feature/feature_023.jpg
-  ./feature/feature_024.jpg
-  ./feature/feature_025.jpg
-  ./feature/feature_026.jpg
-  ./feature/feature_027.jpg
-  ./feature/feature_028.jpg
-  ./feature/feature_029.jpg
-  ./feature/feature_030.jpg
-  ./feature/feature_031.jpg
-  ./feature/feature_032.jpg
-  ./feature/feature_033.jpg
-  ./feature/feature_034.jpg
-  ./feature/feature_035.jpg
-  ./feature/feature_036.jpg
-  ./feature/feature_037.jpg
-  ./feature/feature_038.jpg
-  ./feature/feature_039.jpg
-  ./feature/feature_040.jpg
-  ./feature/feature_041.jpg
-  ./feature/feature_042.jpg
-  ./feature/feature_043.jpg
-  ./feature/feature_044.jpg
-  ./feature/feature_045.jpg
-  ./feature/feature_046.jpg
-  ./feature/feature_047.jpg
-  ./feature/feature_048.jpg
-  ./feature/feature_049.jpg
-  ./feature/feature_050.jpg
-  ./feature/feature_051.jpg
-  ./feature/feature_052.jpg
-  ./feature/feature_052.jpg
-  ./feature/feature_054.jpg
-  ./feature/feature_055.jpg
-  ./feature/feature_056.jpg
-  ./feature/feature_057.jpg
-  ./feature/feature_058.jpg
-  ./feature/feature_059.jpg
-  ./feature/feature_060.jpg
-  ./feature/feature_061.jpg
-  ./feature/feature_062.jpg
-  ./feature/feature_063.jpg
+  var data=`https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_000.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_001.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_002.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_003.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_004.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_005.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_006.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_007.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_008.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_009.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_010.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_011.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_012.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_013.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_014.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_015.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_016.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_017.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_018.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_019.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_020.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_021.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_022.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_023.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_024.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_025.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_026.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_027.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_028.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_029.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_030.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_031.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_032.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_033.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_034.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_035.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_036.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_037.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_038.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_039.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_040.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_041.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_042.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_043.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_044.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_045.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_046.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_047.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_048.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_049.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_050.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_051.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_052.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_052.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_054.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_055.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_056.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_057.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_058.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_059.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_060.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_061.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_062.jpg
+  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_063.jpg
 
   `
   return data.split("\n")[index];
@@ -987,39 +987,7 @@ let canvasTl=gsap.timeline({
 
 
 
-// gsap.to('.page11',{
-//   scrollTrigger:{
-//     trigger:'.page11',
-//     start:'top top',
-//     end:'bottom top',
-//     markers:false,
-//     pin:true,
-//     scroller:'#main'
-//   }
 
-// })
-// gsap.to('.page12',{
-//   scrollTrigger:{
-//     trigger:'.page12',
-//     start:'top top',
-//     end:'bottom top',
-//     markers:false,
-//     pin:true,
-//     scroller:'#main'
-//   }
-
-// })
-// gsap.to('.page13',{
-//   scrollTrigger:{
-//     trigger:'.page13',
-//     start:'top top',
-//     end:'bottom top',
-//     markers:false,
-//     pin:true,
-//     scroller:'#main'
-//   }
-
-// })
 
 let tlWhy=gsap.timeline({
 
@@ -1038,7 +1006,8 @@ if(window.innerWidth>1023){
   tlWhy.to('.imageWhy',{
     top:'100vh',
     left:'0',
-    translateY:'50%'
+    translateY:'50%',
+    zIndex:5,
     
   })
 }

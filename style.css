@@ -56,12 +56,12 @@
     position:absolute;
     width: inherit;
     height: inherit;
-    background: #f8cb9ea9;
-    border-radius: 0 40% 40% 0;
+    background: #e6ddd3a9;
+    border-radius: 0 45% 45% 0;
     transform: scale(1.5); 
     z-index: -2;
     backdrop-filter: blur(5px);
-    box-shadow: 2px 0 2px rgba(255, 255, 255, 0.337);
+    /* box-shadow: 2px 0 2px rgba(255, 255, 255, 0.337); */
     
     
   }
@@ -71,10 +71,10 @@
     width:calc(100% - 2px);
     height: calc(100% - 2px);
     background: #100F0F;
-    border-radius: 0 40% 40% 0; 
+    border-radius: 0 45% 45% 0; 
     transform: scale(1.5);
     z-index: -1;
-    opacity: .3;
+    opacity: .35;
     transition: opacity .3s;
     
   }
@@ -88,14 +88,39 @@
     top: 0;
     left: 2em;
     width: 350px;
-    /* height: 500px; */
+    /* height: 350px; */
     /* transform: rotate(-45deg); */
     /* border:1px solid red */
+
+  }
+  nav ul.submenu:before{
+    content:'';
+    width:550px;
+    height: 550px;
+    background: rgba(255, 255, 255, 0.19);
+    border: .5px solid rgba(255, 255, 255, 0.43);
+    top:0;
+    left:0;
+    transform: translateX(-100%) translateY(-100%);
+    position: absolute;
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    transition: transform .7s, opacity .2s;
+    opacity: 0;
+    /* filter: blur(2px); */
+    /* border:0.5px solid white */
   }
   
-  nav > input:checked ~ ul li{
+  nav > input:checked ~ ul li 
+  {
     transform: rotate(calc((90deg / 4)* var( --item))) translateX(0);
     opacity: 1;
+  }
+  nav > input:checked ~ ul.submenu:before{
+    /* border:1px solid white; */
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+
   }
   
   nav ul.submenu li{
@@ -105,9 +130,9 @@
     height: 60px;
     transform: rotate(calc((90deg / 4)* var( --item))) translateX(-157px);
     transform-origin: left center;
-    /* border-right: 2px solid #d64312; */
-    padding: 3px;
-    text-align: end;
+    /* border: 2px solid #d64312; */
+    padding: 2px;
+    /* text-align: end; */
     display: flex;
     justify-content: end;
     align-items: center;
@@ -138,8 +163,8 @@
   nav ul li a{
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     
   }
   
@@ -157,18 +182,22 @@
   nav ul li a:hover i{
     background-color: transparent;
     border-color: #ff721d;
+    /* transform: scale(1.5); */
+    width: 46px;
+    height: 46px;
   }
   
   nav ul li a span{
     position: absolute;
     left: calc(100% + 1em);
     text-align: left;
-    font-size: 13px;
-    padding: 0 10px;
+    font-size: 15px;
+    padding:3px 10px;
     background-image: linear-gradient(to right , #ff721d 25%, transparent);
     border-radius: 25px;
     z-index: -99;
     transition: color 3s;
+    color: rgb(229, 216, 193);
   }
   
   nav ul li a span::before{
