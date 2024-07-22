@@ -751,23 +751,60 @@ function videoRatio(){
   const height=window.innerHeight;
   console.log(width , height)
   const video=document.querySelector('.page1');
+  const scrollAspect=document.querySelector('.scroll-aspect');
+  const slider1=document.querySelectorAll('.shopYourVibe .slide1 .image');
+  const slider2=document.querySelectorAll('.shopYourVibe .slide2 .image');
+  const slider3=document.querySelectorAll('.shopYourVibe .slide3 .image');
 
-  console.log((4/3).toFixed(2), (3/4).toFixed(2));
 
   function resizeVdo(){
 
-  const width= window.innerWidth;
-      const height=window.innerHeight;
-      console.log((width/height).toFixed(2) , (height/width).toFixed(2))
-      let hRatio=width/height;
-      let vRatio=height/width;
+    const width= window.innerWidth;
+    const height=window.innerHeight;
+    console.log((width/height).toFixed(2) , (height/width).toFixed(2))
+    let hRatio=width/height;
+    let vRatio=height/width;
 
-      if(hRatio>vRatio){
-          video.style.aspectRatio=16/9;
-      }else{
-          video.style.aspectRatio=9/16;
+    if(hRatio>vRatio){
+        video.style.aspectRatio=16/9;
+        scrollAspect.src='https://res.cloudinary.com/dojcchveo/image/upload/v1721583960/fastrack/banners/vtt7rouncnxz1jblsv8m.png';
+        slider1.forEach((element, idx) => {
+          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721583960/fastrack/banners/vtt7rouncnxz1jblsv8m.png')`;
+          
+          element.style.backgroundPosition=`${25 * idx}%`;
+          element.style.backgroundSize=`500% 100%`
+          
+        });
+        slider2.forEach((element, idx) => {
+          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721583805/fastrack/banners/zohhaerwgyys3vg0ruep.png')`;
+          
+          element.style.backgroundPosition=`${25 * idx}%`;
+          element.style.backgroundSize=`500% 100%`
+          
+        });
+        slider3.forEach((element, idx) => {
+          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721583920/fastrack/banners/haaelk4f1ekfo5w4ycp0.png')`;
+          
+          element.style.backgroundPosition=`${25 * idx}%`;
+          element.style.backgroundSize=`500% 100%`
+          
+        });
+        
+    }else{
+        video.style.aspectRatio=9/16;
+        scrollAspect.src='https://res.cloudinary.com/dojcchveo/image/upload/v1721617381/fastrack/banners/npye5jpcankbycttov4o.png';
+        slider1.forEach((element, idx) => {
+          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721617381/fastrack/banners/npye5jpcankbycttov4o.png')`;
 
-      }
+          element.style.backgroundPosition=`${25 * idx}%`;
+          element.style.backgroundSize=`500% 100%`;
+          // element.style.border='1px solid red'
+          
+        });
+        
+
+
+    }
 
   }
   resizeVdo()

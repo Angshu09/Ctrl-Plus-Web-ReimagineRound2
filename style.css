@@ -22,6 +22,7 @@
     position: relative;
     overflow: hidden;
     background-color: #100F0F;
+    cursor:none;
   }
   ::before, ::after{
     box-sizing: border-box;
@@ -412,6 +413,14 @@
     background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
   
   }
+
+  /* .shopYourVibe .slide1 .image:nth-child(2){
+    background-position: 25%;
+    border:1px solid red;
+    background-size: ; 
+
+
+  } */
   
   
   @keyframes autoRun {
