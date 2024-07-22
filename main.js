@@ -51,149 +51,7 @@ main.addEventListener('mousemove',(event)=>{
 })
 
 
-function canvas(){
-
-  const canvas= document.querySelector("canvas");
-const context=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-window.addEventListener('resize', function(){
-  canvas.width=window.innerWidth;
-  canvas.height=window.innerHeight;
-  render();
-})
-
-function files(index){
-  var data=`./feature/feature_000.jpg
-  ./feature/feature_001.jpg
-  ./feature/feature_002.jpg
-  ./feature/feature_003.jpg
-  ./feature/feature_004.jpg
-  ./feature/feature_005.jpg
-  ./feature/feature_006.jpg
-  ./feature/feature_007.jpg
-  ./feature/feature_008.jpg
-  ./feature/feature_009.jpg
-  ./feature/feature_010.jpg
-  ./feature/feature_011.jpg
-  ./feature/feature_012.jpg
-  ./feature/feature_013.jpg
-  ./feature/feature_014.jpg
-  ./feature/feature_015.jpg
-  ./feature/feature_016.jpg
-  ./feature/feature_017.jpg
-  ./feature/feature_018.jpg
-  ./feature/feature_019.jpg
-  ./feature/feature_020.jpg
-  ./feature/feature_021.jpg
-  ./feature/feature_022.jpg
-  ./feature/feature_023.jpg
-  ./feature/feature_024.jpg
-  ./feature/feature_025.jpg
-  ./feature/feature_026.jpg
-  ./feature/feature_027.jpg
-  ./feature/feature_028.jpg
-  ./feature/feature_029.jpg
-  ./feature/feature_030.jpg
-  ./feature/feature_031.jpg
-  ./feature/feature_032.jpg
-  ./feature/feature_033.jpg
-  ./feature/feature_034.jpg
-  ./feature/feature_035.jpg
-  ./feature/feature_036.jpg
-  ./feature/feature_037.jpg
-  ./feature/feature_038.jpg
-  ./feature/feature_039.jpg
-  ./feature/feature_040.jpg
-  ./feature/feature_041.jpg
-  ./feature/feature_042.jpg
-  ./feature/feature_043.jpg
-  ./feature/feature_044.jpg
-  ./feature/feature_045.jpg
-  ./feature/feature_046.jpg
-  ./feature/feature_047.jpg
-  ./feature/feature_048.jpg
-  ./feature/feature_049.jpg
-  ./feature/feature_050.jpg
-  ./feature/feature_051.jpg
-  ./feature/feature_052.jpg
-  ./feature/feature_052.jpg
-  ./feature/feature_054.jpg
-  ./feature/feature_055.jpg
-  ./feature/feature_056.jpg
-  ./feature/feature_057.jpg
-  ./feature/feature_058.jpg
-  ./feature/feature_059.jpg
-  ./feature/feature_060.jpg
-  ./feature/feature_061.jpg
-  ./feature/feature_062.jpg
-  ./feature/feature_063.jpg
-
-  `
-  return data.split("\n")[index];
-}
-const frameCount=64//no. of images
-
-const images=[];
-const imageSeq={
-  frame:1,
-}
-
-for (let i = 0; i < frameCount; i++) {
-  const img= new Image();
-  img.src=files(i);
-  images.push(img);
-}
-
-gsap.to(imageSeq,{
-  frame:frameCount-1,
-  snap:'frame',
-  ease:`none`,
-  scrollTrigger:{
-    scrub:0.2,
-    trigger:`.why-heading .center`,
-    start:'50% 0%',
-    end:'400% 50%',
-    scroller:`#main`,
-  },
-  onUpdate:render,
-
-})
-images[1].onload=render;
-
-function render(){
-  scaleImage(images[imageSeq.frame], context);
-}
-
-function scaleImage(img,ctx){
-  var canvas=ctx.canvas;
-  var hRatio=canvas.width/img.width;
-  var vRatio=canvas.height/img.height;
-  var ratio=Math.max(hRatio, vRatio);
-  var centerShift_x=(canvas.width - img.width *ratio)/2;
-  var centerShift_y=(canvas.height-img.height*ratio)/2;
-  ctx.clearRect(0,0, canvas.width, canvas.height);
-  ctx.drawImage(
-    img,
-    0,
-    0,
-    img.width,
-    img.height,
-    centerShift_x,
-    centerShift_y,
-    img.width*ratio,
-    img.height*ratio,
-  )
-}
-
-}
-
-canvas()
-
-
-
+//loader Animation
 function loader(){
 
   const loaderTl=gsap.timeline();
@@ -324,7 +182,7 @@ gsap.to('.page1 .video ',{
     end:'100% top',
     trigger:'.page1 .video',
     scroller:`#main`,
-    markers:true
+    markers:false
 
 
   }
@@ -332,68 +190,68 @@ gsap.to('.page1 .video ',{
 
 
 
-
+//Horizontal scroll Animation
 function scrollHorizontal(){
 
   const slider=document.querySelector('.wrapper');
-const sections=gsap.utils.toArray('.horizontalScroll .wrapper .slide');
+  const sections=gsap.utils.toArray('.horizontalScroll .wrapper .slide');
 
-const tlScroll=gsap.timeline({
-  default:{
-    ease:'none'
-  },
-  scrollTrigger:{
-    trigger:slider,
-    scroller:'#main',
-    pin:true,
-    scrub:2,
-    start:'top 0%',
-    end:'top -100%',
-    markers:false,
-  }
-})
+  const tlScroll=gsap.timeline({
+    default:{
+      ease:'none'
+    },
+    scrollTrigger:{
+      trigger:slider,
+      scroller:'#main',
+      pin:true,
+      scrub:2,
+      start:'top 0%',
+      end:'top -100%',
+      markers:false,
+    }
+  })
 
-tlScroll.to(slider,{
-  xPercent:-75
-}, "<")
-
-
+  tlScroll.to(slider,{
+    xPercent:-75
+  }, "<")
 
 
-sections.forEach((stop, index)=> {
 
-  if(index===0){
 
-    tlScroll.from(stop.querySelector('.image'),{
-      x:'-40vw',
-      rotate:'-180deg',
-      scrollTrigger:{
-        trigger:stop.querySelector('.image'),
-        containerAnimation:tlScroll,
-        scrub:true,
-        markers:false,
-  
-      }
-    })
+  sections.forEach((stop, index)=> {
 
-  }else{
+    if(index===0){
 
-    tlScroll.from(stop.querySelector('.image'),{
-      x:'-40vw',
-      rotate:'-180deg',
-      opacity:0,
-      scrollTrigger:{
-        trigger:stop.querySelector('.image'),
-        containerAnimation:tlScroll,
-        scrub:true,
-        markers:false,
-        end:'center center'
-  
-      }
-    })
+      tlScroll.from(stop.querySelector('.image'),{
+        x:'-40vw',
+        rotate:'-180deg',
+        scrollTrigger:{
+          trigger:stop.querySelector('.image'),
+          containerAnimation:tlScroll,
+          scrub:true,
+          markers:false,
     
+        }
+      })
 
-  }
+    }else{
+
+      tlScroll.from(stop.querySelector('.image'),{
+        x:'-40vw',
+        rotate:'-180deg',
+        opacity:0,
+        scrollTrigger:{
+          trigger:stop.querySelector('.image'),
+          containerAnimation:tlScroll,
+          scrub:true,
+          markers:false,
+          end:'center center'
+    
+        }
+      })
+      
+
+    }
   
   // console.log(stop.querySelector('.image'))
   
@@ -404,6 +262,8 @@ sections.forEach((stop, index)=> {
 
 scrollHorizontal()
 
+
+//Service Animation
 
 function service(){
 
@@ -440,6 +300,8 @@ tl.from('.serviceText', {
 }
 service();
 
+
+//Trendings Animation
 function trendings(){
 
   gsap.from('.trendings .heading',{
@@ -494,6 +356,7 @@ function trendings(){
 trendings();
 
 
+//ShopYourVibe Animation
 function shopYourVibe(){
 
   let tl1=gsap.timeline({scrollTrigger: {start:'top 0%',end:'top -100%', markers:false, scroller:'#main', trigger:'.slider', scrub:2, pin:true}})
@@ -538,7 +401,7 @@ function shopYourVibe(){
 }
 shopYourVibe()
 
-
+//Best Seller Animation
 function bestSellerAnimation(){
 
   gsap.from('.bestSeller .heading',{
@@ -578,87 +441,7 @@ function bestSellerAnimation(){
   
 
 }
-// bestSellerAnimation();
 
-
-function whyUs(){
-
-  const tlWhy=gsap.timeline({
-    scrollTrigger:{
-      trigger:'.why-heading',
-      start:'50% 50%',
-      end:'100% 50%',
-      scrub:2,
-      pin:true,
-      markers:false,
-      scroller:'#main'
-    }
-  })
-  
-  tlWhy.to('.top',{
-    top:'-50%',
-  },'a')
-  tlWhy.to('.bottom',{
-    bottom:'-90%',
-    zIndex:-1,
-  },'a')
-  tlWhy.to('.top-h',{
-    top:'70%',
-  },'a')
-  tlWhy.to('.bottom-h',{
-    top:'-70%',
-  },'a')
-
-  //method 2
-tlWhy.to('.why-heading .center',{
-  scrollTrigger:{
-    trigger:'.why-heading .center',
-    pin:true,
-    scroller:'#main',
-    start:'50% 0%',
-    end:'260% 50%',
-  }
-})
-
-const tlWatch=gsap.timeline({
-  scrollTrigger:{
-    trigger:'.page11 .sec-2',
-    start:'50% 90%',
-    end:'50% 50%',
-    scrub:true,
-    markers:false,
-    scroller:'#main'
-  }
-})
-
-tlWatch.to('.watchImage',{
- top:'100%',
- left:'0%'
-
-})
-
-const tlWatch2=gsap.timeline({
-  scrollTrigger:{
-    trigger:'.page11 .sec-3',
-    start:'50% 90%',
-    end:'50% 50%',
-    scrub:true,
-    markers:false,
-    scroller:'#main'
-  }
-})
-
-tlWatch2.to('.watchImage',{
-  top:'200%',
-  left:'60%'
- 
- })
-
-  
-
-}
-
-whyUs()
 
  function category(){
   //Category
@@ -800,7 +583,7 @@ document.querySelector(".r-btn2").addEventListener("mouseleave", function () {
  category();
 
 
- // Trending
+ // Trending cards creation 
 async function fillTrending() {
   const res = await fetch("https://jayasaha811733.github.io/ReImagine_2_API/assets.json");
   const data = await res.json();
@@ -890,7 +673,7 @@ async function fillTrending() {
 
 fillTrending();
 
-
+// Best Seller Cards Creation
 async function bestSeller() {
   const res = await fetch("https://jayasaha811733.github.io/ReImagine_2_API/assets.json");
   const data = await res.json();
@@ -961,6 +744,8 @@ async function bestSeller() {
 
 bestSeller();
 
+
+//videoAspect configuration
 function videoRatio(){
   const width= window.innerWidth;
   const height=window.innerHeight;
@@ -990,3 +775,321 @@ function videoRatio(){
   window.addEventListener('resize', resizeVdo)
 }
 videoRatio()
+
+
+// function whyUs(){
+
+//   const tlWhy=gsap.timeline({
+//     scrollTrigger:{
+//       trigger:'.page10 canvas',
+//       start:'50% 50%',
+//       end:'100% 50%',
+//       scrub:2,
+//       pin:true,
+//       markers:false,
+//       scroller:'#main'
+//     }
+//   })
+  
+//   tlWhy.to('.top',{
+//     top:'-50%',
+//   },'a')
+//   tlWhy.to('.bottom',{
+//     bottom:'-90%',
+//     zIndex:-1,
+//   },'a')
+//   tlWhy.to('.top-h',{
+//     top:'70%',
+//   },'a')
+//   tlWhy.to('.bottom-h',{
+//     top:'-70%',
+//   },'a')
+
+ 
+
+// // const tlWatch=gsap.timeline({
+// //   scrollTrigger:{
+// //     trigger:'.page11 .sec-2',
+// //     start:'50% 90%',
+// //     end:'50% 50%',
+// //     scrub:true,
+// //     markers:false,
+// //     scroller:'#main'
+// //   }
+// // })
+
+// // tlWatch.to('.watchImage',{
+// //  top:'100%',
+// //  left:'0%'
+
+// // })
+
+// // const tlWatch2=gsap.timeline({
+// //   scrollTrigger:{
+// //     trigger:'.page11 .sec-3',
+// //     start:'50% 90%',
+// //     end:'50% 50%',
+// //     scrub:true,
+// //     markers:false,
+// //     scroller:'#main'
+// //   }
+// // })
+
+// // tlWatch2.to('.watchImage',{
+// //   top:'200%',
+// //   left:'60%'
+ 
+// //  })
+
+  
+
+// }
+
+
+
+//canvas
+const canvas=document.querySelector('canvas');
+const context=canvas.getContext('2d');
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+window.addEventListener('resize', function(){
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+  render();
+})
+
+function files(index){
+  var data=`./feature/feature_000.jpg
+  ./feature/feature_001.jpg
+  ./feature/feature_002.jpg
+  ./feature/feature_003.jpg
+  ./feature/feature_004.jpg
+  ./feature/feature_005.jpg
+  ./feature/feature_006.jpg
+  ./feature/feature_007.jpg
+  ./feature/feature_008.jpg
+  ./feature/feature_009.jpg
+  ./feature/feature_010.jpg
+  ./feature/feature_011.jpg
+  ./feature/feature_012.jpg
+  ./feature/feature_013.jpg
+  ./feature/feature_014.jpg
+  ./feature/feature_015.jpg
+  ./feature/feature_016.jpg
+  ./feature/feature_017.jpg
+  ./feature/feature_018.jpg
+  ./feature/feature_019.jpg
+  ./feature/feature_020.jpg
+  ./feature/feature_021.jpg
+  ./feature/feature_022.jpg
+  ./feature/feature_023.jpg
+  ./feature/feature_024.jpg
+  ./feature/feature_025.jpg
+  ./feature/feature_026.jpg
+  ./feature/feature_027.jpg
+  ./feature/feature_028.jpg
+  ./feature/feature_029.jpg
+  ./feature/feature_030.jpg
+  ./feature/feature_031.jpg
+  ./feature/feature_032.jpg
+  ./feature/feature_033.jpg
+  ./feature/feature_034.jpg
+  ./feature/feature_035.jpg
+  ./feature/feature_036.jpg
+  ./feature/feature_037.jpg
+  ./feature/feature_038.jpg
+  ./feature/feature_039.jpg
+  ./feature/feature_040.jpg
+  ./feature/feature_041.jpg
+  ./feature/feature_042.jpg
+  ./feature/feature_043.jpg
+  ./feature/feature_044.jpg
+  ./feature/feature_045.jpg
+  ./feature/feature_046.jpg
+  ./feature/feature_047.jpg
+  ./feature/feature_048.jpg
+  ./feature/feature_049.jpg
+  ./feature/feature_050.jpg
+  ./feature/feature_051.jpg
+  ./feature/feature_052.jpg
+  ./feature/feature_052.jpg
+  ./feature/feature_054.jpg
+  ./feature/feature_055.jpg
+  ./feature/feature_056.jpg
+  ./feature/feature_057.jpg
+  ./feature/feature_058.jpg
+  ./feature/feature_059.jpg
+  ./feature/feature_060.jpg
+  ./feature/feature_061.jpg
+  ./feature/feature_062.jpg
+  ./feature/feature_063.jpg
+
+  `
+  return data.split("\n")[index];
+}
+
+const frameCount=64;
+
+const images=[];
+const imageSeq={
+  frame:1,
+}
+
+for (let i = 0; i < frameCount; i++) {
+  const img=new Image();
+  img.src=files(i);
+  images.push(img);
+  
+}
+
+gsap.to(imageSeq,{
+  frame:frameCount-1,
+  snap:'frame',
+  ease:'none',
+  scrollTrigger:{
+    scrub:3,
+    trigger:'.page10 canvas',
+    start:'top top',
+    end:'300% top',
+    scroller:'#main'
+  },
+  onUpdate:render
+});
+
+images[1].onload=render;
+
+function render(){
+  scaleImage(images[imageSeq.frame], context);
+}
+
+
+function scaleImage(img, ctx){
+  var canvas=ctx.canvas;
+  var hRatio=canvas.width/img.width;
+  var vRatio=canvas.height/img.height;
+  var ratio=Math.max(hRatio, vRatio);
+  var centerShift_x=(canvas.width - img.width*ratio) / 2;
+  var centerShift_y=(canvas.height - img.height*ratio) / 2;
+  ctx.clearRect(0,0, canvas.width, canvas.height);
+  ctx.drawImage(
+    img,
+    0,
+    0,
+    img.width,
+    img.height,
+    centerShift_x,
+    centerShift_y,
+    img.width*ratio,
+    img.height*ratio
+  );
+}
+
+
+let canvasTl=gsap.timeline({
+  default:'none',
+  scrollTrigger:{
+    trigger:'.page10>canvas',
+    pin:true,
+    scroller:'#main',
+    start:'top top',
+    end:'300% top'
+  }
+})
+
+
+
+
+// gsap.to('.page11',{
+//   scrollTrigger:{
+//     trigger:'.page11',
+//     start:'top top',
+//     end:'bottom top',
+//     markers:false,
+//     pin:true,
+//     scroller:'#main'
+//   }
+
+// })
+// gsap.to('.page12',{
+//   scrollTrigger:{
+//     trigger:'.page12',
+//     start:'top top',
+//     end:'bottom top',
+//     markers:false,
+//     pin:true,
+//     scroller:'#main'
+//   }
+
+// })
+// gsap.to('.page13',{
+//   scrollTrigger:{
+//     trigger:'.page13',
+//     start:'top top',
+//     end:'bottom top',
+//     markers:false,
+//     pin:true,
+//     scroller:'#main'
+//   }
+
+// })
+
+let tlWhy=gsap.timeline({
+
+  scrollTrigger:{
+    trigger:'.page12',
+    start:'50% 100%',
+    end:'50% 50%',
+    scrub:true,
+    markers:false,
+    scroller:'#main'
+  }
+
+})
+
+if(window.innerWidth>1023){
+  tlWhy.to('.imageWhy',{
+    top:'100vh',
+    left:'0',
+    translateY:'50%'
+    
+  })
+}
+else{
+  tlWhy.to('.imageWhy',{
+    top:'100vh',
+    // translateY:'50%'
+    zIndex:5
+    
+  })
+}
+let tlWhy2=gsap.timeline({
+
+  scrollTrigger:{
+    trigger:'.page13',
+    start:'50% 100%',
+    end:'50% 50%',
+    scrub:true,
+    markers:false,
+    scroller:'#main'
+  }
+
+})
+
+if(window.innerWidth>1023){
+  tlWhy2.to('.imageWhy',{
+    top:'200vh',
+    left:'60%',
+    translateY:'50%'
+    
+  })
+}
+else{
+  tlWhy2.to('.imageWhy',{
+    top:'200vh',
+    // translateY:'50%'
+    zIndex:5
+    
+  })
+}
