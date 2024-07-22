@@ -447,139 +447,125 @@ function bestSellerAnimation(){
 
  function category(){
   //Category
-document.querySelector(".l-btn1").addEventListener("mousemove", function () {
-  const centerCenterElement = document.querySelector(".center-center1");
-  const contentElement = document.querySelector(".content-1");
-  if (window.matchMedia("(max-width: 540px)").matches) {
-    centerCenterElement.style.height = "22vh";
-    contentElement.style.width = "80vw";
-  } else if (window.matchMedia("(max-width: 640px)").matches) {
-    centerCenterElement.style.height = "35vh";
-    contentElement.style.width = "80vw";
-  } else if (window.matchMedia("(max-width: 1024px)").matches) {
-    centerCenterElement.style.height = "35vh";
-    contentElement.style.width = "40vw";
-  } else {
-    centerCenterElement.style.height = "70vh";
-    contentElement.style.width = "30vw";
-  }
-  document.querySelector(".l-btn1").style.background =
-    "linear-gradient(to right, #ff721d, #d64312)";
-  document.querySelector(".l-btn1").style.color = "white";
-  document.querySelector(".l-btn1").style.border = "none";
-  document.querySelector(".content-1").style.opacity = "1";
-  document.querySelector(".content-1").style.filter = "blur(0.5px)";
-});
-
-document.querySelector(".l-btn1").addEventListener("mouseleave", function () {
-  document.querySelector(".center-center1").style.height = "0";
-  document.querySelector(".l-btn1").style.background = "initial";
-  document.querySelector(".l-btn1").style.color = "grey";
-  document.querySelector(".l-btn1").style.border = "1px solid grey";
-  document.querySelector(".content-1").style.width = "20vw";
-  document.querySelector(".content-1").style.opacity = "0";
-  document.querySelector(".content-1").style.filter = "blur(10px)";
-});
-
-document.querySelector(".l-btn2").addEventListener("mousemove", function () {
-  const centerCenterElement = document.querySelector(".center-center2");
-  const contentElement = document.querySelector(".content-2");
-  if (window.matchMedia("(max-width: 540px)").matches) {
-    centerCenterElement.style.height = "22vh";
-    contentElement.style.width = "80vw";
-  } else if (window.matchMedia("(max-width: 640px)").matches) {
-    centerCenterElement.style.height = "35vh";
-    contentElement.style.width = "80vw";
-  } else if (window.matchMedia("(max-width: 1024px)").matches) {
-    centerCenterElement.style.height = "35vh";
-    contentElement.style.width = "40vw";
-  } else {
-    centerCenterElement.style.height = "70vh";
-    contentElement.style.width = "30vw";
-  }
-  document.querySelector(".l-btn2").style.background =
-    "linear-gradient(to right, #ff721d, #d64312)";
-  document.querySelector(".l-btn2").style.color = "white";
-  document.querySelector(".l-btn2").style.border = "none";
-  document.querySelector(".content-2").style.opacity = "1";
-  document.querySelector(".content-2").style.filter = "blur(0.5px)";
-});
-document.querySelector(".l-btn2").addEventListener("mouseleave", function () {
-  document.querySelector(".center-center2").style.height = "0";
-  document.querySelector(".l-btn2").style.background = "initial";
-  document.querySelector(".l-btn2").style.color = "grey";
-  document.querySelector(".l-btn2").style.border = "1px solid grey";
-  document.querySelector(".content-2").style.width = "20vw";
-  document.querySelector(".content-2").style.opacity = "0";
-  document.querySelector(".content-2").style.filter = "blur(10px)";
-});
-
-document.querySelector(".r-btn1").addEventListener("mousemove", function () {
-  const centerCenterElement = document.querySelector(".center-center3");
-  const contentElement = document.querySelector(".content-3");
-  if (window.matchMedia("(max-width: 540px)").matches) {
-    centerCenterElement.style.height = "22vh";
-    contentElement.style.width = "80vw";
-  } else if (window.matchMedia("(max-width: 640px)").matches) {
-    centerCenterElement.style.height = "35vh";
-    contentElement.style.width = "80vw";
-  } else if (window.matchMedia("(max-width: 1024px)").matches) {
-    centerCenterElement.style.height = "35vh";
-    contentElement.style.width = "40vw";
-  } else {
-    centerCenterElement.style.height = "70vh";
-    contentElement.style.width = "30vw";
-  }
-  document.querySelector(".r-btn1").style.background =
-    "linear-gradient(to right, #ff721d, #d64312)";
-  document.querySelector(".r-btn1").style.color = "white";
-  document.querySelector(".r-btn1").style.border = "none";
-  document.querySelector(".content-3").style.opacity = "1";
-  document.querySelector(".content-3").style.filter = "blur(0.5px)";
-});
-
-document.querySelector(".r-btn1").addEventListener("mouseleave", function () {
-  document.querySelector(".center-center3").style.height = "0";
-  document.querySelector(".r-btn1").style.background = "initial";
-  document.querySelector(".r-btn1").style.color = "grey";
-  document.querySelector(".r-btn1").style.border = "1px solid grey";
-  document.querySelector(".content-3").style.width = "20vw";
-  document.querySelector(".content-3").style.opacity = "0";
-  document.querySelector(".content-3").style.filter = "blur(10px)";
-});
-
-document.querySelector(".r-btn2").addEventListener("mousemove", function () {
-  const centerCenterElement = document.querySelector(".center-center4");
-  const contentElement = document.querySelector(".content-4");
-  if (window.matchMedia("(max-width: 540px)").matches) {
-    centerCenterElement.style.height = "22vh";
-    contentElement.style.width = "80vw";
-  } else if (window.matchMedia("(max-width: 640px)").matches) {
-    centerCenterElement.style.height = "35vh";
-    contentElement.style.width = "80vw";
-  } else if (window.matchMedia("(max-width: 1024px)").matches) {
-    centerCenterElement.style.height = "35vh";
-    contentElement.style.width = "40vw";
-  } else {
-    centerCenterElement.style.height = "70vh";
-    contentElement.style.width = "30vw";
-  }
-  document.querySelector(".r-btn2").style.background =
-    "linear-gradient(to right, #ff721d, #d64312)";
-  document.querySelector(".r-btn2").style.color = "white";
-  document.querySelector(".r-btn2").style.border = "none";
-  document.querySelector(".content-4").style.opacity = "1";
-  document.querySelector(".content-4").style.filter = "blur(0.5px)";
-});
-document.querySelector(".r-btn2").addEventListener("mouseleave", function () {
-  document.querySelector(".center-center4").style.height = "0";
-  document.querySelector(".r-btn2").style.background = "initial";
-  document.querySelector(".r-btn2").style.color = "grey";
-  document.querySelector(".r-btn2").style.border = "1px solid grey";
-  document.querySelector(".content-4").style.width = "20vw";
-  document.querySelector(".content-4").style.opacity = "0";
-  document.querySelector(".content-4").style.filter = "blur(10px)";
-});
+  document.querySelector(".l-btn1").addEventListener("mousemove", function () {
+    const centerCenterElement = document.querySelector(".center-center1");
+    const contentElement = document.querySelector(".content-1");
+    if (window.matchMedia("(max-width: 540px)").matches) {
+      centerCenterElement.style.height = "22vh";
+      contentElement.style.width = "80vw";
+    } else if (window.matchMedia("(max-width: 640px)").matches) {
+      centerCenterElement.style.height = "35vh";
+      contentElement.style.width = "80vw";
+    } else if (window.matchMedia("(max-width: 1024px)").matches) {
+      centerCenterElement.style.height = "35vh";
+      contentElement.style.width = "40vw";
+    } else {
+      centerCenterElement.style.height = "70vh";
+      contentElement.style.width = "30vw";
+    }
+    document.querySelector(".l-btn1").style.color = "white";
+    document.querySelector(".l-btn1").style.border = "none";
+    document.querySelector(".content-1").style.opacity = "1";
+    document.querySelector(".content-1").style.filter = "blur(0.5px)";
+  });
+  document.querySelector(".l-btn1").addEventListener("mouseleave", function () {
+    document.querySelector(".center-center1").style.height = "0";
+    document.querySelector(".l-btn1").style.color = "grey";
+    document.querySelector(".l-btn1").style.border = "1px solid #b6b5b5";
+    document.querySelector(".content-1").style.width = "20vw";
+    document.querySelector(".content-1").style.opacity = "0";
+    document.querySelector(".content-1").style.filter = "blur(10px)";
+  });
+  
+  document.querySelector(".l-btn2").addEventListener("mousemove", function () {
+    const centerCenterElement = document.querySelector(".center-center2");
+    const contentElement = document.querySelector(".content-2");
+    if (window.matchMedia("(max-width: 540px)").matches) {
+      centerCenterElement.style.height = "22vh";
+      contentElement.style.width = "80vw";
+    } else if (window.matchMedia("(max-width: 640px)").matches) {
+      centerCenterElement.style.height = "35vh";
+      contentElement.style.width = "80vw";
+    } else if (window.matchMedia("(max-width: 1024px)").matches) {
+      centerCenterElement.style.height = "35vh";
+      contentElement.style.width = "40vw";
+    } else {
+      centerCenterElement.style.height = "50vh";
+      contentElement.style.width = "30vw";
+    }
+    document.querySelector(".l-btn2").style.color = "white";
+    document.querySelector(".l-btn2").style.border = "none";
+    document.querySelector(".content-2").style.opacity = "1";
+    document.querySelector(".content-2").style.filter = "blur(0.5px)";
+  });
+  document.querySelector(".l-btn2").addEventListener("mouseleave", function () {
+    document.querySelector(".center-center2").style.height = "0";
+    document.querySelector(".l-btn2").style.color = "grey";
+    document.querySelector(".l-btn2").style.border = "1px solid #b6b5b5";
+    document.querySelector(".content-2").style.width = "20vw";
+    document.querySelector(".content-2").style.opacity = "0";
+    document.querySelector(".content-2").style.filter = "blur(10px)";
+  });
+  
+  document.querySelector(".r-btn1").addEventListener("mousemove", function () {
+    const centerCenterElement = document.querySelector(".center-center3");
+    const contentElement = document.querySelector(".content-3");
+    if (window.matchMedia("(max-width: 540px)").matches) {
+      centerCenterElement.style.height = "22vh";
+      contentElement.style.width = "80vw";
+    } else if (window.matchMedia("(max-width: 640px)").matches) {
+      centerCenterElement.style.height = "35vh";
+      contentElement.style.width = "80vw";
+    } else if (window.matchMedia("(max-width: 1024px)").matches) {
+      centerCenterElement.style.height = "35vh";
+      contentElement.style.width = "40vw";
+    } else {
+      centerCenterElement.style.height = "50vh";
+      contentElement.style.width = "30vw";
+    }
+    document.querySelector(".r-btn1").style.color = "white";
+    document.querySelector(".r-btn1").style.border = "none";
+    document.querySelector(".content-3").style.opacity = "1";
+    document.querySelector(".content-3").style.filter = "blur(0.5px)";
+  });
+  document.querySelector(".r-btn1").addEventListener("mouseleave", function () {
+    document.querySelector(".center-center3").style.height = "0";
+    document.querySelector(".r-btn1").style.color = "grey";
+    document.querySelector(".r-btn1").style.border = "1px solid #b6b5b5";
+    document.querySelector(".content-3").style.width = "20vw";
+    document.querySelector(".content-3").style.opacity = "0";
+    document.querySelector(".content-3").style.filter = "blur(10px)";
+  });
+  
+  document.querySelector(".r-btn2").addEventListener("mousemove", function () {
+    const centerCenterElement = document.querySelector(".center-center4");
+    const contentElement = document.querySelector(".content-4");
+    if (window.matchMedia("(max-width: 540px)").matches) {
+      centerCenterElement.style.height = "22vh";
+      contentElement.style.width = "80vw";
+    } else if (window.matchMedia("(max-width: 640px)").matches) {
+      centerCenterElement.style.height = "35vh";
+      contentElement.style.width = "80vw";
+    } else if (window.matchMedia("(max-width: 1024px)").matches) {
+      centerCenterElement.style.height = "35vh";
+      contentElement.style.width = "40vw";
+    } else {
+      centerCenterElement.style.height = "50vh";
+      contentElement.style.width = "30vw";
+    }
+    document.querySelector(".r-btn2").style.color = "white";
+    document.querySelector(".r-btn2").style.border = "none";
+    document.querySelector(".content-4").style.opacity = "1";
+    document.querySelector(".content-4").style.filter = "blur(0.5px)";
+  });
+  document.querySelector(".r-btn2").addEventListener("mouseleave", function () {
+    document.querySelector(".center-center4").style.height = "0";
+    document.querySelector(".r-btn2").style.color = "grey";
+    document.querySelector(".r-btn2").style.border = "1px solid #b6b5b5";
+    document.querySelector(".content-4").style.width = "20vw";
+    document.querySelector(".content-4").style.opacity = "0";
+    document.querySelector(".content-4").style.filter = "blur(10px)";
+  });
  }
 
  category();

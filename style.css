@@ -450,6 +450,26 @@
 
 
   } */
+
+  .hover-effect, .hover-effect2 {
+    overflow: hidden;
+  }
+  
+  .hover-effect::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0;
+    border-radius: 0 0 50% 50%;
+    background: linear-gradient(to right, #ff721d, #d64312);
+    transition: width 1s, height 1s;
+  }
+  
+  .hover-effect:hover::before {
+    height: 150%;
+  }
   
   
   @keyframes autoRun {
