@@ -50,6 +50,13 @@ main.addEventListener('mousemove',(event)=>{
     stagger:0.025
   })
 })
+main.addEventListener('mouseleave',(event)=>{
+  gsap.to('.cursor',{
+    
+    opacity:0,
+    duration:0.001
+  })
+})
 
 
 //loader Animation
