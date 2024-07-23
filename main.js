@@ -232,7 +232,7 @@ function scrollHorizontal(){
 
 
   let listX=['0','-50vw','-50vw'];
-  let listY=['-50vh','50vh','-50vh'];
+  let listY=['-50vh','100vh','-100vh'];
   let listRotate=['0deg','45deg','-45deg'];
 
   sections.forEach((stop, index)=> {
@@ -421,18 +421,21 @@ shopYourVibe()
 //Best Seller Animation
 function bestSellerAnimation(){
 
-  gsap.from('.bestSeller .heading',{
-    opacity:0,
+  gsap.from('.bestSeller .heading h1 div',{
+    // opacity:0,
+    y:'-100px',
     scale:0,
     scrollTrigger: {
       trigger:'.bestSeller',
       scroller:'#main',
       markers:false,
-      start:"top 50%",
+      start:"top 70%",
       end:'top 20%',
       scrub:2,
+      
     },
     duration:1,
+    stagger:0.1
   
   })
   
@@ -446,7 +449,7 @@ function bestSellerAnimation(){
       trigger:'.bestSeller',
       scroller:'#main',
       markers:false,
-      start:"top 40%",
+      start:"top 55%",
       end:'top 10%',
       scrub:2,
     },
@@ -840,32 +843,6 @@ function videoRatio(){
 videoRatio()
 
 
-// function ripple(){
-//   const buttons= document.querySelectorAll('.rippleBtn');
-//   buttons.forEach(btn=>{
-//       btn.addEventListener('mouseenter', function(e){
-//       console.log('connected')
-//       let x= e.clientX - e.target.offsetLeft;
-//       let y= e.clientY - e.target.offsetTop;
-
-//       console.log(x, y)
-//       let ripples=document.createElement('span');
-//       ripples.classList.add('rippleSpan');
-//       ripples.style.left=x+'px';
-//       ripples.style.top=y+'px';
-//       this.appendChild(ripples);
-
-//       setTimeout(()=>{
-//       ripples.remove()
-//       },1000)
-//   })
-// })
-// // console.log(buttons)
-// }
-
-// ripple()
-
-//canvas
 
 function canvas(){
   const canvas=document.querySelector('canvas');
