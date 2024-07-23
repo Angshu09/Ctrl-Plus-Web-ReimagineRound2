@@ -774,7 +774,7 @@ async function bestSeller() {
                     <div
                       class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-md text-[white] text-[12px] md:text-[15px] text-center font-bold tracking-widest w-[80%] sm:w-[70%]"
                     >
-                      BUY NOW
+                      ADD TO CART
                     </div>
                   </div>
                 </div>
@@ -783,6 +783,7 @@ async function bestSeller() {
   });
 
   bestSellerAnimation()
+  cart()
 }
 bestSeller();
 
@@ -1098,4 +1099,51 @@ else{
     zIndex:5
     
   })
+}
+
+
+//Add To Cart 
+
+function cart(){
+const addToCartBS=document.querySelectorAll('.bestSeller  .buyNow');
+// console.log(addToCartBS)
+addToCartBS.forEach(element => {
+  element.addEventListener('click',()=>{
+    if(element.innerHTML==='ADD TO CART'){
+      element.innerHTML=`GO TO CART`
+    }
+    else{
+      element.innerHTML=`ADD TO CART`
+    }
+  })
+  
+});
+
+const addToCartT=document.querySelectorAll('.trendings .addToCart');
+// console.log(addToCartT)
+addToCartT.forEach(element => {
+  element.addEventListener('click',()=>{
+
+    // console.log(element.innerHTML)
+    if(element.innerHTML==='+ ADD TO CART'){
+      element.innerHTML=`GO TO CART`
+    }
+    else{
+      element.innerHTML=`+ ADD TO CART`
+    }
+  })
+});
+
+const addToCartF=document.querySelector('.feature .addToCart');
+addToCartF.addEventListener('click',()=>{
+  // console.log(addToCartF.innerHTML.trim())
+  if(addToCartF.innerHTML.trim()==='+ ADD TO CART'){
+    addToCartF.innerHTML=`GO TO CART`
+  }
+  else{
+    addToCartF.innerHTML=`+ ADD TO CART`
+  }
+
+})
+
 }
