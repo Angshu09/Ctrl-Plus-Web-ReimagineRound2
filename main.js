@@ -321,8 +321,8 @@ service();
 //Trendings Animation
 function trendings(){
 
-  gsap.from('.trendings .heading',{
-    opacity:0,
+  gsap.from('.trendings .heading h1 div',{
+    y:'-100px',
     scale:0,
     scrollTrigger: {
       trigger:'.trendings',
@@ -333,6 +333,7 @@ function trendings(){
       scrub:2,
     },
     duration:1,
+    stagger:0.1
   
   })
   gsap.from('.trendings .slideContainer',{  
@@ -371,6 +372,44 @@ function trendings(){
 
 }
 trendings();
+
+
+function features(){
+
+  gsap.from('.feature .heading h1 div',{
+    y:'-100px',
+    scale:0,
+    scrollTrigger: {
+      trigger:'.feature',
+      scroller:'#main',
+      markers:false,
+      start:"top 80%",
+      end:'top 30%',
+      scrub:2,
+    },
+    duration:1,
+    stagger:0.1
+  
+  });
+
+  gsap.from('.featureSlide',{
+    y:'100%',
+    x:'100%',
+    scale:0,
+
+    scrollTrigger: {
+      trigger:'.feature',
+      scroller:'#main',
+      markers:false,
+      start:"top 50%",
+      end:'top 0%',
+      scrub:2,
+    },
+    duration:1.5,
+  })
+  
+}
+features()
 
 
 //ShopYourVibe Animation
