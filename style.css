@@ -22,7 +22,7 @@
     position: relative;
     overflow: hidden;
     background-color: #100F0F;
-    cursor:none;
+    /* cursor:none; */
   }
   ::before, ::after{
     box-sizing: border-box;
@@ -42,6 +42,20 @@
     background-image: linear-gradient(62deg, #3b230a 0%, #281f24 100%);
   
   
+  }
+
+  @keyframes animate {
+    0%{
+      width:0;
+      height: 0;
+      opacity: 0.2;
+    }
+    100%{
+      width: 500px;
+      height: 500px;
+      opacity: 0;
+    }
+    
   }
   
   
@@ -193,7 +207,7 @@
     text-align: left;
     font-size: 15px;
     padding:3px 10px;
-    background-image: linear-gradient(to right , #ff721d 25%, transparent);
+    background:#ff721d;
     border-radius: 25px;
     z-index: -99;
     transition: color 3s;
@@ -239,6 +253,16 @@
   }
   nav input:checked ~ label .close{
     display: block;
+  }
+
+  .whyUs h1{
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+    -webkit-background-clip: text;
+    color:transparent;
+    font-weight: bold;
+    
+
   }
   
   
@@ -443,13 +467,15 @@
   
   }
 
-  /* .shopYourVibe .slide1 .image:nth-child(2){
-    background-position: 25%;
-    border:1px solid red;
-    background-size: ; 
 
-
-  } */
+  .footer-link:hover{
+    color:rgb(245, 90, 33);
+    font-size: 16px;
+    /* text-decoration: underline; */
+    cursor: none;
+    pad: 5px;
+    transition: all .5s ease;
+  }
 
   .hover-effect, .hover-effect2 {
     overflow: hidden;
@@ -488,7 +514,17 @@
       right: -420px;
     }
   }
+
   
+  @keyframes anime1 {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100px); }
+  }
+  @keyframes anime2 {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(100px); }
+  }
+
   
   
   @media screen and (max-width: 415px) {

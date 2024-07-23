@@ -38,25 +38,32 @@ function loco(){
 }
 loco();
 
-const cursor= document.querySelector('.cursor');
-const main=document.querySelector('body');
 
-main.addEventListener('mousemove',(event)=>{
-  gsap.to('.cursor',{
-    x:event.x,
-    y:event.y,
-    duration:0,
-    opacity:1,
-    stagger:0.025
+// cursor
+function cursor(){
+  const cursor= document.querySelector('.cursor');
+  const main=document.querySelector('body');
+
+  main.addEventListener('mousemove',(event)=>{
+    gsap.to('.cursor',{
+      x:event.x,
+      y:event.y,
+      duration:0,
+      opacity:1,
+      stagger:0.025
+    })
   })
-})
-main.addEventListener('mouseleave',(event)=>{
-  gsap.to('.cursor',{
-    
-    opacity:0,
-    duration:0.001
+  main.addEventListener('mouseleave',(event)=>{
+    gsap.to('.cursor',{
+      
+      opacity:0,
+      duration:0.001
+    })
   })
-})
+
+}
+cursor()
+
 
 
 //loader Animation
@@ -278,33 +285,33 @@ scrollHorizontal()
 function service(){
 
   const serviceContainer=document.querySelector('.services')
-const serviceLine=document.querySelector('.line')
+  const serviceLine=document.querySelector('.line')
 
-var tl= gsap.timeline({scrollTrigger: {start:'top 60%',end:'top 0%', markers:false, scroller:'#main', trigger:'.services', scrub:3, }})
+  var tl= gsap.timeline({scrollTrigger: {start:'top 80%',end:'top 0%', markers:false, scroller:'#main', trigger:'.services', scrub:3, }})
 
-tl.from(serviceLine,{
-  x:'-100%',
-  duration:2,
-  delay:0.5,
-  ease: "slow(0.7,0.7,false)",
+  tl.from(serviceLine,{
+    x:'-100%',
+    duration:2,
+    delay:0.5,
+    ease: "slow(0.7,0.7,false)",
 
-})
-tl.from('.section',{
-  y:-60,
-  duration:1.5,
-  opacity:0,
-  stagger:0.6,
-  ease: "elastic.out(0.9,0.3)",
+  })
+  tl.from('.section',{
+    y:-60,
+    duration:1.5,
+    opacity:0,
+    stagger:0.6,
+    ease: "elastic.out(0.9,0.3)",
 
-})
-tl.from('.serviceText', {
-  opacity:0,
-  x:-80,
-  duration:0.5,
-  stagger:0.5,
-  delay:-2.5 
+  })
+  tl.from('.serviceText', {
+    opacity:0,
+    x:-80,
+    duration:0.5,
+    stagger:0.5,
+    delay:-2.5 
 
-})
+  })
 
 
 }
@@ -321,7 +328,7 @@ function trendings(){
       trigger:'.trendings',
       scroller:'#main',
       markers:false,
-      start:"top 50%",
+      start:"top 70%",
       end:'top 20%',
       scrub:2,
     },
@@ -335,7 +342,7 @@ function trendings(){
       trigger:'.trendings',
       scroller:'#main',
       markers:false,
-      start:"top 45%",
+      start:"top 60%",
       end:'top 15%',
       scrub:2,
     },
@@ -351,7 +358,7 @@ function trendings(){
       trigger:'.trendings',
       scroller:'#main',
       markers:false,
-      start:"top 40%",
+      start:"top 50%",
       end:'top 10%',
       scrub:2,
     },
@@ -430,7 +437,7 @@ function bestSellerAnimation(){
   })
   
   const slide=document.querySelectorAll('.bestSeller .bestSeller-slide')
-  console.log(slide)
+  // console.log(slide)
   
   gsap.from('.bestSeller .bestSeller-slide',{
     opacity:0,
@@ -575,7 +582,6 @@ function bestSellerAnimation(){
     document.querySelector(".content-4").style.filter = "blur(10px)";
   });
  }
-
  category();
 
 
@@ -666,7 +672,6 @@ async function fillTrending() {
     `;
   }
 }
-
 fillTrending();
 
 // Best Seller Cards Creation
@@ -737,7 +742,6 @@ async function bestSeller() {
 
   bestSellerAnimation()
 }
-
 bestSeller();
 
 
@@ -745,8 +749,10 @@ bestSeller();
 function videoRatio(){
   const width= window.innerWidth;
   const height=window.innerHeight;
-  console.log(width , height)
+  // console.log(width , height)
   const video=document.querySelector('.page1');
+  const source=document.querySelector('.page1 video source')
+  const overcast=document.querySelector('.page1 .overCast')
   const scrollAspect=document.querySelector('.scroll-aspect');
   const slider1=document.querySelectorAll('.shopYourVibe .slide1 .image');
   const slider2=document.querySelectorAll('.shopYourVibe .slide2 .image');
@@ -757,12 +763,15 @@ function videoRatio(){
 
     const width= window.innerWidth;
     const height=window.innerHeight;
-    console.log((width/height).toFixed(2) , (height/width).toFixed(2))
+    // console.log((width/height).toFixed(2) , (height/width).toFixed(2))
     let hRatio=width/height;
     let vRatio=height/width;
 
     if(hRatio>vRatio){
         video.style.aspectRatio=16/9;
+        source.src='https://res.cloudinary.com/dojcchveo/video/upload/v1721215868/tz4tx0ws8kktdcn2l4kk.mp4';
+        overcast.style.aspectRatio=16/9;
+
         scrollAspect.src='https://res.cloudinary.com/dojcchveo/image/upload/v1721583960/fastrack/banners/vtt7rouncnxz1jblsv8m.png';
         slider1.forEach((element, idx) => {
           element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721583960/fastrack/banners/vtt7rouncnxz1jblsv8m.png')`;
@@ -788,6 +797,11 @@ function videoRatio(){
         
     }else{
         video.style.aspectRatio=9/16;
+
+        
+        source.src='https://res.cloudinary.com/dojcchveo/video/upload/v1721708291/fastrack/nbztex3cyhqjajnl3lhm.mp4';
+        overcast.style.aspectRatio=9/16;
+
         scrollAspect.src='https://res.cloudinary.com/dojcchveo/image/upload/v1721630133/fastrack/banners/ryx2jx15eq1nh8qghifv.jpg';
         slider1.forEach((element, idx) => {
           element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721630133/fastrack/banners/ryx2jx15eq1nh8qghifv.jpg')`;
@@ -826,157 +840,187 @@ function videoRatio(){
 videoRatio()
 
 
+// function ripple(){
+//   const buttons= document.querySelectorAll('.rippleBtn');
+//   buttons.forEach(btn=>{
+//       btn.addEventListener('mouseenter', function(e){
+//       console.log('connected')
+//       let x= e.clientX - e.target.offsetLeft;
+//       let y= e.clientY - e.target.offsetTop;
+
+//       console.log(x, y)
+//       let ripples=document.createElement('span');
+//       ripples.classList.add('rippleSpan');
+//       ripples.style.left=x+'px';
+//       ripples.style.top=y+'px';
+//       this.appendChild(ripples);
+
+//       setTimeout(()=>{
+//       ripples.remove()
+//       },1000)
+//   })
+// })
+// // console.log(buttons)
+// }
+
+// ripple()
 
 //canvas
-const canvas=document.querySelector('canvas');
-const context=canvas.getContext('2d');
 
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
+function canvas(){
+  const canvas=document.querySelector('canvas');
+  const context=canvas.getContext('2d');
 
-window.addEventListener('resize', function(){
   canvas.width=window.innerWidth;
   canvas.height=window.innerHeight;
-  render();
-})
 
-function files(index){
-  var data=`https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_000.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_001.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_002.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_003.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_004.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_005.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_006.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_007.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_008.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_009.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_010.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_011.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_012.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_013.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_014.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_015.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_016.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_017.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_018.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_019.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_020.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_021.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_022.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_023.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_024.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_025.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_026.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_027.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_028.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_029.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_030.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_031.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_032.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_033.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_034.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_035.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_036.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_037.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_038.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_039.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_040.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_041.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_042.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_043.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_044.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_045.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_046.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_047.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_048.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_049.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_050.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_051.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_052.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_052.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_054.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_055.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_056.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_057.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_058.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_059.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_060.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_061.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_062.jpg
-  https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_063.jpg
+  window.addEventListener('resize', function(){
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+    render();
+  })
 
-  `
-  return data.split("\n")[index];
-}
+  function files(index){
+    var data=`https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_000.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_001.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_002.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_003.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_004.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_005.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_006.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_007.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_008.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_009.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_010.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_011.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_012.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_013.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_014.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_015.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_016.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_017.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_018.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_019.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_020.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_021.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_022.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_023.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_024.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_025.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_026.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_027.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_028.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_029.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_030.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_031.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_032.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_033.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_034.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_035.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_036.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_037.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_038.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_039.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_040.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_041.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_042.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_043.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_044.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_045.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_046.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_047.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_048.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_049.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_050.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_051.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_052.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_052.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_054.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_055.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_056.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_057.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_058.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_059.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_060.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_061.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_062.jpg
+    https://jayasaha811733.github.io/Reimagine2ImageSequence/feature_063.jpg
 
-const frameCount=64;
-
-const images=[];
-const imageSeq={
-  frame:1,
-}
-
-for (let i = 0; i < frameCount; i++) {
-  const img=new Image();
-  img.src=files(i);
-  images.push(img);
-  
-}
-
-gsap.to(imageSeq,{
-  frame:frameCount-1,
-  snap:'frame',
-  ease:'none',
-  scrollTrigger:{
-    scrub:3,
-    trigger:'.page10 canvas',
-    start:'top top',
-    end:'300% top',
-    scroller:'#main'
-  },
-  onUpdate:render
-});
-
-images[1].onload=render;
-
-function render(){
-  scaleImage(images[imageSeq.frame], context);
-}
-
-
-function scaleImage(img, ctx){
-  var canvas=ctx.canvas;
-  var hRatio=canvas.width/img.width;
-  var vRatio=canvas.height/img.height;
-  var ratio=Math.max(hRatio, vRatio);
-  var centerShift_x=(canvas.width - img.width*ratio) / 2;
-  var centerShift_y=(canvas.height - img.height*ratio) / 2;
-  ctx.clearRect(0,0, canvas.width, canvas.height);
-  ctx.drawImage(
-    img,
-    0,
-    0,
-    img.width,
-    img.height,
-    centerShift_x,
-    centerShift_y,
-    img.width*ratio,
-    img.height*ratio
-  );
-}
-
-
-let canvasTl=gsap.timeline({
-  default:'none',
-  scrollTrigger:{
-    trigger:'.page10>canvas',
-    pin:true,
-    scroller:'#main',
-    start:'top top',
-    end:'300% top'
+    `
+    return data.split("\n")[index];
   }
-})
+
+  const frameCount=64;
+
+  const images=[];
+  const imageSeq={
+    frame:1,
+  }
+
+  for (let i = 0; i < frameCount; i++) {
+    const img=new Image();
+    img.src=files(i);
+    images.push(img);
+    
+  }
+
+  gsap.to(imageSeq,{
+    frame:frameCount-1,
+    snap:'frame',
+    ease:'none',
+    scrollTrigger:{
+      scrub:3,
+      trigger:'.page10 canvas',
+      start:'top top',
+      end:'300% top',
+      scroller:'#main'
+    },
+    onUpdate:render
+  });
+
+  images[1].onload=render;
+
+  function render(){
+    scaleImage(images[imageSeq.frame], context);
+  }
+
+
+  function scaleImage(img, ctx){
+    var canvas=ctx.canvas;
+    var hRatio=canvas.width/img.width;
+    var vRatio=canvas.height/img.height;
+    var ratio=Math.max(hRatio, vRatio);
+    var centerShift_x=(canvas.width - img.width*ratio) / 2;
+    var centerShift_y=(canvas.height - img.height*ratio) / 2;
+    ctx.clearRect(0,0, canvas.width, canvas.height);
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width*ratio,
+      img.height*ratio
+    );
+  }
+
+
+  let canvasTl=gsap.timeline({
+    default:'none',
+    scrollTrigger:{
+      trigger:'.page10>canvas',
+      pin:true,
+      scroller:'#main',
+      start:'top top',
+      end:'300% top'
+    }
+  })
+
+
+}
+canvas()
 
 
 let tlWhy=gsap.timeline({
@@ -1025,8 +1069,9 @@ let tlWhy2=gsap.timeline({
 if(window.innerWidth>1023){
   tlWhy2.to('.imageWhy',{
     top:'200vh',
-    left:'60%',
-    translateY:'50%'
+    left:'100%',
+    translateY:'50%',
+    translateX:'-100%'
     
   })
 }
