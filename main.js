@@ -47,7 +47,7 @@ main.addEventListener('mousemove',(event)=>{
     y:event.y,
     duration:0,
     opacity:1,
-    stagger:0.028
+    stagger:0.025
   })
 })
 
