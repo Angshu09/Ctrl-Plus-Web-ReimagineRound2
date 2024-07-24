@@ -41,7 +41,7 @@ loco();
 
 // cursor
 function cursor(){
-  const cursor= document.querySelector('.cursor');
+  
   const main=document.querySelector('body');
 
   main.addEventListener('mousemove',(event)=>{
