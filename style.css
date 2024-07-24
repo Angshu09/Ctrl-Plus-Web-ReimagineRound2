@@ -520,16 +520,30 @@
 
   
   @keyframes anime1 {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-100px); }
+    0% { 
+      transform: translateY(0px) translateX(0px); 
+      opacity:0.5;
+      background: rgb(239, 122, 79);
+    }
+    50% { transform: translateY(-100px) translateX(100px);
+      opacity: 1;
+      background: rgb(255, 140, 0);
+     }
+    100%{ 
+      transform: translateY(0) translateX(0px);
+      opacity: 0.5;
+      background:rgb(239, 122, 79);
+    }
   }
   @keyframes anime2 {
       0% { transform: translateY(0); }
       100% { transform: translateY(100px); }
   }
 
-  
-  
+  .page5 .shade:nth-child(1){
+    animation: anime1 6s linear infinite;
+  }
+   
   @media screen and (max-width: 415px) {
     .bestSeller
       .slideContainer
