@@ -51,7 +51,7 @@ function cursor(){
       y:event.y,
       duration:0,
       opacity:1,
-      stagger:0.03
+      stagger:0.02
     })
   })
   main.addEventListener('mouseleave',(event)=>{
