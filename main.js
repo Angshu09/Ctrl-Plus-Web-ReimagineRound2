@@ -1,4 +1,3 @@
-import { splitVendorChunk } from 'vite';
 import './style.css'
 
 
@@ -1151,6 +1150,7 @@ addToCartF.addEventListener('click',()=>{
 
 //feature
 var swiper = new Swiper('.swiper-container', {
+
   loop: true,
   autoplay: {
     delay: 3000,
@@ -1158,20 +1158,12 @@ var swiper = new Swiper('.swiper-container', {
   },
   breakpoints: {
     320: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    480: {
       slidesPerView: 3,
       spaceBetween: 20,
     },
-    640: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
-    1024: {
+    450:{
       slidesPerView: 4,
-      spaceBetween: 40,
-    },
+      spaceBetween: 20,
+    }
   },
 });
