@@ -39,6 +39,8 @@ function loco(){
 loco();
 
 
+
+
 // cursor
 function cursor(){
   const main=document.querySelector('body');
@@ -49,7 +51,7 @@ function cursor(){
       y:event.y,
       duration:0,
       opacity:1,
-      stagger:0.02
+      stagger:0.03
     })
   })
   main.addEventListener('mouseleave',(event)=>{

@@ -570,11 +570,7 @@
     }
   }
 
-  .cursor{
-    transition: transform .2s  ease;
-    transform-origin: center center;
-    pointer-events: none;
-  }
+
 
   
   
