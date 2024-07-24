@@ -6,6 +6,9 @@
     /* background: red; */
   }
   
+  p{
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+  }
   
   .slideContainer::-webkit-scrollbar,
   .slideContainer2::-webkit-scrollbar {
