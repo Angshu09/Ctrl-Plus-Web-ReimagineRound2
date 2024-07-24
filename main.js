@@ -1153,3 +1153,64 @@ addToCartF.addEventListener('click',()=>{
 })
 
 }
+
+//feature
+var swiper = new Swiper('.swiper-container', {
+
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    450:{
+      slidesPerView: 4,
+      spaceBetween: 20,
+    }
+  },
+});
+
+document.querySelectorAll('.swiper-slide').forEach(slide => {
+  slide.addEventListener('click', function() {
+
+    const img = this.querySelector('img');
+    const featureImg = document.querySelector('.feature-img-div')
+    const outerDiv = document.querySelector('.feature-text')
+
+    if (window.matchMedia("(max-width: 740px)").matches){
+      document.querySelector('.feature-img').src = img.src
+      document.querySelector('.feature-img').classList.remove('scale-x-[-1]')
+      document.querySelector('.feature-img').classList.remove('transform')
+      featureImg.classList.remove('justify-start')
+      featureImg.classList.add('justify-center')
+      featureImg.classList.add('pb-8')
+      document.querySelector('.feature-img-outer').classList.remove('justify-start')
+      document.querySelector('.feature-img-outer').classList.add('justify-center')
+      document.querySelector('.feature-img').classList.remove('w-full')
+      document.querySelector('.feature-img').classList.add('h-[249px]')
+      outerDiv.style.display = 'none'
+    }
+    else{
+      document.querySelector('.feature-img').src = img.src
+      document.querySelector('.feature-img-outer').classList.add('!w-[85%]')
+      document.querySelector('.feature-img').classList.remove('scale-x-[-1]')
+      document.querySelector('.feature-img').classList.remove('transform')
+      featureImg.classList.remove('items-end');
+      featureImg.classList.add('items-center');
+      outerDiv.style.display = 'none'
+      featureImg.classList.remove('justify-start')
+      featureImg.classList.add('justify-center')
+     
+      outerDiv.classList.add('justify-center')
+    }
+
+
+   
+   
+  }); 
+});
+
