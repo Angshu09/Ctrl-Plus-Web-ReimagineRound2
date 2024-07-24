@@ -41,7 +41,6 @@ loco();
 
 // cursor
 function cursor(){
-  
   const main=document.querySelector('body');
 
   main.addEventListener('mousemove',(event)=>{
@@ -50,7 +49,7 @@ function cursor(){
       y:event.y,
       duration:0,
       opacity:1,
-      stagger:0.025
+      stagger:0.02
     })
   })
   main.addEventListener('mouseleave',(event)=>{
