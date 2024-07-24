@@ -569,6 +569,14 @@
       clip-path: circle(190px at 80% -20%);
     }
   }
+
+  .cursor{
+    transition: transform .2s  ease;
+    transform-origin: center center;
+    pointer-events: none;
+  }
+
+  
   
   
   
