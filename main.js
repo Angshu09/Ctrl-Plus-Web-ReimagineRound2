@@ -528,7 +528,7 @@ function bestSellerAnimation(){
   });
   document.querySelector(".l-btn1").addEventListener("mouseleave", function () {
     document.querySelector(".center-center1").style.height = "0";
-    document.querySelector(".l-btn1").style.color = "grey";
+    document.querySelector(".l-btn1").style.color = "#dadada";
     document.querySelector(".l-btn1").style.border = "1px solid #b6b5b5";
     document.querySelector(".content-1").style.width = "20vw";
     document.querySelector(".content-1").style.opacity = "0";
@@ -558,7 +558,7 @@ function bestSellerAnimation(){
   });
   document.querySelector(".l-btn2").addEventListener("mouseleave", function () {
     document.querySelector(".center-center2").style.height = "0";
-    document.querySelector(".l-btn2").style.color = "grey";
+    document.querySelector(".l-btn2").style.color = "#dadada";
     document.querySelector(".l-btn2").style.border = "1px solid #b6b5b5";
     document.querySelector(".content-2").style.width = "20vw";
     document.querySelector(".content-2").style.opacity = "0";
@@ -588,7 +588,7 @@ function bestSellerAnimation(){
   });
   document.querySelector(".r-btn1").addEventListener("mouseleave", function () {
     document.querySelector(".center-center3").style.height = "0";
-    document.querySelector(".r-btn1").style.color = "grey";
+    document.querySelector(".r-btn1").style.color = "#dadada";
     document.querySelector(".r-btn1").style.border = "1px solid #b6b5b5";
     document.querySelector(".content-3").style.width = "20vw";
     document.querySelector(".content-3").style.opacity = "0";
@@ -618,7 +618,7 @@ function bestSellerAnimation(){
   });
   document.querySelector(".r-btn2").addEventListener("mouseleave", function () {
     document.querySelector(".center-center4").style.height = "0";
-    document.querySelector(".r-btn2").style.color = "grey";
+    document.querySelector(".r-btn2").style.color = "#dadada";
     document.querySelector(".r-btn2").style.border = "1px solid #b6b5b5";
     document.querySelector(".content-4").style.width = "20vw";
     document.querySelector(".content-4").style.opacity = "0";
@@ -661,8 +661,8 @@ async function fillTrending() {
       </div>
 
       <div class="buttonContainer flex gap-3 text-white">
-        <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
-        <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+        <div class="buyNow hov-eff transition-all duration-700 px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+        <div class="addToCart hov-eff transition-all duration-700 px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
       </div>
 
     </div>
@@ -701,8 +701,8 @@ async function fillTrending() {
       </div>
 
       <div class="buttonContainer flex gap-3 text-white">
-        <div class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
-        <div class="addToCart px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
+        <div class="buyNow hov-eff transition-all duration-700 px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide ">BUY NOW</div>
+        <div class="addToCart hov-eff transition-all duration-700 px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-full text-[10px] text-center font-bold tracking-wide">+ ADD TO CART</div>
       </div>
 
     </div>
@@ -733,7 +733,7 @@ async function bestSeller() {
               >
                 <div class="imgBox">
                   <img
-                    class="lg:w-[200px] custom:w-[170px] w-[140px]"
+                    class="lg:w-[200px] custom:w-[170px] w-[130px]"
                     src="${element.img}"
                     alt=""
                   />
@@ -773,7 +773,7 @@ async function bestSeller() {
                   </div>
                   <div class="bestSeller-button w-full flex justify-center">
                     <div
-                      class="buyNow px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-md text-[white] text-[12px] md:text-[15px] text-center font-bold tracking-widest w-[80%] sm:w-[70%]"
+                      class="buyNow hov-eff transition-all duration-700 px-3 py-2 bg-gradient-to-r from-[#FF721D] to-[#972b07] rounded-md text-[white] text-[12px] md:text-[15px] text-center font-bold tracking-widest w-[80%] sm:w-[70%]"
                     >
                       ADD TO CART
                     </div>

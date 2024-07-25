@@ -480,7 +480,7 @@
     transition: all .5s ease;
   }
 
-  .hover-effect, .hover-effect2 {
+  .hover-effect {
     overflow: hidden;
   }
   
@@ -499,8 +499,14 @@
   .hover-effect:hover::before {
     height: 150%;
   }
+
   
-  
+  .hov-eff:hover{
+    background: #d9d9d9;
+    color: black;
+  }
+
+
   @keyframes autoRun {
     from {
       left: 100%;
@@ -544,7 +550,7 @@
     animation: anime1 6s linear infinite;
   }
    
-  @media screen and (max-width: 415px) {
+  @media screen and (max-width: 450px) {
     .bestSeller
       .slideContainer
       .slidewrapper

@@ -7,6 +7,8 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
         oswald: ['Oswald', 'sans-serif'],
         redhat: ['Red Hat Display', 'sans-serif'],
+        raleway: [ 'Raleway', 'sans-serif'],
+        cormorate: ["Cormorant Garamond", "serif"]
       },
       screens: {
         'custom': '450px',
