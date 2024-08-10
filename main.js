@@ -813,7 +813,7 @@ function videoRatio(){
 
     if(hRatio>vRatio){
         video.style.aspectRatio=16/9;
-        source.src='https://res.cloudinary.com/dojcchveo/video/upload/v1721215868/tz4tx0ws8kktdcn2l4kk.mp4';
+        source.src='https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/vdbig.mp4';
         overcast.style.aspectRatio=16/9;
 
         scrollAspect.src='https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/banner1.png';
@@ -843,7 +843,7 @@ function videoRatio(){
         video.style.aspectRatio=9/16;
 
         
-        source.src='https://res.cloudinary.com/dojcchveo/video/upload/v1721708291/fastrack/nbztex3cyhqjajnl3lhm.mp4';
+        source.src='https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/vdsmall.mp4';
         overcast.style.aspectRatio=9/16;
 
         scrollAspect.src='https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/smbanner1.png';
