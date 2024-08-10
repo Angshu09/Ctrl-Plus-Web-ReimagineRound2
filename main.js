@@ -643,7 +643,7 @@ async function fillTrending() {
     <div class="desc flex flex-col w-[60%] justify-between p-3 h-full font-bold">
 
       <div class="logo w-[30%]">
-        <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720950430/fastrack/t9tmr1zpecmjeuxgd29n.png" alt="logo">
+        <img src="https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/faslogo.png" alt="logo">
       </div>
 
       <div class="itemName text-white">
@@ -683,7 +683,7 @@ async function fillTrending() {
     <div class="desc flex flex-col w-[60%] justify-between p-3 h-full font-bold">
 
       <div class="logo w-[30%]">
-        <img src="https://res.cloudinary.com/dojcchveo/image/upload/v1720950430/fastrack/t9tmr1zpecmjeuxgd29n.png" alt="logo">
+        <img src="https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/faslogo.png" alt="logo">
       </div>
 
       <div class="itemName text-white">
@@ -816,23 +816,23 @@ function videoRatio(){
         source.src='https://res.cloudinary.com/dojcchveo/video/upload/v1721215868/tz4tx0ws8kktdcn2l4kk.mp4';
         overcast.style.aspectRatio=16/9;
 
-        scrollAspect.src='https://res.cloudinary.com/dojcchveo/image/upload/v1721583960/fastrack/banners/vtt7rouncnxz1jblsv8m.png';
+        scrollAspect.src='https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/banner1.png';
         slider1.forEach((element, idx) => {
-          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721583960/fastrack/banners/vtt7rouncnxz1jblsv8m.png')`;
+          element.style.background=`url('https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/banner1.png')`;
           
           element.style.backgroundPosition=`${25 * idx}%`;
           element.style.backgroundSize=`500% 100%`
           
         });
         slider2.forEach((element, idx) => {
-          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721583805/fastrack/banners/zohhaerwgyys3vg0ruep.png')`;
+          element.style.background=`url('https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/banner2.png')`;
           
           element.style.backgroundPosition=`${25 * idx}%`;
           element.style.backgroundSize=`500% 100%`
           
         });
         slider3.forEach((element, idx) => {
-          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721583920/fastrack/banners/haaelk4f1ekfo5w4ycp0.png')`;
+          element.style.background=`url('https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/banner3.png')`;
           
           element.style.backgroundPosition=`${25 * idx}%`;
           element.style.backgroundSize=`500% 100%`
@@ -846,9 +846,9 @@ function videoRatio(){
         source.src='https://res.cloudinary.com/dojcchveo/video/upload/v1721708291/fastrack/nbztex3cyhqjajnl3lhm.mp4';
         overcast.style.aspectRatio=9/16;
 
-        scrollAspect.src='https://res.cloudinary.com/dojcchveo/image/upload/v1721630133/fastrack/banners/ryx2jx15eq1nh8qghifv.jpg';
+        scrollAspect.src='https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/smbanner1.png';
         slider1.forEach((element, idx) => {
-          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721630133/fastrack/banners/ryx2jx15eq1nh8qghifv.jpg')`;
+          element.style.background=`url('https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/smbanner1.png')`;
 
           element.style.backgroundPosition=`${25 * idx}%`;
           element.style.backgroundSize=`500% 100%`;
@@ -856,7 +856,7 @@ function videoRatio(){
           
         });
         slider2.forEach((element, idx) => {
-          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721630133/fastrack/banners/qtswpv9pevjy4tcsrswf.jpg')`;
+          element.style.background=`url('https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/smbanner2.png')`;
 
           element.style.backgroundPosition=`${25 * idx}%`;
           element.style.backgroundSize=`500% 100%`;
@@ -864,7 +864,7 @@ function videoRatio(){
           
         });
         slider3.forEach((element, idx) => {
-          element.style.background=`url('https://res.cloudinary.com/dojcchveo/image/upload/v1721630132/fastrack/banners/vjiuqpautekmlmlrskcq.jpg')`;
+          element.style.background=`url('https://raw.githubusercontent.com/JayaSaha811733/ReImagine_2_API/main/smbanner3.png')`;
 
           element.style.backgroundPosition=`${25 * idx}%`;
           element.style.backgroundSize=`500% 100%`;
